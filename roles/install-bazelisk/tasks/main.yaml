@@ -1,0 +1,19 @@
+- name: Check if bazelisk is installed
+  command: bash -c "type -p {{ bazelisk_executable }}"
+  ignore_errors: yes
+  register: bazelisk_installed
+
+- name: Download bazelisk
+  get_url:
+    url: "{{ bazelisk_url }}"
+    dest: "{{ bazelisk_target }}"
+    mode: '0755'
+  when: bazelisk_installed.rc != 0
+  register: bazelisk_downloaded
+
+# This will apply to further plays and playbooks
+- name: Set bazelisk_executable fact
+  set_fact:
+    tox_executable: "{{ ansible_user_dir }}/.local/bin/tox"
+    cacheable: true
+  when: bazelisk_downloaded is changed

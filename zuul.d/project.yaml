@@ -2,3 +2,4 @@
     check:
       jobs:
         - noop
+        - test-ensure-bazelisk
