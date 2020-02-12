@@ -1,13 +1,9 @@
 {
   "checks": {
     "zuul-check:zuul_jobs": {
-      "state": "SCHEDULED",
-      "message": "Change has been enqueued in check",
-      "url": "https://gerrit-zuul.inaugust.com/t/gerrit/buildset/96a42f2c80b0463aa431dde6a64836c7",
-      "started": "2020-02-12T23:08:28Z",
-      "finished": "2020-02-12T22:58:31Z",
+      "state": "NOT_STARTED",
       "created": "2020-02-12T21:23:25Z",
-      "updated": "2020-02-12T23:08:29Z"
+      "updated": "2020-02-12T23:11:55Z"
     }
   }
 }
