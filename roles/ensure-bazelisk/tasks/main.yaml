@@ -1,0 +1,25 @@
+- name: Check if bazelisk is installed
+  command: bash -c "type -p {{ bazelisk_executable }}"
+  failed_when: false
+  register: bazelisk_installed
+
+- name: Ensure target directory exists
+  file:
+    state: directory
+    path: "{{ bazelisk_target | dirname }}"
+  when: bazelisk_installed.rc != 0
+
+- name: Download bazelisk
+  get_url:
+    url: "{{ bazelisk_url }}"
+    dest: "{{ bazelisk_target }}"
+    mode: '0755'
+  when: bazelisk_installed.rc != 0
+  register: bazelisk_downloaded
+
+# This will apply to further plays and playbooks
+- name: Set bazelisk_executable fact
+  set_fact:
+    bazelisk_executable: "{{ bazelisk_target }}"
+    cacheable: true
+  when: bazelisk_downloaded is changed
