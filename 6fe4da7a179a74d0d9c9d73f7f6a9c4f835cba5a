@@ -4,10 +4,10 @@
       "state": "SCHEDULED",
       "message": "Change has been enqueued in check",
       "url": "https://gerrit-zuul.inaugust.com/t/gerrit/buildset/c9cec54ddc53466ea911908474611465",
-      "started": "2020-02-12T21:35:54Z",
+      "started": "2020-02-12T21:39:54Z",
       "finished": "2020-02-12T21:23:30Z",
       "created": "2020-02-12T21:23:25Z",
-      "updated": "2020-02-12T21:35:54Z"
+      "updated": "2020-02-12T21:39:54Z"
     }
   }
 }
