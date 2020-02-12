@@ -1,0 +1,16 @@
+# Jobs used for testing roles in this repoistory
+
+# A temporary nodeset until we add this to 
+- nodeset:
+    name: temp-debian
+    nodes:
+      - name: testnode
+        label: debian-stretch
+
+- job:
+    name: test-ensure-bazelisk
+    run: playbooks/test-ensure-bazelisk.yaml
+    nodeset: temp-debian
+    files:
+      - roles/ensure-bazelisk/.*
+      - playbooks/test-ensure-bazelisk.yaml
