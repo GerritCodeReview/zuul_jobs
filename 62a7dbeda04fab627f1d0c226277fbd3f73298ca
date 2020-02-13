@@ -1,11 +1,13 @@
 {
   "checks": {
     "zuul-check:zuul_jobs": {
-      "state": "RUNNING",
-      "message": "Jobs have started running",
+      "state": "FAILED",
+      "message": "Change failed",
+      "url": "https://gerrit-zuul.inaugust.com/t/gerrit/buildset/e5ab1d5caca24dfd88863a9660fe58e9",
       "started": "2020-02-13T22:41:07Z",
+      "finished": "2020-02-13T22:45:53Z",
       "created": "2020-02-13T22:41:07Z",
-      "updated": "2020-02-13T22:41:10Z"
+      "updated": "2020-02-13T22:45:53Z"
     }
   }
 }
