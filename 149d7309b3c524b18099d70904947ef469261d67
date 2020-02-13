@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "05b5c396_51eac25b",
+        "filename": "roles/ensure-bazelisk/README.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1010246
+      },
+      "writtenOn": "2020-02-13T14:34:41Z",
+      "side": 1,
+      "message": "The nodes are ephemeral.",
+      "parentUuid": "3a452c44_002aba05",
+      "revId": "149d7309b3c524b18099d70904947ef469261d67",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "94c5f513_c9e2e31e",
         "filename": "zuul.d/test-jobs.yaml",
         "patchSetId": 5
