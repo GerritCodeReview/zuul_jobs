@@ -16,6 +16,24 @@
       "revId": "6fe4da7a179a74d0d9c9d73f7f6a9c4f835cba5a",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6de7c534_c3835ccb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1010246
+      },
+      "writtenOn": "2020-02-13T14:37:04Z",
+      "side": 1,
+      "message": "No, I don\u0027t think that\u0027s intentional. Also - wow, I didn\u0027t know gerrit could handle patches without change-id in the way this worked. I\u0027ve learned something today!",
+      "parentUuid": "d9cea124_59d08c54",
+      "revId": "6fe4da7a179a74d0d9c9d73f7f6a9c4f835cba5a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
