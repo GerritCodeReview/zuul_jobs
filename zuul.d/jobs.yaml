@@ -1,0 +1,22 @@
+- job:
+    name: gerrit-base
+    description: |
+      Base job for building gerrit
+
+      This job sets up all the repos which are required for a gerrit build.
+    pre-run: playbooks/gerrit-base/pre.yaml
+    required-projects:
+      - gerrit
+      - jgit
+      - plugins/codemirror-editor
+      - plugins/commit-message-length-validator
+      - plugins/delete-project
+      - plugins/download-commands
+      - plugins/gitiles
+      - plugins/hooks
+      - plugins/plugin-manager
+      - plugins/replication
+      - plugins/reviewnotes
+      - plugins/singleusergroup
+      - plugins/webhooks
+      - polymer-bridges
