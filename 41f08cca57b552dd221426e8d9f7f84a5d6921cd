@@ -1,11 +1,9 @@
 {
   "checks": {
     "zuul-check:zuul_jobs": {
-      "state": "RUNNING",
-      "message": "Jobs have started running",
-      "started": "2020-02-13T20:57:33Z",
+      "state": "NOT_STARTED",
       "created": "2020-02-13T18:31:33Z",
-      "updated": "2020-02-13T20:57:38Z"
+      "updated": "2020-02-13T21:31:59Z"
     }
   }
 }
