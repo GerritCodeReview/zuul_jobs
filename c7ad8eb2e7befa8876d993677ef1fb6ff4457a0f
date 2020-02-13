@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b3aafe75_5404fc7d",
+        "filename": "roles/prepare-gerrit-repos/README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1041506
+      },
+      "writtenOn": "2020-02-13T23:16:31Z",
+      "side": 1,
+      "message": "Hi James,\n\nLet me introduce myself: I host Zuul with Gerrit on private setup and also added support for submodules.\n\nI used .gitmodules as a source of truth for a list of submodules, their paths and branches:\n\n* job must know what super project is, so job (and playbook) uses custom variable so all git submodules operations happen in superproject directory: \n\n   super_project: \"{{ zuul.projects[\u0027project-canonical-path\u0027] }}\"\n\n* I have to restore git remote in superproject directory for git submodule clone to work as Zuul intentionally set \u0027origin\u0027 remote to /dev/null. I hardcode remote protocol/port in playbook, as Zuul doesn\u0027t provide this information for job (canonical path doesn\u0027t have information about remote protocol/port).\n\n* Then I loop through submodules in .gitmodules and either clone original submodule or replace submodule directory with corresponding Zuul project. There is a straightforward way how to map URLs (relative or absolute) listed in .gitmodules and canonical project names Zuul provides in zuul.projects variable. Branches for submodules are also taken from .gitmodules.\n\nThe main profit is that superproject users just hack on .gitmodules and don\u0027t care about syncing it with job description (which maybe located in another repo).\n\nWhat do you think about using .gitmodules as a single source of truth?",
+      "revId": "c7ad8eb2e7befa8876d993677ef1fb6ff4457a0f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a01229c9_0c83f04e",
+        "filename": "roles/prepare-gerrit-repos/tasks/repo.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1041506
+      },
+      "writtenOn": "2020-02-13T23:16:31Z",
+      "side": 1,
+      "message": "We use following commands to \u0027restore\u0027 submodule directory from Zuul project:\n\n  git -C superproject submodule init \u003cmodule[\u0027path\u0027]]\u003e\n  git -C superproject submodule absorbgitdirs \u003cmodule[\u0027path\u0027]\u003e\n  git -C superproject module_abspath checkout \u003cmodule[\u0027branch\u0027]\u003e\n\nabsorbgitdirs allows submodule to behave like real submodule in case \u0027git submodule\u0027 are called by build scripts later.",
+      "revId": "c7ad8eb2e7befa8876d993677ef1fb6ff4457a0f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
