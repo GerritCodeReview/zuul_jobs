@@ -1,0 +1,1 @@
+gerrit_root: "{{ ansible_user_dir }}/{{ zuul.projects['gerrit.googlesource.com/gerrit'].src_dir }}"
