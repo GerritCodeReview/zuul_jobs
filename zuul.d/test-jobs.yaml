@@ -14,3 +14,13 @@
     files:
       - roles/ensure-bazelisk/.*
       - playbooks/test-ensure-bazelisk.yaml
+
+- job:
+    name: test-gerrit-base
+    parent: gerrit-base
+    run: playbooks/test-gerrit-base.yaml
+    nodeset: temp-debian
+    files:
+      - roles/ensure-bazelisk/.*
+      - roles/prepare-gerrit-repos/.*
+      - playbooks/test-gerrit-base.yaml
