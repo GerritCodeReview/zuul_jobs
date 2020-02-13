@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "98a89dbc_e7043ce4",
+        "filename": "roles/prepare-gerrit-repos/README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1010246
+      },
+      "writtenOn": "2020-02-13T19:51:22Z",
+      "side": 1,
+      "message": "footer? #notaminusone",
+      "range": {
+        "startLine": 11,
+        "startChar": 13,
+        "endLine": 11,
+        "endChar": 19
+      },
+      "revId": "41f08cca57b552dd221426e8d9f7f84a5d6921cd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
