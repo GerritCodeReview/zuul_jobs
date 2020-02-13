@@ -1,0 +1,20 @@
+# In case there is no matching branch we may need to check out the
+# actual sha defined in the parent repo. The default zuul remote,
+# file:///dev/null, doesn't work here because relative paths cause
+# it to be file:///dev/plugins/download-commands, which isn't a
+# thing. Removing the origin causes git to use relative local
+# filesystem paths.
+- name: Remove origin remote
+  command: "git remote rm origin"
+  args:
+    chdir: "{{ gerrit_root }}"
+
+- name: Move plugin repos into gerrit tree
+  include_tasks:
+    file: repo.yaml
+  vars:
+    project_dest: "{{ gerrit_project_mapping.get(project.name, project.name) }}"
+  when: "project_dest != ''"
+  loop: "{{ zuul.projects.values() | list }}"
+  loop_control:
+    loop_var: project

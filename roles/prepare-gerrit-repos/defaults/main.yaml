@@ -1,0 +1,4 @@
+gerrit_project_mapping:
+  gerrit: ''
+  jgit: modules/jgit
+  'zuul/jobs': ''

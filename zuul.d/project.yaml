@@ -2,3 +2,4 @@
     check:
       jobs:
         - test-ensure-bazelisk
+        - test-gerrit-base

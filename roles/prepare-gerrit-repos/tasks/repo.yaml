@@ -1,0 +1,44 @@
+- name: Prepare project
+  debug:
+    msg: "{{ project.name }} {{ project_dest }}"
+
+- name: Check if zuul.branch exists in repo
+  set_fact:
+    # If zuul checked out the branch we're testing, then it exists.
+    project_branch_exists: "{{ zuul.branch == project.checkout }}"
+
+- name: Check if repo has a dependent change
+  set_fact:
+    repo_has_dependent_change: "{{ zuul['items'] | selectattr('project.canonical_name', 'eq', zuul.project.canonical_name) | list | length | bool }}"
+
+- name: Check for unsatisfiable source repo condition
+  when:
+    - "project.canonical_name != zuul.project.canonical_name"
+    - "not project_branch_exists"
+    - "repo_has_dependent_change"
+  fail:
+    msg: >-
+      The repository {{ project.name }} does not contain the branch
+      under test ({{ zuul.branch }}), but this change depends on a
+      change to that project and branch.  While Zuul is able to check
+      out the repos in the requested state, the branch mismatch means
+      that Gerrit's submodule subscription would not automatically
+      update the submodule pointer, and the merged state would not
+      reflect the tested state.
+
+      This configuration would be testable by creating a {{
+      zuul.branch }} branch in the {{ project.name }} repo.
+      Alternatively, you can merge the dependent change, manually
+      update the submodule pointer, then test this change again.
+
+# If there is no matching branch we need to check out the actual sha
+# defined in the parent repo.
+- name: Update submodule
+  when: "not project_branch_exists"
+  command: "git submodule update --init {{ project.name }}"
+  args:
+    chdir: "{{ gerrit_root }}"
+
+- name: Move repo into place
+  when: "project_branch_exists"
+  command: "mv -T -f {{ ansible_user_dir }}/{{ project.src_dir }} {{ gerrit_root }}/{{ project_dest }}"
