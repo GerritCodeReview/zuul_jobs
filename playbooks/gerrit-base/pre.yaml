@@ -1,0 +1,5 @@
+- name: Preparatory steps for all Gerrit build jobs
+  hosts: all
+  roles:
+    - ensure-bazelisk
+    - prepare-gerrit-repos

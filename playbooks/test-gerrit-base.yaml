@@ -1,0 +1,23 @@
+- hosts: all
+  tasks:
+    - command: "ls -la src/gerrit.googlesource.com/gerrit/"
+    - command: "ls -la src/gerrit.googlesource.com/gerrit/plugins"
+    - command: "ls -la src/gerrit.googlesource.com/gerrit/polymer-bridges"
+    - name: List submodule git dir
+      command: "ls src/gerrit.googlesource.com/gerrit/{{ item }}/.git"
+      args:
+        chdir: "{{ ansible_user_dir }}"
+      loop:
+        - modules/jgit
+        - plugins/codemirror-editor
+        - plugins/commit-message-length-validator
+        - plugins/delete-project
+        - plugins/download-commands
+        - plugins/gitiles
+        - plugins/hooks
+        - plugins/plugin-manager
+        - plugins/replication
+        - plugins/reviewnotes
+        - plugins/singleusergroup
+        - plugins/webhooks
+        - polymer-bridges
