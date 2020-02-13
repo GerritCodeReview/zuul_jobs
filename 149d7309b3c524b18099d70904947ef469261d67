@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a452c44_002aba05",
+        "filename": "roles/ensure-bazelisk/README.rst",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2020-02-13T08:41:12Z",
+      "side": 1,
+      "message": "Out of interest: Are the nodes ephemeral or will the VMs be running constantly?",
+      "revId": "149d7309b3c524b18099d70904947ef469261d67",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94c5f513_c9e2e31e",
+        "filename": "zuul.d/test-jobs.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2020-02-13T08:41:12Z",
+      "side": 1,
+      "message": "typo: repository",
+      "range": {
+        "startLine": 1,
+        "startChar": 38,
+        "endLine": 1,
+        "endChar": 48
+      },
+      "revId": "149d7309b3c524b18099d70904947ef469261d67",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
