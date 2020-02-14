@@ -4,3 +4,4 @@
         - test-ensure-bazelisk
         - test-ensure-java
         - test-gerrit-base
+        - test-install-build-essential

@@ -1,0 +1,8 @@
+- hosts: all
+  roles:
+    - install-build-essential
+  tasks:
+    - name: Run gcc
+      command: gcc --version
+    - name: Run zip
+      command: zip
