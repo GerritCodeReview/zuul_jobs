@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e15549ca_67ba217b",
+        "filename": "zuul.d/test-jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2020-02-14T06:52:38Z",
+      "side": 1,
+      "message": "repository",
+      "range": {
+        "startLine": 1,
+        "startChar": 38,
+        "endLine": 1,
+        "endChar": 48
+      },
+      "revId": "8e9c66af4d9abc22aa8c08c9216f723d0a0de8e0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
