@@ -3,4 +3,5 @@
       jobs:
         - noop
         - test-ensure-bazelisk
+        - test-ensure-java
         - test-gerrit-base
