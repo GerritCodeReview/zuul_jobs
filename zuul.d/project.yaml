@@ -5,3 +5,4 @@
         - test-ensure-bazelisk
         - test-ensure-java
         - test-gerrit-base
+        - test-gerrit-plugin-build
