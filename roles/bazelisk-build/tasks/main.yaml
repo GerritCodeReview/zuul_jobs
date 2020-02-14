@@ -1,0 +1,15 @@
+- name: Run bazelisk build
+  shell: |
+    java -fullversion
+    {{ bazelisk_executable }} version
+    {{ bazelisk_executable }} build --spawn_strategy=standalone --genrule_strategy=standalone {{ bazelisk_targets }}
+  args:
+    executable: /bin/bash
+    chdir: "{{ zuul_work_dir }}"
+- name: Run bazelisk test
+  when: "bazelisk_test_targets != ''"
+  shell: |
+    {{ bazelisk_executable }} test {{ bazelisk_test_targets }}
+  args:
+    executable: /bin/bash
+    chdir: "{{ zuul_work_dir }}"

@@ -35,10 +35,22 @@
     name: test-gerrit-base
     parent: gerrit-base
     run: playbooks/test-gerrit-base.yaml
-    nodeset: temp-debian
     files:
       - roles/ensure-bazelisk/.*
       - roles/ensure-java/.*
       - roles/prepare-gerrit-repos/.*
       - roles/install-build-essential/.*
       - playbooks/test-gerrit-base.yaml
+
+- job:
+    name: test-gerrit-plugin-build
+    parent: gerrit-plugin-build
+    required-projects:
+      - plugins/checks
+    vars:
+      gerrit_plugin: checks
+    files:
+      - roles/ensure-bazelisk/.*
+      - roles/prepare-gerrit-repos/.*
+      - roles/copy-plugin-deps/.*
+      - playbooks/gerrit-plugin/build.yaml
