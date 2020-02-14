@@ -1,5 +1,8 @@
 - name: Run bazelisk build
   shell: |
+    # Temp: figure out what else is missing:
+    sudo apt-get install build-essential
+
     java -fullversion
     {{ bazelisk_executable }} version
     {{ bazelisk_executable }} build --spawn_strategy=standalone --genrule_strategy=standalone {{ bazelisk_targets }}
