@@ -92,6 +92,30 @@
       "revId": "de85df8b8d6427d663e90e837ec4c92784523798",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f3a11dfc_5eaaf869",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-02-14T17:22:13Z",
+      "side": 1,
+      "message": "Yeah, this is the key.  As written, this will copy all of those modules into place, which is great for master, but on stable branches we will probably end up with a surplus of modules.  The way we can fix that (prior to Vitaliy\u0027s implementation) is to make branch variants of this.  That would involve reducing the set of projects above into the set that is common across all branches, then adding something like:\n\n- job:\n    name: gerrit-base\n    branches: stable/3.0\n    required-projects:\n      - (additional projects only on 3.0 branch)\n\nBut we can defer that for a little bit -- we can get this working for master then refactor for other branches without disruption.",
+      "parentUuid": "3f27a3b7_51355694",
+      "range": {
+        "startLine": 8,
+        "startChar": 4,
+        "endLine": 23,
+        "endChar": 0
+      },
+      "revId": "de85df8b8d6427d663e90e837ec4c92784523798",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
