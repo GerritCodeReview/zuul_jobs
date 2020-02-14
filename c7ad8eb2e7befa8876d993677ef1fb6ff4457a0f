@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "2deca7f6_e1224115",
+        "filename": "roles/prepare-gerrit-repos/README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-02-14T17:18:25Z",
+      "side": 1,
+      "message": "Hi, nice to meet you!  I like that idea, and think we should do it, but there\u0027s one thing I\u0027d prefer to change.\n\nHaving the super_project variable makes a lot of sense, and using .gitmodules as the source of truth means that we will only copy/import the submodules necessary for the branch (which addresses David\u0027s concern).\n\nBut I would prefer to avoid restoring a real remote for two reasons: we avoid having the CI system clone from the upstream sources (I know in this case, it\u0027s google, and it can probably handle the traffic, but still, Zuul caches git repos so we might as well take advantage of it) and this makes it easy to ensure that we\u0027re testing the repos as Zuul prepared them (in other words, if a user unfamiliar with Zuul writes a job that does \"git pull\" and it fails, that\u0027s good).  That does mean that each time the gerrit repo has a submodule added, we will need to add a line to require-projects, but that doesn\u0027t happen that often, and I don\u0027t think it\u0027s a significant cost.[1]\n\nI recognize the preceding paragraph is my opinion, and in some circumstances the process you outlined may be more appropriate, so I don\u0027t mean to suggest any flaw in your system -- it sounds great.  :)\n\nCan you share some of your code that uses super_project and reads .gitmodules?  Maybe you could make a followup patch to this one that starts to use it, and we can work on it there?\n\nRegardless, I think we can move forward on merging this patch because it should work well enough for the time being, and we should be able to make the changes you describe without significant impact to jobs that build on this.\n\n[1] If we add .gitmodule parsing to Zuul itself, we could automatically populate required-projects and make this even easier.",
+      "parentUuid": "b3aafe75_5404fc7d",
+      "revId": "c7ad8eb2e7befa8876d993677ef1fb6ff4457a0f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a01229c9_0c83f04e",
         "filename": "roles/prepare-gerrit-repos/tasks/repo.yaml",
         "patchSetId": 3
@@ -30,6 +48,24 @@
       "writtenOn": "2020-02-13T23:16:31Z",
       "side": 1,
       "message": "We use following commands to \u0027restore\u0027 submodule directory from Zuul project:\n\n  git -C superproject submodule init \u003cmodule[\u0027path\u0027]]\u003e\n  git -C superproject submodule absorbgitdirs \u003cmodule[\u0027path\u0027]\u003e\n  git -C superproject module_abspath checkout \u003cmodule[\u0027branch\u0027]\u003e\n\nabsorbgitdirs allows submodule to behave like real submodule in case \u0027git submodule\u0027 are called by build scripts later.",
+      "revId": "c7ad8eb2e7befa8876d993677ef1fb6ff4457a0f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0260a78d_a83079a2",
+        "filename": "roles/prepare-gerrit-repos/tasks/repo.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-02-14T17:18:25Z",
+      "side": 1,
+      "message": "Every day I learn something new about git.",
+      "parentUuid": "a01229c9_0c83f04e",
       "revId": "c7ad8eb2e7befa8876d993677ef1fb6ff4457a0f",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
