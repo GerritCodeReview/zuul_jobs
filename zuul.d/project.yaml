@@ -4,3 +4,4 @@
         - noop
         - test-ensure-bazelisk
         - test-gerrit-base
+        - test-gerrit-plugin-build

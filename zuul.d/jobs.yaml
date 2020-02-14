@@ -1,9 +1,10 @@
 - job:
     name: gerrit-base
     description: |
-      Base job for building gerrit
+      Base job for building Gerrit
 
-      This job sets up all the repos which are required for a gerrit build.
+      This job sets up all the repos which are required for a gerrit
+      build.
     pre-run: playbooks/gerrit-base/pre.yaml
     required-projects:
       - gerrit
@@ -20,3 +21,26 @@
       - plugins/singleusergroup
       - plugins/webhooks
       - polymer-bridges
+
+- job:
+    name: gerrit-plugin-build
+    parent: gerrit-base
+    description: |
+      Builds a Gerrit plugin
+
+      Responds to these variables:
+
+      .. zuul:jobvar:: gerrit_plugin
+
+         The name of the plugin to build.  Defaults to the project
+         under test, but can be specified explicitly to build
+         cross-repo.
+
+      .. zuul:jobvar:: baselisk_targets
+
+         The bazelisk targets to build.  Defaults to the gerrit_plugin
+         specified above.
+    run: playbooks/gerrit-plugin/build.yaml
+    vars:
+      gerrit_plugin: "{{ zuul.project.short_name }}"
+      bazelisk_targets: "plugins/{{ gerrit_plugin }}:{{ gerrit_plugin }}"
