@@ -1,0 +1,1 @@
+gerrit_plugin: "{{ zuul.project.short_name }}"
