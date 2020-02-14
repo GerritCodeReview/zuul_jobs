@@ -1,0 +1,8 @@
+- name: Check if external plugin deps exists
+  stat:
+    path: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/gerrit/plugins/{{ gerrit_plugin }}/external_plugin_deps.bzl"
+  register: deps_stat
+
+- name: Copy external plugin deps
+  command: "cp -f {{ ansible_user_dir }}/src/gerrit.googlesource.com/gerrit/plugins/{{ gerrit_plugin }}/external_plugin_deps.bzl {{ gerrit_root }}/plugins"
+  when: "deps_stat.stat.exists is true"
