@@ -1,9 +1,11 @@
 {
   "checks": {
     "zuul-check:zuul_jobs": {
-      "state": "NOT_STARTED",
+      "state": "SCHEDULED",
+      "message": "Change has been enqueued in check",
+      "started": "2020-02-14T20:38:38Z",
       "created": "2020-02-14T19:35:13Z",
-      "updated": "2020-02-14T20:38:06Z"
+      "updated": "2020-02-14T20:38:39Z"
     }
   }
 }
