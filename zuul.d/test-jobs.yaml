@@ -24,6 +24,14 @@
       - playbooks/test-ensure-java.yaml
 
 - job:
+    name: test-install-build-essential
+    run: playbooks/test-install-build-essential.yaml
+    nodeset: temp-debian
+    files:
+      - roles/install-build-essential/.*
+      - playbooks/test-install-build-essential.yaml
+
+- job:
     name: test-gerrit-base
     parent: gerrit-base
     run: playbooks/test-gerrit-base.yaml
@@ -32,4 +40,5 @@
       - roles/ensure-bazelisk/.*
       - roles/ensure-java/.*
       - roles/prepare-gerrit-repos/.*
+      - roles/install-build-essential/.*
       - playbooks/test-gerrit-base.yaml

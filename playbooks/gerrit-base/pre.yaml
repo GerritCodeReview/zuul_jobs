@@ -3,4 +3,7 @@
   roles:
     - ensure-bazelisk
     - ensure-java
+    - role: install-nodejs
+      node_version: 10
+    - install-build-essential
     - prepare-gerrit-repos

@@ -1,0 +1,7 @@
+- name: Install essential build packages
+  become: true
+  package:
+    name:
+      - build-essential
+      - zip
+    state: present
