@@ -1,3 +1,12 @@
+# Temp: figure out what else is missing:
+- include_role:
+    name: install-nodejs
+  vars:
+    node_version: 10
+- package:
+    name: build-essential
+    state: present
+  become: true
 - name: Run bazelisk build
   shell: |
     java -fullversion
