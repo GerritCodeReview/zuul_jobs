@@ -72,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "5d841731_6f334659",
+        "filename": "roles/prepare-gerrit-repos/tasks/repo.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-02-14T17:43:28Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ea2ba860_b5a394bd",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 4
+      },
+      "revId": "de85df8b8d6427d663e90e837ec4c92784523798",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3f27a3b7_51355694",
         "filename": "zuul.d/jobs.yaml",
         "patchSetId": 9
