@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ed35a023_842e1ebc",
+        "filename": "playbooks/test-gerrit-base.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2020-02-14T06:56:44Z",
+      "side": 1,
+      "message": "will this also work on branches that don\u0027t have all of these submodules?",
+      "range": {
+        "startLine": 8,
+        "startChar": 8,
+        "endLine": 20,
+        "endChar": 25
+      },
+      "revId": "de85df8b8d6427d663e90e837ec4c92784523798",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ea2ba860_b5a394bd",
+        "filename": "roles/prepare-gerrit-repos/tasks/repo.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2020-02-14T06:56:44Z",
+      "side": 1,
+      "message": "whitespace",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 41,
+        "endChar": 4
+      },
+      "revId": "de85df8b8d6427d663e90e837ec4c92784523798",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3f27a3b7_51355694",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2020-02-14T06:56:44Z",
+      "side": 1,
+      "message": "same here; does this work on branches that don\u0027t have all of these submodules?",
+      "range": {
+        "startLine": 8,
+        "startChar": 4,
+        "endLine": 23,
+        "endChar": 0
+      },
+      "revId": "de85df8b8d6427d663e90e837ec4c92784523798",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
