@@ -1,0 +1,5 @@
+- name: Build a gerrit plugin
+  hosts: all
+  roles:
+    - copy-plugin-deps
+    - bazelisk-build

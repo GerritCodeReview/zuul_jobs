@@ -1,0 +1,4 @@
+bazelisk_targets: ""
+bazelisk_test_targets: ""
+bazelisk_executable: bazelisk
+zuul_work_dir: "{{ ansible_user_dir }}/{{ zuul.project.src_dir}}"

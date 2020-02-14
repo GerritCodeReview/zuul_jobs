@@ -5,3 +5,4 @@
         - test-ensure-java
         - test-gerrit-base
         - test-install-build-essential
+        - test-gerrit-plugin-build
