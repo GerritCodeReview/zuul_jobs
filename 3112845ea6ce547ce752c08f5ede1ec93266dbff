@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "0d4ae6c6_d98c18a0",
+        "filename": "roles/bazelisk-build/README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-02-14T17:40:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4c68ae18_4014f4f6",
+      "range": {
+        "startLine": 15,
+        "startChar": 19,
+        "endLine": 15,
+        "endChar": 28
+      },
+      "revId": "3112845ea6ce547ce752c08f5ede1ec93266dbff",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "336d6d62_3ce0e4c9",
         "filename": "roles/bazelisk-build/README.rst",
         "patchSetId": 1
@@ -45,6 +69,30 @@
       "revId": "3112845ea6ce547ce752c08f5ede1ec93266dbff",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9194db85_0833f1d8",
+        "filename": "roles/bazelisk-build/README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-02-14T17:40:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "336d6d62_3ce0e4c9",
+      "range": {
+        "startLine": 16,
+        "startChar": 15,
+        "endLine": 16,
+        "endChar": 21
+      },
+      "revId": "3112845ea6ce547ce752c08f5ede1ec93266dbff",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
