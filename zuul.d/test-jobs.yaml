@@ -16,11 +16,20 @@
       - playbooks/test-ensure-bazelisk.yaml
 
 - job:
+    name: test-ensure-java
+    run: playbooks/test-ensure-java.yaml
+    nodeset: temp-debian
+    files:
+      - roles/ensure-java/.*
+      - playbooks/test-ensure-java.yaml
+
+- job:
     name: test-gerrit-base
     parent: gerrit-base
     run: playbooks/test-gerrit-base.yaml
     nodeset: temp-debian
     files:
       - roles/ensure-bazelisk/.*
+      - roles/ensure-java/.*
       - roles/prepare-gerrit-repos/.*
       - playbooks/test-gerrit-base.yaml

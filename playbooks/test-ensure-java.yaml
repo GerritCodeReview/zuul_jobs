@@ -1,0 +1,6 @@
+- hosts: all
+  roles:
+    - ensure-java
+  tasks:
+    - name: Print java version
+      command: java -fullversion
