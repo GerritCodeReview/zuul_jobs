@@ -2,6 +2,75 @@
   "comments": [
     {
       "key": {
+        "uuid": "a398f6d6_15350b2d",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-02-15T13:06:19Z",
+      "side": 1,
+      "message": "Why hard code this? Han-Wen may know better, but we should probably use Google\u0027s Remote Build Execution (RBE), as documented in Documentation/dav-bazel.txt. That would mean to call it something like:\n\n  bazel build --config\u003dremote --remote_instance_name\u003dprojects/{{gerrit_code_review_project_id}}/instances/default_instance\n\nwhere {{gerrit_code_review_project_id}} would be a secret and should be retrieved during execution from the system.",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 93
+      },
+      "revId": "b4a77e64dc9b40409ed025ece6f897811a3eb64c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "40346c38_61b61f02",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-02-15T13:06:19Z",
+      "side": 1,
+      "message": "Same as above --config\u003dremote [...]",
+      "range": {
+        "startLine": 12,
+        "startChar": 30,
+        "endLine": 12,
+        "endChar": 34
+      },
+      "revId": "b4a77e64dc9b40409ed025ece6f897811a3eb64c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4b1325ad_215a5109",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-02-15T13:06:19Z",
+      "side": 1,
+      "message": "Nit: Unrelated here and could be fixed in the change where it was introduced?",
+      "range": {
+        "startLine": 5,
+        "startChar": 28,
+        "endLine": 5,
+        "endChar": 29
+      },
+      "revId": "b4a77e64dc9b40409ed025ece6f897811a3eb64c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3d1bb52d_f8131562",
         "filename": "zuul.d/jobs.yaml",
         "patchSetId": 6
