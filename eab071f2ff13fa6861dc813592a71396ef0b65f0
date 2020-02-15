@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9cf326ed_74428cb1",
+        "filename": "playbooks/test-gerrit-base.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-02-15T13:05:44Z",
+      "side": 1,
+      "message": "To build a core or custom gerrit plugin, core plugins are not required. Why should we fetch codemirror-editor plugin to build hooks plugin? This would just waste network bandwidth to pull core plugins for building core or custom plugins. During the last user conferences there were discussions to add even more core plugins (right now we have 11 core plugins, but that number could grow in the future). The only needed submodule is modules/jgit.\n\nThere is only single plugin that I am aware of (multi-site plugin) that depends on one core plugin (replication plugin). So the build of multi-site plugin would benefit from this simplification: always fetch everything.\n\nIf we want to simplify things, we could just have gerrit-base job. With it in place we would be able to build both: gerrit core (e.g.: bazelisk build :release) and all core and non-core gerrit plugins (e.g.: bazelisk build plugins/gitiles).\n\nIf we want to only clone exactly what is required to build core or custom plugin, we could define more granular job: gerrit-core-base, that wouldn\u0027t clone core plugins at all, jgit module is still required, though. In such cloned workspace `bazelisk build :gerrit` would work, but not `bazelisk build :release`. \n\nCould gerrit-base-with-all-core-plugins-fetched job re-use gerrit-core-base job and pass the list of the plugins to fetch in addition? That list could be different on different stable branches (as we add/remove core plugins or modules).",
+      "range": {
+        "startLine": 8,
+        "startChar": 10,
+        "endLine": 20,
+        "endChar": 25
+      },
+      "revId": "eab071f2ff13fa6861dc813592a71396ef0b65f0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
