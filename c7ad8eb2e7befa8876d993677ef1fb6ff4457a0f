@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "bce401bd_413e6a1a",
+        "filename": "roles/prepare-gerrit-repos/README.rst",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1041506
+      },
+      "writtenOn": "2020-02-16T21:12:26Z",
+      "side": 1,
+      "message": "Hi James,\n\n\u003e Can you share some of your code that uses super_project and reads .gitmodules? \n\nI\u0027ve published submodule.py that restores submodules of super project with corresponding zuul.projects: https://github.com/vlotorev/zuul-tools\n\n\u003e Maybe you could make a followup patch to this one that starts to use it, and we can work on it there?\n\nI won\u0027t be able to make a followup patch.\n\n\u003e [1] If we add .gitmodule parsing to Zuul itself, we could automatically populate required-projects and make this even easier. \n\nThat would be awesome.\n\nThanks for positive feedback.",
+      "parentUuid": "2deca7f6_e1224115",
+      "revId": "c7ad8eb2e7befa8876d993677ef1fb6ff4457a0f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a01229c9_0c83f04e",
         "filename": "roles/prepare-gerrit-repos/tasks/repo.yaml",
         "patchSetId": 3
