@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "e6b80651_665eef18",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-02-17T21:57:01Z",
+      "side": 1,
+      "message": "Yes, sorry, I just meant that this is the script I was working from:\n\nhttps://gerrit.googlesource.com/gerrit-ci-scripts/+/refs/heads/master/jenkins/gerrit-bazel-build-plugin.sh#21\n\nSo that\u0027s the command I went with.  I agree that we should look into caching.  Zuul has a number of facilities for this -- we\u0027re currently benefiting from Zuul\u0027s merger cache to limit interactions with Gerrit -- Zuul makes one request to update the internal merger cache when starting jobs, and then pushes that state to all of the nodes used in the job.  We\u0027re currently not using any prepared images, but we could, and if we did, then Zuul would only need to push the deltas onto the workers.  But at the moment, it only takes about 35 seconds to push the gerrit repo and all of the core plugins onto the worker (and most of that is command overhead, not network io).  So we can probably leave that optimization for later.  We can also look into using RBE, but the combination of needing to use a secret and wanting to do so in a repo where anyone can propose changes makes that complex (but not impossible).\n\nWithin the context of a local build, do you think the \"standalone\" arguments are inappropriate, or are they okay?",
+      "parentUuid": "b99b5654_221964b7",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 93
+      },
+      "revId": "b4a77e64dc9b40409ed025ece6f897811a3eb64c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "40346c38_61b61f02",
         "filename": "roles/bazelisk-build/tasks/main.yaml",
         "patchSetId": 6
