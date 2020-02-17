@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "96587d1c_7cd90bfe",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-02-17T18:56:32Z",
+      "side": 1,
+      "message": "This is what the current CI script I based this on does.  My priority was getting something that worked at parity.",
+      "parentUuid": "a398f6d6_15350b2d",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 93
+      },
+      "revId": "b4a77e64dc9b40409ed025ece6f897811a3eb64c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "40346c38_61b61f02",
         "filename": "roles/bazelisk-build/tasks/main.yaml",
         "patchSetId": 6
