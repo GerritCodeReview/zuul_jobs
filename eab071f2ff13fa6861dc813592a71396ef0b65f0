@@ -22,6 +22,30 @@
       "revId": "eab071f2ff13fa6861dc813592a71396ef0b65f0",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "66b79a9e_10972c4e",
+        "filename": "playbooks/test-gerrit-base.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2020-02-17T09:35:34Z",
+      "side": 1,
+      "message": "To be fair, we have this same behaviour on the Jenkins-based CI and Igave the respective scripts to James as a template. But I totally agree, that we shouldn\u0027t clone all submodules, if not required.",
+      "parentUuid": "9cf326ed_74428cb1",
+      "range": {
+        "startLine": 8,
+        "startChar": 10,
+        "endLine": 20,
+        "endChar": 25
+      },
+      "revId": "eab071f2ff13fa6861dc813592a71396ef0b65f0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
