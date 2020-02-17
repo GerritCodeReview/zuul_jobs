@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "b99b5654_221964b7",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-02-17T19:05:39Z",
+      "side": 1,
+      "message": "The current CI is using Docker image with pre warmed Bazel action and repository caches. One step in building docker image for thd CI is building Gerrit and populating caches on stable branches and master. RBE is another alternative that offers remote cache usage and remote execution.",
+      "parentUuid": "96587d1c_7cd90bfe",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 93
+      },
+      "revId": "b4a77e64dc9b40409ed025ece6f897811a3eb64c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "40346c38_61b61f02",
         "filename": "roles/bazelisk-build/tasks/main.yaml",
         "patchSetId": 6
