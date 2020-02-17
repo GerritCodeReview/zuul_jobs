@@ -46,6 +46,30 @@
       "revId": "eab071f2ff13fa6861dc813592a71396ef0b65f0",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4a682143_d442a4ea",
+        "filename": "playbooks/test-gerrit-base.yaml",
+        "patchSetId": 11
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-02-17T18:51:16Z",
+      "side": 1,
+      "message": "Yes, that makes a lot of sense.  We can structure it exactly as David suggests.  The \"required-projects\" attribute of a job is additive, so the most base job can say:\n\n  required-projects: [jgit]\n\nAnd then the various plugin jobs can add exactly what they need (usually just the plugin itself, but multi-site can add replication as well).  And the job to build gerrit itself can add the core plugins (varying by branch).",
+      "parentUuid": "66b79a9e_10972c4e",
+      "range": {
+        "startLine": 8,
+        "startChar": 10,
+        "endLine": 20,
+        "endChar": 25
+      },
+      "revId": "eab071f2ff13fa6861dc813592a71396ef0b65f0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
