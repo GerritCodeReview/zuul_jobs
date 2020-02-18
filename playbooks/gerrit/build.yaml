@@ -1,0 +1,5 @@
+- name: Build Gerrit
+  hosts: all
+  roles:
+    - role: bazelisk-build
+      bazelisk_targets: "plugins:core release api"
