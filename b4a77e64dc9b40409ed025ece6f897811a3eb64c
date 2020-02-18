@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "1a3210b4_164dc8c6",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-02-18T07:44:44Z",
+      "side": 1,
+      "message": "The issue is with Bazel caches and not really with execution strategy. I have concerns to always build on the CI without any caches. On my laptop, where I am regularly building different gerrit branches:\n\n  davido@wizball:~/.gerritcodereview/bazel-cache/downloaded-artifacts$ du -sh .\n  373M\n\nand\n\n  davido@wizball:~/.gerritcodereview/bazel-cache/repository$ du -sh .\n  937M\n\nWe certainly should try to avoid fetching so much dependencies on each and every CI build.\n\nUsing the RBE, sounds very promising to me, because we don\u0027t have to re-build Docker images, it just works and is really fast. It takes ca. 4 min. to build and run all tests on Gerrit@HEAD for me.\n\nMoreover, I just realized, that Han-Wen mentioned the GCP gerrit project name in README.md: [1] of gerrit-linter project, so that probably it is not a secret at all and can we could just put here in clear text, done?\n\nCan you try it, if RBE build would just work on Zuul CI build? Note, though, you would need this change for PG plugins to be built properly, that was merged yesterday: [2].\n\n[1] https://gerrit.googlesource.com/gerrit-linter/+/refs/heads/master/README.md#docker-on-gcp\n[2] https://gerrit-review.googlesource.com/c/gerrit/+/255293",
+      "parentUuid": "e6b80651_665eef18",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 93
+      },
+      "revId": "b4a77e64dc9b40409ed025ece6f897811a3eb64c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "40346c38_61b61f02",
         "filename": "roles/bazelisk-build/tasks/main.yaml",
         "patchSetId": 6
