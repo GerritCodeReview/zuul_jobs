@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "b17dbc9e_447b1bf7",
+        "filename": "playbooks/test-gerrit-base.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2020-02-18T08:10:11Z",
+      "side": 1,
+      "message": "I agree, this would definitely require more maintenance work and should only be done, if the branches strongly diverge, which I hope and am pretty confident won\u0027t happen. I was mostly curious, if this would be possible.\nMoving the gerrit job would be a possibility, but scattering the jobs over multiple repos and not having the same way of doing it for every job (e.g. keeping plugin jobs here at the same time) might be confusing as well. But as you suggested, I would also first continue with the current setup until it\u0027s stabilized and then see, whether moving the jobs to the repos of the build target would bring an advantage.",
+      "parentUuid": "3486aa3d_39366ffd",
+      "range": {
+        "startLine": 8,
+        "startChar": 8,
+        "endLine": 20,
+        "endChar": 25
+      },
+      "revId": "de85df8b8d6427d663e90e837ec4c92784523798",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ea2ba860_b5a394bd",
         "filename": "roles/prepare-gerrit-repos/tasks/repo.yaml",
         "patchSetId": 9
