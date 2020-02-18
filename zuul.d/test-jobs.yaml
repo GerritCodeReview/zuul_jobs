@@ -35,6 +35,19 @@
     name: test-gerrit-base
     parent: gerrit-base
     run: playbooks/test-gerrit-base.yaml
+    required-projects:
+      - plugins/codemirror-editor
+      - plugins/commit-message-length-validator
+      - plugins/delete-project
+      - plugins/download-commands
+      - plugins/gitiles
+      - plugins/hooks
+      - plugins/plugin-manager
+      - plugins/replication
+      - plugins/reviewnotes
+      - plugins/singleusergroup
+      - plugins/webhooks
+      - polymer-bridges
     files:
       - roles/ensure-bazelisk/.*
       - roles/ensure-java/.*
