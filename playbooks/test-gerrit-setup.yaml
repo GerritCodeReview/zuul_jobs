@@ -1,0 +1,8 @@
+- hosts: all
+  tasks:
+    - name: List submodule git dir
+      command: "ls src/gerrit.googlesource.com/gerrit/{{ item }}/.git"
+      args:
+        chdir: "{{ ansible_user_dir }}"
+      loop:
+        - modules/jgit
