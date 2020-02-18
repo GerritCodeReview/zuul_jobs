@@ -3,23 +3,82 @@
     description: |
       Base job for building Gerrit
 
-      This job sets up all the repos which are required for a gerrit
-      build.
+      This job sets up the common repos which are required for all
+      gerrit-related builds (plugins or Gerrit itself).
     pre-run: playbooks/gerrit-base/pre.yaml
     required-projects:
       - gerrit
+
+- job:
+    name: gerrit-base
+    description: Branch variant to add projects.
+    branches:
+      - stable/3.1
+      - master
+    required-projects:
       - jgit
-      - plugins/codemirror-editor
+
+- job:
+    name: gerrit-build
+    parent: gerrit-base
+    description: |
+      Build Gerrit
+
+      This job sets up all the repos which are required for a gerrit
+      build and runs bazelisk.
+
+      Responds to these variables:
+
+      .. zuul:jobvar:: baselisk_targets
+
+         The bazelisk targets to build.  Defaults to ":release".
+
+      .. zuul:jobvar:: baselisk_test_targets
+
+         The bazelisk targets to test.
+    run: playbooks/gerrit/build.yaml
+    timeout: 3600
+    vars:
+      bazelisk_targets: ":release"
+      zuul_work_dir: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/gerrit"
+    required-projects:
       - plugins/commit-message-length-validator
-      - plugins/delete-project
       - plugins/download-commands
-      - plugins/gitiles
       - plugins/hooks
-      - plugins/plugin-manager
       - plugins/replication
       - plugins/reviewnotes
       - plugins/singleusergroup
+
+- job:
+    name: gerrit-build
+    description: Branch variant to add projects.
+    branches:
+      - stable/2.16
+      - stable/3.0
+      - stable/3.1
+      - master
+    required-projects:
+      - plugins/codemirror-editor
+
+- job:
+    name: gerrit-build
+    description: Branch variant to add projects.
+    branches:
+      - stable/3.0
+      - stable/3.1
+      - master
+    required-projects:
+      - plugins/delete-project
+      - plugins/gitiles
+      - plugins/plugin-manager
       - plugins/webhooks
+
+- job:
+    name: gerrit-build
+    description: Branch variant to add projects.
+    branches:
+      - master
+    required-projects:
       - polymer-bridges
 
 - job:

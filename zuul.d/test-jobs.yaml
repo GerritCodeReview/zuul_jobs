@@ -25,6 +25,19 @@
     name: test-gerrit-base
     parent: gerrit-base
     run: playbooks/test-gerrit-base.yaml
+    required-projects:
+      - plugins/codemirror-editor
+      - plugins/commit-message-length-validator
+      - plugins/delete-project
+      - plugins/download-commands
+      - plugins/gitiles
+      - plugins/hooks
+      - plugins/plugin-manager
+      - plugins/replication
+      - plugins/reviewnotes
+      - plugins/singleusergroup
+      - plugins/webhooks
+      - polymer-bridges
     files:
       - roles/ensure-bazelisk/.*
       - roles/ensure-java/.*
@@ -44,3 +57,22 @@
       - roles/prepare-gerrit-repos/.*
       - roles/copy-plugin-deps/.*
       - playbooks/gerrit-plugin/build.yaml
+
+- job:
+    name: test-gerrit-build-master
+    parent: gerrit-build
+
+- job:
+    name: test-gerrit-build-stable-3.1
+    parent: gerrit-build
+    override-checkout: stable-3.1
+
+- job:
+    name: test-gerrit-build-stable-3.0
+    parent: gerrit-build
+    override-checkout: stable-3.0
+
+- job:
+    name: test-gerrit-build-stable-2.16
+    parent: gerrit-build
+    override-checkout: stable-2.16
