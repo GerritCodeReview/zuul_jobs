@@ -121,6 +121,30 @@
     },
     {
       "key": {
+        "uuid": "c8edd2f2_ecdb447d",
+        "filename": "playbooks/test-gerrit-base.yaml",
+        "patchSetId": 9
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-02-18T15:08:17Z",
+      "side": 1,
+      "message": "Yes, there\u0027s an analogous situation in openstack where we have a project called devstack which sets up an openstack cloud.  What needs to be set up varies from branch to branch, and it maintains that configuration in a branched repo.  For example, here\u0027s the list of projects to set up in master[1] and an old stable branch [2]\n\n[1] https://opendev.org/openstack/devstack/src/branch/master/.zuul.yaml#L388-L441\n[2] https://opendev.org/openstack/devstack/src/branch/stable/queens/.zuul.yaml#L233-L241",
+      "parentUuid": "b17dbc9e_447b1bf7",
+      "range": {
+        "startLine": 8,
+        "startChar": 8,
+        "endLine": 20,
+        "endChar": 25
+      },
+      "revId": "de85df8b8d6427d663e90e837ec4c92784523798",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ea2ba860_b5a394bd",
         "filename": "roles/prepare-gerrit-repos/tasks/repo.yaml",
         "patchSetId": 9
