@@ -121,6 +121,30 @@
     },
     {
       "key": {
+        "uuid": "b92586e2_d1619626",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-02-18T15:00:45Z",
+      "side": 1,
+      "message": "That sounds like a great thing to explore.  Our shared goal is to get tests running for Gerrit plugins.  My time is limited and I think it is best spent getting basic tests up and running (they are!), demonstrating how the system works, and facilitating other people contributing.  I\u0027m not very familiar with RBE, so perhaps you could make a followup patch that implements it?  The nice thing about Zuul is that anyone can propose a patch and we can all see it work.",
+      "parentUuid": "1a3210b4_164dc8c6",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 93
+      },
+      "revId": "b4a77e64dc9b40409ed025ece6f897811a3eb64c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "40346c38_61b61f02",
         "filename": "roles/bazelisk-build/tasks/main.yaml",
         "patchSetId": 6
