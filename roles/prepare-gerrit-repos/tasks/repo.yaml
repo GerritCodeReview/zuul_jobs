@@ -38,7 +38,7 @@
 # defined in the parent repo.
 - name: Update submodule
   when: "not project_branch_exists"
-  command: "git submodule update --init {{ project.name }}"
+  command: "git submodule update --init {{ project_dest }}"
   args:
     chdir: "{{ gerrit_root }}"
 

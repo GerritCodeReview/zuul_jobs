@@ -22,15 +22,29 @@
       - playbooks/test-install-build-essential.yaml
 
 - job:
-    name: test-gerrit-base
-    parent: gerrit-base
-    run: playbooks/test-gerrit-base.yaml
+    name: test-gerrit-setup
+    parent: gerrit-setup
+    run: playbooks/test-gerrit-setup.yaml
+    required-projects:
+      - jgit
+      - plugins/codemirror-editor
+      - plugins/commit-message-length-validator
+      - plugins/delete-project
+      - plugins/download-commands
+      - plugins/gitiles
+      - plugins/hooks
+      - plugins/plugin-manager
+      - plugins/replication
+      - plugins/reviewnotes
+      - plugins/singleusergroup
+      - plugins/webhooks
+      - polymer-bridges
     files:
       - roles/ensure-bazelisk/.*
       - roles/ensure-java/.*
       - roles/prepare-gerrit-repos/.*
       - roles/install-build-essential/.*
-      - playbooks/test-gerrit-base.yaml
+      - playbooks/test-gerrit-setup.yaml
 
 - job:
     name: test-gerrit-plugin-build
