@@ -16,6 +16,24 @@
       "revId": "eca3cb18c1364f35fef9aa1cbadb62d89f2a3552",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "664b64a3_45563c0a",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-02-20T14:49:04Z",
+      "side": 1,
+      "message": "I actually did go back that far when I was writing this change, then remembered that versions that old are well out of support and we don\u0027t really need it, so I removed it for simplicity.  :)  We can add as many of these branch variants as we want, and list what branches they are for.  So we could have one with the cookbook plugin which listed all the branches the cookbook was on.  Or we could have one for each branch, and repeat the list.\n\nThis is also part of what convinced me that Thomas\u0027s suggestion to move this into the gerrit repo itself is best.  In that case, we would have one variant for each branch, because it would simply be defined in that branch of the gerrit repo.  It\u0027s easy to see which modules are included in each branch -- you just look at the job definition in the branch you\u0027re interested in.",
+      "parentUuid": "c07dc364_37efbefe",
+      "revId": "eca3cb18c1364f35fef9aa1cbadb62d89f2a3552",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
