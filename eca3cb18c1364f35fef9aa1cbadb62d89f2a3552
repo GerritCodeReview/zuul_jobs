@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c07dc364_37efbefe",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2020-02-20T07:01:31Z",
+      "side": 1,
+      "message": "How will this work if we have submodules that exist on one of the earlier branches but are removed in a later one?\n\nFor example we used to have a cookbook-plugin submodule, which was removed, but still exists in some of the older branches.\n\nWe don\u0027t need to solve it immediately because I don\u0027t think we\u0027re likely to remove anything yet, but we should be aware of the possibility so that it doesn\u0027t bite us in future.",
+      "revId": "eca3cb18c1364f35fef9aa1cbadb62d89f2a3552",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
