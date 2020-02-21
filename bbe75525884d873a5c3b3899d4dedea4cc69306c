@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "11859c6d_810c5b05",
+        "filename": "roles/ensure-bazelisk/README.rst",
+        "patchSetId": 8
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1010246
+      },
+      "writtenOn": "2020-02-21T12:51:00Z",
+      "side": 1,
+      "message": "This needs to be ensure-bazelisk.bazelisk_executable",
+      "range": {
+        "startLine": 28,
+        "startChar": 22,
+        "endLine": 28,
+        "endChar": 41
+      },
+      "revId": "bbe75525884d873a5c3b3899d4dedea4cc69306c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
