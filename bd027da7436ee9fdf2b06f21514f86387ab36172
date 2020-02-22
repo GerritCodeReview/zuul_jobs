@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a247d36d_afb713c4",
+        "filename": "zuul.d/test-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-02-22T18:18:15Z",
+      "side": 1,
+      "message": "Should we add test per branch? E.g. stable-2.16 and stable-3.0 branches don\u0027t have modules/jgit submodule.",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 23
+      },
+      "revId": "bd027da7436ee9fdf2b06f21514f86387ab36172",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
