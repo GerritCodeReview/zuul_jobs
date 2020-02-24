@@ -1,6 +1,5 @@
 - job:
     name: gerrit-base
-    nodeset: temp-debian
     description: |
       Base job for building Gerrit
 

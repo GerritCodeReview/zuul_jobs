@@ -1,16 +1,8 @@
 # Jobs used for testing roles in this repository
 
-# A temporary nodeset until we add this to zuul/config
-- nodeset:
-    name: temp-debian
-    nodes:
-      - name: testnode
-        label: debian-stretch-8G
-
 - job:
     name: test-ensure-bazelisk
     run: playbooks/test-ensure-bazelisk.yaml
-    nodeset: temp-debian
     files:
       - roles/ensure-bazelisk/.*
       - playbooks/test-ensure-bazelisk.yaml
@@ -18,7 +10,6 @@
 - job:
     name: test-ensure-java
     run: playbooks/test-ensure-java.yaml
-    nodeset: temp-debian
     files:
       - roles/ensure-java/.*
       - playbooks/test-ensure-java.yaml
@@ -26,7 +17,6 @@
 - job:
     name: test-install-build-essential
     run: playbooks/test-install-build-essential.yaml
-    nodeset: temp-debian
     files:
       - roles/install-build-essential/.*
       - playbooks/test-install-build-essential.yaml
