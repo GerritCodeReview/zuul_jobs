@@ -22,6 +22,23 @@
       "revId": "bd027da7436ee9fdf2b06f21514f86387ab36172",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e3bb1fd0_0a607ca8",
+        "filename": "zuul.d/test-jobs.yaml",
+        "patchSetId": 3
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-02-25T21:34:58Z",
+      "side": 1,
+      "message": "We probably should, but at this point, I think the best way to verify that is to go ahead and set up jobs to build gerrit itself.  I think this is good enough to exercise the role (and demonstrate it doesn\u0027t have syntax errors and can set up at least one additional repo correctly).",
+      "revId": "bd027da7436ee9fdf2b06f21514f86387ab36172",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
