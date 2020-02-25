@@ -1,0 +1,4 @@
+- name: Build Gerrit
+  hosts: all
+  roles:
+    - bazelisk-build
