@@ -37,6 +37,7 @@
 
          The bazelisk targets to test.
     run: playbooks/gerrit/build.yaml
+    timeout: 3600
     vars:
       bazelisk_targets: ":release"
       zuul_work_dir: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/gerrit"
