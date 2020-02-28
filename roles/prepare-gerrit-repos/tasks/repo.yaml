@@ -12,10 +12,26 @@
   set_fact:
     repo_has_dependent_change: "{{ zuul['items'] | selectattr('project.canonical_name', 'eq', project.canonical_name) | list | length | bool }}"
 
+- name: Check if repo is in submodules
+  ignore_errors: true
+  set_fact:
+    project_in_gitmodules: "{{ lookup ('ini', 'path section=submodule \"' + project_dest + '\" file=' + zuul.executor.work_root + '/' + zuul.projects['gerrit.googlesource.com/gerrit'].src_dir + '/.gitmodules', errors='ignore') }}"
+- name: Coerce submodule check to boolean
+  set_fact:
+    project_in_gitmodules: "{{ project_in_gitmodules | default('') | length > 0 | bool }}"
+
+- name: Check if repo is a tracking branch
+  ignore_errors: true
+  set_fact:
+    tracking_branch: "{{ lookup ('ini', 'branch section=submodule \"' + project_dest + '\" file=' + zuul.executor.work_root + '/' + zuul.projects['gerrit.googlesource.com/gerrit'].src_dir + '/.gitmodules', errors='ignore') }}"
+- name: Coerce tracking branch to boolean
+  set_fact:
+    tracking_branch: "{{ ((tracking_branch | default('')) == '.') | bool }}"
+
 - name: Check for unsatisfiable source repo condition
   when:
     - "project.canonical_name != zuul.project.canonical_name"
-    - "not project_branch_exists"
+    - "not project_branch_exists or not tracking_branch"
     - "repo_has_dependent_change"
   fail:
     msg: >-
@@ -37,11 +53,12 @@
 # If there is no matching branch we need to check out the actual sha
 # defined in the parent repo.
 - name: Update submodule
-  when: "not project_branch_exists"
-  command: "git submodule update --init {{ project.name }}"
+  when: "project_in_gitmodules and (not project_branch_exists or not tracking_branch)"
+  command: "git submodule update --init {{ project_dest }}"
   args:
     chdir: "{{ gerrit_root }}"
 
+# Else:
 - name: Move repo into place
-  when: "project_branch_exists"
+  when: "not (project_in_gitmodules and (not project_branch_exists or not tracking_branch))"
   command: "mv -T -f {{ ansible_user_dir }}/{{ project.src_dir }} {{ gerrit_root }}/{{ project_dest }}"
