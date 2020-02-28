@@ -65,3 +65,10 @@ dependent projects have the same branches as Gerrit itself.
       gerrit_project_mapping:
         gerrit: ''
         jgit: modules/jgit
+
+.. zuul:rolevar:: gerrit_project_name
+   :default: gerrit.googlesource.com/gerrit
+
+   The canonical name of the Gerrit repository.  This role uses this
+   value to look up the branch of Gerrit which is checked out in order
+   to detect whether or not sub-projects contain the same branch.

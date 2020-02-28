@@ -4,12 +4,13 @@
 
 - name: Check if zuul.branch exists in repo
   set_fact:
-    # If zuul checked out the branch we're testing, then it exists.
-    project_branch_exists: "{{ zuul.branch == project.checkout }}"
+    # If zuul checked out the branch we're testing (ie, gerrit's
+    # branch), then it exists.
+    project_branch_exists: "{{ zuul.projects[gerrit_project_name].checkout == project.checkout }}"
 
 - name: Check if repo has a dependent change
   set_fact:
-    repo_has_dependent_change: "{{ zuul['items'] | selectattr('project.canonical_name', 'eq', zuul.project.canonical_name) | list | length | bool }}"
+    repo_has_dependent_change: "{{ zuul['items'] | selectattr('project.canonical_name', 'eq', project.canonical_name) | list | length | bool }}"
 
 - name: Check for unsatisfiable source repo condition
   when:
@@ -19,17 +20,19 @@
   fail:
     msg: >-
       The repository {{ project.name }} does not contain the branch
-      under test ({{ zuul.branch }}), but this change depends on a
-      change to that project and branch.  While Zuul is able to check
-      out the repos in the requested state, the branch mismatch means
-      that Gerrit's submodule subscription would not automatically
-      update the submodule pointer, and the merged state would not
-      reflect the tested state.
+      under test ({{ zuul.projects[gerrit_project_name].checkout }}),
+      but this change depends on a change to that project and branch.
+      While Zuul is able to check out the repos in the requested
+      state, the branch mismatch means that Gerrit's submodule
+      subscription would not automatically update the submodule
+      pointer, and the merged state would not reflect the tested
+      state.
 
       This configuration would be testable by creating a {{
-      zuul.branch }} branch in the {{ project.name }} repo.
-      Alternatively, you can merge the dependent change, manually
-      update the submodule pointer, then test this change again.
+      zuul.projects[gerrit_project_name].checkout }} branch in the {{
+      project.name }} repo.  Alternatively, you can merge the
+      dependent change, manually update the submodule pointer, then
+      test this change again.
 
 # If there is no matching branch we need to check out the actual sha
 # defined in the parent repo.

@@ -1,3 +1,4 @@
+gerrit_project_name: gerrit.googlesource.com/gerrit
 gerrit_project_mapping:
   gerrit: ''
   jgit: modules/jgit
