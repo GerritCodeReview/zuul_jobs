@@ -13,3 +13,7 @@
   args:
     executable: /bin/bash
     chdir: "{{ zuul_work_dir }}"
+- name: Copy release.war to artifacts location
+  command: "cp bazel-bin/release.war {{ zuul_output_dir }}/artifacts"
+  args:
+    chdir: "{{ zuul_work_dir }}"

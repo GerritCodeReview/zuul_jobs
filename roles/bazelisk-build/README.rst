@@ -21,6 +21,11 @@ Runs bazelisk build with the specified targets.
    The path to the bazelisk executable.  See
    :zuul:role:`ensure-bazelisk`.
 
+.. zuul:rolevar:: zuul_output_dir
+   :default: {{ ansible_user_dir }}/zuul-output
+
+   Base directory for collecting job output.
+
 .. zuul:rolevar:: zuul_work_dir
    :default: {{ ansible_user_dir }}/{{ zuul.project.src_dir}}
 
