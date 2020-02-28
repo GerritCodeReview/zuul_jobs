@@ -15,7 +15,7 @@
 
 - job:
     name: gerrit-build-base
-    parent: gerrit-setup
+    parent: gerrit-base
     description: |
       Build Gerrit
 
@@ -41,7 +41,7 @@
 
 - job:
     name: gerrit-plugin-build
-    parent: gerrit-setup
+    parent: gerrit-base
     description: |
       Builds a Gerrit plugin in-tree
 
@@ -66,6 +66,3 @@
       gerrit_plugin: "{{ zuul.project.short_name }}"
       bazelisk_targets: "plugins/{{ gerrit_plugin }}:{{ gerrit_plugin }}"
       zuul_work_dir: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/gerrit"
-    # Temporarily add jgit here until we reparent on gerrit-base
-    required-projects:
-      - jgit
