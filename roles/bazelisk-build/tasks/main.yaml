@@ -15,3 +15,18 @@
     chdir: "{{ zuul_work_dir }}"
   register: test_result
   failed_when: test_result.rc not in [0, 4]
+- name: Copy output to artifacts location
+  loop: "{{ bazelisk_artifacts }}"
+  command: "cp {{ item }} {{ zuul_output_dir }}/artifacts"
+  args:
+    chdir: "{{ zuul_work_dir }}"
+- name: Return sdist artifacts to Zuul
+  loop: "{{ bazelisk_artifacts }}"
+  zuul_return:
+    data:
+      zuul:
+        artifacts:
+          - name: "Build"
+            url: "artifacts/{{ item | basename }}"
+            metadata:
+              type: java_jar

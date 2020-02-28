@@ -1,4 +1,6 @@
 bazelisk_targets: ""
 bazelisk_test_targets: ""
 bazelisk_executable: bazelisk
+bazelisk_artifacts: []
+zuul_output_dir: "{{ ansible_user_dir }}/zuul-output"
 zuul_work_dir: "{{ ansible_user_dir }}/{{ zuul.project.src_dir}}"
