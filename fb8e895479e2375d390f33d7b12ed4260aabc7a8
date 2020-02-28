@@ -16,6 +16,24 @@
       "revId": "fb8e895479e2375d390f33d7b12ed4260aabc7a8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "acac65ef_608fa057",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1010246
+      },
+      "writtenOn": "2020-02-28T21:39:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fa956987_3fa3f748",
+      "revId": "fb8e895479e2375d390f33d7b12ed4260aabc7a8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
