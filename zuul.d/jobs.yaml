@@ -15,7 +15,7 @@
 
 - job:
     name: gerrit-build-base
-    parent: gerrit-setup
+    parent: gerrit-base
     description: |
       Build Gerrit
 
@@ -41,7 +41,7 @@
 
 - job:
     name: gerrit-plugin-build
-    parent: gerrit-setup
+    parent: gerrit-base
     description: |
       Builds a Gerrit plugin in-tree
 
