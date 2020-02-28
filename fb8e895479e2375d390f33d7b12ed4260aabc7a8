@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fa956987_3fa3f748",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-02-28T21:30:59Z",
+      "side": 1,
+      "message": "This should probably be zuul_work_dir (see task above).",
+      "revId": "fb8e895479e2375d390f33d7b12ed4260aabc7a8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
