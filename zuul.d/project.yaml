@@ -6,3 +6,7 @@
         - test-gerrit-setup
         - test-install-build-essential
         - test-gerrit-plugin-build
+        - test-gerrit-build-master
+        - test-gerrit-build-stable-3.1
+        - test-gerrit-build-stable-3.0
+        - test-gerrit-build-stable-2.16
