@@ -37,6 +37,8 @@
     timeout: 3600
     vars:
       bazelisk_targets: ":release"
+      bazelisk_artifacts:
+        - bazel-bin/release.war
       zuul_work_dir: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/gerrit"
 
 - job:
@@ -67,4 +69,6 @@
       gerrit_plugin: "{{ zuul.project.short_name }}"
       bazelisk_targets: "plugins/{{ gerrit_plugin }}:{{ gerrit_plugin }}"
       bazelisk_test_targets: "plugins/{{ gerrit_plugin }}/..."
+      bazelisk_artifacts:
+        - "bazel-bin/plugins/{{ gerrit_plugin }}/{{ gerrit_plugin }}.jar"
       zuul_work_dir: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/gerrit"
