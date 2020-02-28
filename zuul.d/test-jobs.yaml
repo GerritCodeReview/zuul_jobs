@@ -53,11 +53,6 @@
       - plugins/checks
     vars:
       gerrit_plugin: checks
-    files:
-      - roles/ensure-bazelisk/.*
-      - roles/prepare-gerrit-repos/.*
-      - roles/copy-plugin-deps/.*
-      - playbooks/gerrit-plugin/build.yaml
 
 - job:
     name: test-gerrit-build-master
