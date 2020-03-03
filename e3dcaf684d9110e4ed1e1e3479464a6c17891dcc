@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "29e44fa3_e69509f8",
+        "filename": "roles/prepare-gerrit-repos/tasks/repo.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1064086
+      },
+      "writtenOn": "2020-03-03T15:44:35Z",
+      "side": 1,
+      "message": "Use `gerrit_project_name` instead of explicitly specifying the project url.",
+      "revId": "e3dcaf684d9110e4ed1e1e3479464a6c17891dcc",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e66ddaca_35b3827b",
+        "filename": "roles/prepare-gerrit-repos/tasks/repo.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1064086
+      },
+      "writtenOn": "2020-03-03T15:44:35Z",
+      "side": 1,
+      "message": "Same",
+      "revId": "e3dcaf684d9110e4ed1e1e3479464a6c17891dcc",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
