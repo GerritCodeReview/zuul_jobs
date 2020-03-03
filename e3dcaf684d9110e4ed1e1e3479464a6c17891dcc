@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "99fa5589_389fa412",
+        "filename": "roles/prepare-gerrit-repos/tasks/repo.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-03-03T16:33:55Z",
+      "side": 1,
+      "message": "Good point, thanks!  I developed this in parallel with that change and forgot to reconcile them.",
+      "parentUuid": "29e44fa3_e69509f8",
+      "revId": "e3dcaf684d9110e4ed1e1e3479464a6c17891dcc",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e66ddaca_35b3827b",
         "filename": "roles/prepare-gerrit-repos/tasks/repo.yaml",
         "patchSetId": 5
@@ -33,6 +51,24 @@
       "revId": "e3dcaf684d9110e4ed1e1e3479464a6c17891dcc",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a89e988_cc79a7ba",
+        "filename": "roles/prepare-gerrit-repos/tasks/repo.yaml",
+        "patchSetId": 5
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-03-03T16:33:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e66ddaca_35b3827b",
+      "revId": "e3dcaf684d9110e4ed1e1e3479464a6c17891dcc",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
