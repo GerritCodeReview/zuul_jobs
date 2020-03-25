@@ -34,9 +34,16 @@
 
          The bazelisk targets to test.
     run: playbooks/gerrit/build.yaml
-    timeout: 3600
+    timeout: 7200
     vars:
       bazelisk_targets: ":release"
+      bazelisk_test_targets: >-
+        --test_output errors
+        --test_summary detailed --flaky_test_attempts 3
+        --test_verbose_timeout_warnings --build_tests_only
+        --test_timeout 3600
+        --test_tag_filters=-flaky,-docker
+        //...
       zuul_work_dir: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/gerrit"
 
 - job:
