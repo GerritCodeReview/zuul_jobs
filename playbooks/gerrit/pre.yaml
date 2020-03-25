@@ -1,0 +1,28 @@
+- name: Install pre-requisites
+  hosts: all
+  tasks:
+    - name: Install Gerrit test pre-requisites
+      shell:
+        executable: /bin/bash
+        cmd: |
+          set -e
+          set -x
+
+          DEBIAN_FRONTEND=noninteractive sudo apt-get -y install maven
+
+          sudo npm install --unsafe-perm -g \
+            eslint@"=6.6.0" \
+            eslint-config-google@"=0.13.0" \
+            eslint-plugin-html@"=6.0.0" \
+            eslint-plugin-jsdoc@"=18.4.3" \
+            eslint-plugin-promise@"=4.0.1" \
+            typescript \
+            fried-twinkie@"^0.2.2" \
+            polylint polymer-cli
+          sudo npm install --unsafe-perm -g web-component-tester@"6.8.0"
+
+          # Gerrit tests need a newer git than stretch; TODO: upgrade to buster; for now install newer git
+
+          echo "deb http://ftp.debian.org/debian stretch-backports main" | sudo tee /etc/apt/sources.list.d/backports.list
+          DEBIAN_FRONTEND=noninteractive sudo apt-get update
+          DEBIAN_FRONTEND=noninteractive sudo apt-get install -y -t stretch-backports git
