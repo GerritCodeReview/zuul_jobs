@@ -28,15 +28,30 @@
 
       .. zuul:jobvar:: baselisk_targets
 
-         The bazelisk targets to build.  Defaults to ":release".
+         The bazelisk targets to build.  Defaults to
+         ":plugins:core :release :api".
 
       .. zuul:jobvar:: baselisk_test_targets
 
          The bazelisk targets to test.
+    pre-run: playbooks/gerrit/pre.yaml
     run: playbooks/gerrit/build.yaml
     timeout: 3600
+    nodeset:
+      nodes:
+        - name: testnode
+          label: debian-stretch-60G
     vars:
-      bazelisk_targets: ":release"
+      bazelisk_targets: ":plugins:core :release :api"
+      bazelisk_test_targets: >-
+        --test_env=GERRIT_NOTEDB=ON
+        --spawn_strategy=standalone --genrule_strategy=standalone
+        --test_output errors
+        --test_summary detailed --flaky_test_attempts 3
+        --test_verbose_timeout_warnings --build_tests_only
+        --test_timeout 3600
+        --test_tag_filters=-flaky,-docker
+        //...
       zuul_work_dir: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/gerrit"
 
 - job:
