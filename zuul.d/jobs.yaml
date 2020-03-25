@@ -37,6 +37,7 @@
     timeout: 3600
     vars:
       bazelisk_targets: ":release"
+      bazelisk_test_targets: "//..."
       zuul_work_dir: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/gerrit"
 
 - job:
