@@ -1,5 +1,91 @@
 - name: Build Gerrit
   hosts: all
-  roles:
-    - role: bazelisk-build
-      bazelisk_targets: "plugins:core release api"
+  tasks:
+    - shell:
+        executable: /bin/bash
+        cmd: |
+          set -e
+          set -x
+
+          export PATH=$PATH:/home/zuul/.local/bin
+
+          DEBIAN_FRONTEND=noninteractive sudo apt-get -y install maven
+
+          # From
+          # https://gerrit.googlesource.com/gerrit-ci-scripts/+/refs/heads/master/jenkins-docker/slave-node-wct/Dockerfile
+          npm install --unsafe-perm -g \
+            eslint@"=6.6.0" \
+            eslint-config-google@"=0.13.0" \
+            eslint-plugin-html@"=6.0.0" \
+            eslint-plugin-jsdoc@"=18.4.3" \
+            eslint-plugin-promise@"=4.0.1" \
+            typescript \
+            fried-twinkie@"^0.2.2" \
+            polylint polymer-cli
+          npm install --unsafe-perm -g 'web-component-tester@"6.8.0"
+
+          # end Dockerfile
+
+          # Gerrit tests need a newer git than stretch; TODO: upgrade to buster; for now install newer git
+
+          echo "deb http://ftp.debian.org/debian stretch-backports main" | sudo tee /etc/apt/sources.list.d/backports.list
+          DEBIAN_FRONTEND=noninteractive sudo apt-get update
+          DEBIAN_FRONTEND=noninteractive sudo apt-get install -y -t stretch-backports git
+
+          # Begin gerrit-bazel-build.sh from:
+          # https://gerrit.googlesource.com/gerrit-ci-scripts/+/refs/heads/master/jenkins/gerrit-bazel-build.sh
+
+          cd ~/src/gerrit.googlesource.com/gerrit
+          # jeblair: skip . set-java.sh 8
+
+          export BAZEL_OPTS="$BAZEL_OPTS --spawn_strategy=standalone --genrule_strategy=standalone"
+
+          java -fullversion
+          bazelisk version
+          bazelisk build $BAZEL_OPTS plugins:core release api
+
+          # jeblair: "tools/maven/api.sh install" assumes bazelisk is
+          # in the path; the following commands are what the script
+          # would run:
+
+          bazelisk build //tools/maven:gen_api_install
+          ./bazel-bin/tools/maven/api_install.sh
+
+          # end api.sh install
+
+          tools/eclipse/project.py --bazel bazelisk
+
+          # Begin gerrit-bazel-test.sh from:
+          # https://gerrit.googlesource.com/gerrit-ci-scripts/+/refs/heads/master/jenkins/gerrit-bazel-test.sh
+
+          cd ~/src/gerrit.googlesource.com/gerrit
+          # jeblair: skip . set-java.sh 8
+
+          export BAZEL_OPTS="$BAZEL_OPTS --spawn_strategy=standalone --genrule_strategy=standalone \
+                   --test_output errors \
+                   --test_summary detailed --flaky_test_attempts 3 \
+                   --test_verbose_timeout_warnings --build_tests_only \
+                   --test_timeout 3600 \
+                   --test_tag_filters=-flaky,-docker"
+
+          # jeblair: what is this used for?
+          #                   --test_env DOCKER_HOST=$DOCKER_HOST"
+
+          java -fullversion
+          bazelisk version
+
+          # jeblair: skipping 2.16 reviewdb test for now
+          # if [ "{branch}" == "stable-2.16" ]
+          # then
+          # echo 'Test in ReviewDb mode'
+          # echo '----------------------------------------------'
+          # bazelisk test --test_env=GERRIT_NOTEDB=OFF $BAZEL_OPTS //...
+          # fi
+
+          echo 'Test in NoteDb mode'
+          echo '----------------------------------------------'
+          bazelisk test --test_env=GERRIT_NOTEDB=ON $BAZEL_OPTS //...
+
+          echo 'Test PolyGerrit locally'
+          echo '----------------------------------------------'
+          bash ./polygerrit-ui/app/run_test.sh || touch ~/polygerrit-failed
