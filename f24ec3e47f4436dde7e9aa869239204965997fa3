@@ -22,6 +22,30 @@
       "revId": "f24ec3e47f4436dde7e9aa869239204965997fa3",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "126243f8_a9cf0cf1",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-03-26T19:52:37Z",
+      "side": 1,
+      "message": "Good point, I think I found the correct series of options from the current CI scripts and copied them here; how does PS3 look?",
+      "parentUuid": "87fbddad_e5c1bf24",
+      "range": {
+        "startLine": 40,
+        "startChar": 29,
+        "endLine": 40,
+        "endChar": 36
+      },
+      "revId": "f24ec3e47f4436dde7e9aa869239204965997fa3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
