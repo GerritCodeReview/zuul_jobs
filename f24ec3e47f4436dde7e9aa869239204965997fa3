@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "87fbddad_e5c1bf24",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2020-03-26T00:29:37Z",
+      "side": 1,
+      "message": "Maybe we don\u0027t want to run all tests.  For example in the current CI setup it excludes flaky tests and the elasticsearch tests.",
+      "range": {
+        "startLine": 40,
+        "startChar": 29,
+        "endLine": 40,
+        "endChar": 36
+      },
+      "revId": "f24ec3e47f4436dde7e9aa869239204965997fa3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
