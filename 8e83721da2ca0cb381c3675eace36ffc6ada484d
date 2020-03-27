@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "12be4651_42b183a8",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-03-27T16:35:06Z",
+      "side": 1,
+      "message": "Ah ok, so the current approach is probably the best.",
+      "parentUuid": "3e639d43_0a9e67c5",
+      "range": {
+        "startLine": 37,
+        "startChar": 13,
+        "endLine": 37,
+        "endChar": 17
+      },
+      "revId": "8e83721da2ca0cb381c3675eace36ffc6ada484d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5e559ddb_4763a179",
         "filename": "zuul.d/jobs.yaml",
         "patchSetId": 4
@@ -90,6 +114,24 @@
     },
     {
       "key": {
+        "uuid": "089cabac_17d0577b",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-03-27T16:35:06Z",
+      "side": 1,
+      "message": "Got it.  I\u0027ll probably ignore the reviewdb tests for now for simplicity, until we see all the notedb tests pass, then we can go back and add that.",
+      "parentUuid": "5e559ddb_4763a179",
+      "revId": "8e83721da2ca0cb381c3675eace36ffc6ada484d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ee62f876_d7a19ad4",
         "filename": "zuul.d/jobs.yaml",
         "patchSetId": 4
@@ -101,6 +143,30 @@
       "writtenOn": "2020-03-27T07:34:53Z",
       "side": 1,
       "message": "These are rather bazel options and not test targets. Does it make sense to separate options and targets into two variables? Otherwise, I would rename the variable.",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 41
+      },
+      "revId": "8e83721da2ca0cb381c3675eace36ffc6ada484d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e423ede7_50eb0651",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-03-27T16:35:06Z",
+      "side": 1,
+      "message": "Indeed, I didn\u0027t realize so many would be needed at the time; we can refactor it into two variables.",
+      "parentUuid": "ee62f876_d7a19ad4",
       "range": {
         "startLine": 41,
         "startChar": 0,
