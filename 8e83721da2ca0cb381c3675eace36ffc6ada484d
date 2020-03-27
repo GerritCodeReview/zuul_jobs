@@ -46,6 +46,70 @@
       "revId": "8e83721da2ca0cb381c3675eace36ffc6ada484d",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3e639d43_0a9e67c5",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2020-03-27T07:34:53Z",
+      "side": 1,
+      "message": "No the builds and tests are run in a single job. The job is just split into multiple scripts, but the scripts are working on the same workspace. However, executing the tests without building Gerrit beforehand should work. Bazel will then take care about building everything that is required. The disadvantage doing this however, is of course that some stuff still needs to be build so if we anyway would like to have a build artifact out of the pipeline that would be a waste.",
+      "parentUuid": "1ace1559_137fc192",
+      "range": {
+        "startLine": 37,
+        "startChar": 13,
+        "endLine": 37,
+        "endChar": 17
+      },
+      "revId": "8e83721da2ca0cb381c3675eace36ffc6ada484d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5e559ddb_4763a179",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2020-03-27T07:34:53Z",
+      "side": 1,
+      "message": "This would not be enough to test stable-2.16, where we still have the reviewdb. On that branch tests have to be run twice, once with this option being \u0027ON\u0027 and once \u0027OFF\u0027.",
+      "revId": "8e83721da2ca0cb381c3675eace36ffc6ada484d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ee62f876_d7a19ad4",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1065256
+      },
+      "writtenOn": "2020-03-27T07:34:53Z",
+      "side": 1,
+      "message": "These are rather bazel options and not test targets. Does it make sense to separate options and targets into two variables? Otherwise, I would rename the variable.",
+      "range": {
+        "startLine": 41,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 41
+      },
+      "revId": "8e83721da2ca0cb381c3675eace36ffc6ada484d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
