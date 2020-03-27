@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "33abebb9_f3b98d4f",
+        "filename": "playbooks/gerrit/build.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-03-27T19:46:04Z",
+      "side": 1,
+      "message": "I was wondering about this -- does bazelisk manage java itself, so maybe we don\u0027t need to pre-install java before the job starts?",
+      "parentUuid": "76b38408_b578513a",
+      "revId": "cefca8309b910036543d3a283fe480516f21be7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c0f284c2_c97595ed",
         "filename": "playbooks/gerrit/build.yaml",
         "patchSetId": 8
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "2590b440_e4d2deb1",
+        "filename": "playbooks/gerrit/build.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-03-27T19:46:04Z",
+      "side": 1,
+      "message": "It looks like the generated api_install.sh assumes that, so I think we\u0027ll have to: https://ci.gerritcodereview.com/t/gerrit/build/52ab1b0672e74b619d99c15dcc4362b2\n\nI\u0027m taking that approach in the next patchset.",
+      "parentUuid": "c0f284c2_c97595ed",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 30
+      },
+      "revId": "cefca8309b910036543d3a283fe480516f21be7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4e4d82de_fa7c512f",
         "filename": "playbooks/gerrit/build.yaml",
         "patchSetId": 8
@@ -53,6 +95,30 @@
       "writtenOn": "2020-03-27T18:28:15Z",
       "side": 1,
       "message": "Gerrit tests are using Docker with TestContainers. Do we have a Docker server running somewhere that we can use?",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 66
+      },
+      "revId": "cefca8309b910036543d3a283fe480516f21be7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5440305c_249fa269",
+        "filename": "playbooks/gerrit/build.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-03-27T19:46:04Z",
+      "side": 1,
+      "message": "We\u0027re running on a VM, so we can easily run docker right on the vm.  I have two questions:\n1) Is docker required for running the unit tests?\n2) Where can I learn more about how and why TestContainers is used here?",
+      "parentUuid": "4e4d82de_fa7c512f",
       "range": {
         "startLine": 47,
         "startChar": 0,
@@ -99,6 +165,30 @@
       "writtenOn": "2020-03-27T18:28:15Z",
       "side": 1,
       "message": "I still believe we should keep 1h timeout: a build that takes more than that is a symptom of a code issue and thus I would rather avoid merging that change that causes it.",
+      "range": {
+        "startLine": 37,
+        "startChar": 13,
+        "endLine": 37,
+        "endChar": 17
+      },
+      "revId": "cefca8309b910036543d3a283fe480516f21be7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8bb934e3_3f9ac173",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-03-27T19:46:04Z",
+      "side": 1,
+      "message": "Understood.  But first I\u0027d like to see a successful test run of the gerrit unit tests, even if it takes two hours.",
+      "parentUuid": "f641113c_c65fa704",
       "range": {
         "startLine": 37,
         "startChar": 13,
