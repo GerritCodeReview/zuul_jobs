@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "76b38408_b578513a",
+        "filename": "playbooks/gerrit/build.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-03-27T18:28:15Z",
+      "side": 1,
+      "message": "Oh yes, good point ! We need to get rid of it on the Gerrit CI scripts: we don\u0027t build with Java 7 anymore ;-)",
+      "revId": "cefca8309b910036543d3a283fe480516f21be7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c0f284c2_c97595ed",
+        "filename": "playbooks/gerrit/build.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-03-27T18:28:15Z",
+      "side": 1,
+      "message": "Can we instead just have bazelisk in the path?\nOtherwise every time we change the tools/maven/api.sh we need to remember to change this job as well, which isn\u0027t ideal.",
+      "range": {
+        "startLine": 23,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 30
+      },
+      "revId": "cefca8309b910036543d3a283fe480516f21be7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e4d82de_fa7c512f",
+        "filename": "playbooks/gerrit/build.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-03-27T18:28:15Z",
+      "side": 1,
+      "message": "Gerrit tests are using Docker with TestContainers. Do we have a Docker server running somewhere that we can use?",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 49,
+        "endChar": 66
+      },
+      "revId": "cefca8309b910036543d3a283fe480516f21be7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9eba4deb_80db5d12",
+        "filename": "playbooks/gerrit/build.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-03-27T18:28:15Z",
+      "side": 1,
+      "message": "That sounds good, as v2.16 should be EOL very soon anyway.",
+      "range": {
+        "startLine": 54,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 14
+      },
+      "revId": "cefca8309b910036543d3a283fe480516f21be7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f641113c_c65fa704",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-03-27T18:28:15Z",
+      "side": 1,
+      "message": "I still believe we should keep 1h timeout: a build that takes more than that is a symptom of a code issue and thus I would rather avoid merging that change that causes it.",
+      "range": {
+        "startLine": 37,
+        "startChar": 13,
+        "endLine": 37,
+        "endChar": 17
+      },
+      "revId": "cefca8309b910036543d3a283fe480516f21be7e",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
