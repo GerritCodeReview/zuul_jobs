@@ -22,6 +22,30 @@
       "revId": "2ea582fa417474a5403a68e97e4669725a5bd177",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f34699dc_c5507f61",
+        "filename": "playbooks/gerrit/build.yaml",
+        "patchSetId": 10
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-03-29T15:08:46Z",
+      "side": 1,
+      "message": "\u003e Why are we testing javatests and Polygerrit in the same time? Those are different checkers, right? The same applies to ReviewDb and NoteDb: different checkers. I assumed that the job can retrieve the checker name and build only what it supposed to build. Or am I missing something here?\n\nI\u0027m working from what I think are the relevant files in gerrit-ci-scripts.  This is a direct copy from[1].  I don\u0027t know why it\u0027s structured that way, but to get something working, I thought we should start with that.  Of course, we can make whatever jobs we want here.\n\n[1] https://gerrit.googlesource.com/gerrit-ci-scripts/+/refs/heads/master/jenkins/gerrit-bazel-test.sh\n\n\u003e Moreover, RBE javatests are passing now with this pending change: [2], so this could be also alternative: [3] to local build and test execution. :release build is still failing on master, since move to npm and ES6 modules in PolyGerrit toolchain, though: [4].\n\nI agree that RBE could be interesting in the future, but I don\u0027t think we should switch to RBE because we can\u0027t get the simple shell script version of this working.  Whatever optimizations we use later, I hope we all agree that any developer should be able to check out a copy of Gerrit, build it, and run its test suite on a clean machine with a series of simple well-defined commands.",
+      "parentUuid": "8daee9f2_f96f3df6",
+      "range": {
+        "startLine": 56,
+        "startChar": 10,
+        "endLine": 70,
+        "endChar": 75
+      },
+      "revId": "2ea582fa417474a5403a68e97e4669725a5bd177",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
