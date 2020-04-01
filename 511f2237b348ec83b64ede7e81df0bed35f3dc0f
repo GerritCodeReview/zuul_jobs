@@ -70,6 +70,30 @@
       "revId": "511f2237b348ec83b64ede7e81df0bed35f3dc0f",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dc2683b2_2ae75a78",
+        "filename": "playbooks/gerrit/build.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-04-01T14:41:25Z",
+      "side": 1,
+      "message": "I still think there is value in fully understanding what is required for the tests even if we use docker or RBE later.  The latest patchset is actually passing tests.  If you follow the link to the buildset information, you will see that it is succeeding for the three stable branches; it might even succeed for the master branch, but it\u0027s taking a long time and hit the timeout (if you didn\u0027t notice this, this is why I think subchecks are important).\n\nHere\u0027s the link to the results:\n\nhttps://ci.gerritcodereview.com/t/gerrit/buildset/cc7576d0ea584e7c93501682b64dcff3\n\nLet\u0027s just look at the stable-3.1 branch for the moment.  If I break down the time used for each part of the job:\n\nCopy git repos onto remote node: 4m\nPrepare submodules: 4m\nInstall deps: 2m\nBazelisk build: 25m\ngen_api_install: 0m\napi_install: 0m\neclipse/project.py: 2m\nbazelisk test: 79m\npolygerrit-ui/app/run_test.sh: 1m\n\nIf we categorize those a bit, we are spending:\n\n8 minutes performing Zuul-required setup.  We can speed that up later with caching, but for now, let\u0027s just discount it.\n\n2 minutes installing dependencies.  If we used docker, we would save these two minutes, but add a little time to download the image.  This is not very much time, so I don\u0027t think we should focus our efforts here at the moment.\n\n25 minutes running bazelisk build.  Now I have three questions about this:\n1) Is bazelisk build necessary before bazelisk test?\n2) If not, would it speed anything up to omit it?\n3) Obviously we should build all of gerrit when we are evaluating a change to gerrit, but I think earlier Thomas suggested that in the core plugin jobs, we might be able to just build/test the core plugin.  Which is the best approach for a core plugin test job?  Build all of gerrit with all the plugins, or build just plugin that is changing?\n\nNo time is used running the api_install and eclipse project scripts.  I\u0027m curious what those are and what they do to set up for the unit tests?  Or are they here just to exercise them to make sure they don\u0027t have errors?\n\n79 minutes running bazelisk test.  Is it expected that these should take so long?  We\u0027re running on an n1-standard-2 VM, that\u0027s 2vcpus with 8G of ram.  should we bump that up to a 2vcpu machine?\n\nFinally, it\u0027s looking like the ./polygerrit-ui/app/run_test.sh didn\u0027t run any tests.  However, adding in the polygerrit dependencies at the start of the job did enable the java tests to succeed (they were failing with polygerrit errors earlier).  So can you explain why the java tests require a bunch of npm modules?  And does this polygerrit script at the end require a build of gerrit, or can it run standalone in its own job?\n\nThanks again for helping me understand what\u0027s going on here.",
+      "parentUuid": "bf0f5ed6_0bc97e2d",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 89
+      },
+      "revId": "511f2237b348ec83b64ede7e81df0bed35f3dc0f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
