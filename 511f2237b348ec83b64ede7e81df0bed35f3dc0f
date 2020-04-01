@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2a8a9a7e_cceb2d29",
+        "filename": "playbooks/gerrit/build.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-04-01T11:35:06Z",
+      "side": 1,
+      "message": "Can\u0027t we just use the Docker image we have and reuse it in Zuul?\n\nThere are two advantages in doing that:\n1. We speedup the migration process from the current Jenkins build to Zuul\n2. We keep them in sync until we \"unplug\" Jenkins: they are the same image\n3. We allow people to run the build locally *exactly in the same way* Zuul would do it\n\nWDYT?",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 89
+      },
+      "revId": "511f2237b348ec83b64ede7e81df0bed35f3dc0f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
