@@ -38,7 +38,7 @@
     nodeset:
       nodes:
         - name: testnode
-          label: debian-stretch-30G
+          label: debian-stretch-60G
     vars:
       bazelisk_targets: ":release"
       bazelisk_test_targets: >-
