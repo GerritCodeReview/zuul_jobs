@@ -22,6 +22,30 @@
       "revId": "511f2237b348ec83b64ede7e81df0bed35f3dc0f",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "87a1b2e2_a393c45d",
+        "filename": "playbooks/gerrit/build.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-04-01T12:59:25Z",
+      "side": 1,
+      "message": "\u003e Can\u0027t we just use the Docker image we have and reuse it in Zuul?\n\nThe plan was always to use RBE in GCP. With my recent change (still pending for review: [1]), we are consuming are own GCP Docker image (with upgraded Git core version to 2.6). That Docker image is based on Ubuntu 18.04. Our current Docker image used in Jenkins GerritForge build is based on outdated Debian release and outdated Chromuim release 1.69.xxx. Attempt to bump Debian image is stale: [2].\n\nBecause of action caches current Jenkins Docker image is 5 GB big. With RBE on GCP, the caching problem is solved.\n\nMoreover specific Docker image is only needed for PolyGerrit tests, that is basically unrelated to Gerrit backend tests.\n\nMajor build targets and java tests with NoteDb and ReviewDb modes can use RBE already today:\n\n  $ bazelisk build --config\u003dremote :release :api plugins:core\n  $ bazelisk test --config\u003dremote javatests/...\n\nit takes a couple of minutes, and uses extensively caching.\n\nShould we take PolyGerrit verification out of the picture for now in Zuul intergration and just move forward with RBE on GCP?\n\n* [1] https://gerrit-review.googlesource.com/c/gerrit/+/260873\n* [2] https://gerrit-review.googlesource.com/c/gerrit-ci-scripts/+/237181",
+      "parentUuid": "2a8a9a7e_cceb2d29",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 89
+      },
+      "revId": "511f2237b348ec83b64ede7e81df0bed35f3dc0f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
