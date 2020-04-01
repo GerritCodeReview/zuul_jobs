@@ -46,6 +46,30 @@
       "revId": "511f2237b348ec83b64ede7e81df0bed35f3dc0f",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf0f5ed6_0bc97e2d",
+        "filename": "playbooks/gerrit/build.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-04-01T13:12:49Z",
+      "side": 1,
+      "message": "\u003e \u003e Can\u0027t we just use the Docker image we have and reuse it in Zuul?\n\u003e \n\u003e The plan was always to use RBE in GCP. With my recent change (still pending for review: [1]), we are consuming are own GCP Docker image (with upgraded Git core version to 2.6).\n\n+1\n\nRBE is optional though in our build process: we do not require all developers to use RBE isn\u0027t it? We should also offer the ability to build *without* RBE.\n\n\u003e That Docker image is based on Ubuntu 18.04. Our current Docker image used in Jenkins GerritForge build is based on outdated Debian release and outdated Chromuim release 1.69.xxx. Attempt to bump Debian image is stale: [2].\n\nThat\u0027s a different point, Chrome 80 breaks our tests and the Debian upgrade won\u0027t allow to build and test with Java 8.\n\nOnce we sort out both of them we can upgrade our Debian. \n\n\u003e Because of action caches current Jenkins Docker image is 5 GB big. With RBE on GCP, the caching problem is solved.\n\n+1, agreed.\n\n\u003e Moreover specific Docker image is only needed for PolyGerrit tests, that is basically unrelated to Gerrit backend tests.\n\nYes, PolyGerrit is the guy that has pre-requisites. For the Gerrit tests, only Java + Docker are needed. Does RBE support the ability to use a Docker server through DOCKER_HOST?\n\n\u003e Major build targets and java tests with NoteDb and ReviewDb modes can use RBE already today:\n\u003e \n\u003e   $ bazelisk build --config\u003dremote :release :api plugins:core\n\u003e   $ bazelisk test --config\u003dremote javatests/...\n\nWHy don\u0027t we start using them today?\n\n\u003e it takes a couple of minutes, and uses extensively caching.\n\nYeah, that\u0027s super-cool :-)\n\n\u003e Should we take PolyGerrit verification out of the picture for now in Zuul intergration and just move forward with RBE on GCP?\n\nYou mean having a mixed environment, backend tests verified with Zuul and PolyGerrit tests with Jenkins? I believe it would be messy.\n\nAlso, we do need Docker for the backend tests.",
+      "parentUuid": "87a1b2e2_a393c45d",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 89
+      },
+      "revId": "511f2237b348ec83b64ede7e81df0bed35f3dc0f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
