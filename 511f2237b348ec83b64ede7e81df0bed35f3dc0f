@@ -190,6 +190,30 @@
       "revId": "511f2237b348ec83b64ede7e81df0bed35f3dc0f",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a1103efe_96e5259a",
+        "filename": "playbooks/gerrit/build.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-04-01T20:07:53Z",
+      "side": 1,
+      "message": "\u003e \u003e I\u0027d like to just set the polygerrit tests aside for the moment and focus on the java tests.\n\u003e \n\u003e That was exactly my suggestion. forget PolyGerrit tests for now. Make the rest work. \n\nGreat.  I agree.  I originally wasn\u0027t even trying to make the polygerrit tests work.  But for some reason, the *javatests* need a bunch of node packages installed (like fried-twinkie) to work.  I still don\u0027t understand why.\n\n\u003e make it work on RBE on GCP. For that you need my pending change that built gerrit Docker Image based on Ubuntu 18.04. With that change Zuul should be able to build everything on RBE using these commands:\n\nI think Monty already discussed why it would be better to defer RBE until later.  It\u0027s too much for me right now.  Using RBE is going to require dealing with credentials, the service itself is in beta, and it\u0027s unproven (there are even unmerged changes) required to get it working.\n\nI will be happy to continue to work with you to get simple, straightforward jobs working that build and test on virtual machines.  After that, I will be happy to talk about using docker or RBE for those.  But I just can\u0027t add RBE into the mix now, it\u0027s too much at once.  The need is for validation of changes to these repos, and we\u0027re really close.  Let\u0027s just finish that.\n\n\u003e   $ bazelisk build --config\u003dremote :release :api plugins:core\n\u003e   $ bazelisk test --config\u003dremote javatests/...\n\u003e \n\u003e Correct, all core plugins use Bazel.\n\nOkay, that\u0027s helpful.  But I think I\u0027m still confused on one point, let me ask it very deliberately:\n\nI think there are three cases to handle:\n\n1) A change to the \"gerrit\" repo.\n2) A change to a core plugin repo (eg, \"plugins/replication\")\n3) A change to a non-core plugin repo (eg, \"plugins/checks\")\n\n(Let\u0027s ignore non-bazelisk plugins right now, though I know that\u0027s a possibility for #3.)\n\nWhat bazelisk commands to build and test should we run for each of those three situations?",
+      "parentUuid": "bcff4dc2_39412572",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 89
+      },
+      "revId": "511f2237b348ec83b64ede7e81df0bed35f3dc0f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
