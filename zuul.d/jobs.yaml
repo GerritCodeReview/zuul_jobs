@@ -35,6 +35,10 @@
          The bazelisk targets to test.
     run: playbooks/gerrit/build.yaml
     timeout: 7200
+    nodeset:
+      nodes:
+        - name: testnode
+          label: debian-stretch-30G
     vars:
       bazelisk_targets: ":release"
       bazelisk_test_targets: >-
