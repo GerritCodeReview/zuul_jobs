@@ -22,6 +22,23 @@
       "revId": "f423ae5060c2dca2165d9c30f57948cbc6a67b28",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8e8a45c5_c88c1df7",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-04-01T22:13:18Z",
+      "side": 1,
+      "message": "Here: https://gerrit-review.googlesource.com/261572\n\nThat\u0027s one of the types of changes that needs to be merged to go into effect, and since it only makes the node available for use (as opposed to a change like this one which actually uses it), I went ahead and merged it so we can keep moving here.\n\nThat mostly just references the GCP instance type.  We should actually probably rename all the nodepool labels to match GCP instances; they\u0027re named by vcpu count, but I\u0027d been focused on RAM.  I\u0027ll make a change to clean that up.",
+      "revId": "f423ae5060c2dca2165d9c30f57948cbc6a67b28",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
