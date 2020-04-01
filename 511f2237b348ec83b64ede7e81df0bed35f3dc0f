@@ -166,6 +166,30 @@
       "revId": "511f2237b348ec83b64ede7e81df0bed35f3dc0f",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a753699f_4051cdea",
+        "filename": "playbooks/gerrit/build.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-04-01T16:11:31Z",
+      "side": 1,
+      "message": "Just to make it clear: the whole Gerrit and all core plugins build on RBE (:release target) with the Plugin API build (:api target) and running all Java tests (test javatests/...) would take ca. 5 minutes or even less, (depending on cache utilization).",
+      "parentUuid": "bcff4dc2_39412572",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 89
+      },
+      "revId": "511f2237b348ec83b64ede7e81df0bed35f3dc0f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
