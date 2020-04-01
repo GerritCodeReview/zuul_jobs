@@ -142,6 +142,30 @@
       "revId": "511f2237b348ec83b64ede7e81df0bed35f3dc0f",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bcff4dc2_39412572",
+        "filename": "playbooks/gerrit/build.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-04-01T16:04:23Z",
+      "side": 1,
+      "message": "\u003e I\u0027d like to just set the polygerrit tests aside for the moment and focus on the java tests.\n\nThat was exactly my suggestion. forget PolyGerrit tests for now. Make the rest work. make it work on RBE on GCP. For that you need my pending change that built gerrit Docker Image based on Ubuntu 18.04. With that change Zuul should be able to build everything on RBE using these commands:\n\n  $ bazelisk build --config\u003dremote :release :api plugins:core\n  $ bazelisk test --config\u003dremote javatests/...\n\nCorrect, all core plugins use Bazel.\n\n  $ bazelisk test plugins/\u003cplugin_name\u003e:\u003cpugin_name\u003e_tests\n\nAs you have noticed, checks plugin (not a core plugin for now) doesn\u0027t have one single target, but the tests are spreaded across different Bazel packages. That why it would be better to use:\n\n  $ bazelisk test plugins/\u003cplugin_name/...\n\nThat would always work, with one, multiple or even zero test targets.",
+      "parentUuid": "d547f58e_2b14fdd7",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 89
+      },
+      "revId": "511f2237b348ec83b64ede7e81df0bed35f3dc0f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
