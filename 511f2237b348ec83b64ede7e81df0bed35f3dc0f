@@ -118,6 +118,30 @@
       "revId": "511f2237b348ec83b64ede7e81df0bed35f3dc0f",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d547f58e_2b14fdd7",
+        "filename": "playbooks/gerrit/build.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-04-01T15:54:20Z",
+      "side": 1,
+      "message": "\u003e w00t?\n\nYes, that was my thought exactly.  :)\n\n\u003e \u003e polygerrit-ui/app/run_test.sh: 1m\n\u003e \n\u003e Are you sure PolyGerrit tests are actually executed?\n\u003e 1m seems too low.\n\nI\u0027m pretty sure it\u0027s not... see below.\n\n\u003e \u003e 2 minutes installing dependencies.  If we used docker, we would save these two minutes, but add a little time to download the image.  This is not very much time, so I don\u0027t think we should focus our efforts here at the moment.\n\u003e \n\u003e It actually makes a difference, because of the caching.\n\nWhat caching do you mean?  We\u0027re running on a new VM each time, so we don\u0027t have a local docker image cache.  There are ways to mitigate this, but it\u0027ll take a bit more infrastructure.\n\nOh, I think maybe you mean the disappearing-chrome problem you talk about below?\n\n\u003e Also, bear in mind that resources for building the image may disappear from the network (e.g. installing Chrome) and thus having a baseline that is stable is paramount for a reproducible build.\n\nYes, I\u0027m very familiar with that problem.  We have a number of solutions we use in OpenDev to mitigate that, some of which we could use here.  But we should be able to ignore that for a little while while we operate at a smaller scale.\n\nIf we do address this by continuing to use docker images, I\u0027d like to build them in Zuul using its support for speculative container images.  That will allow us to easily test changes to the docker image, including jobs that then subsequently use the docker image, before merging them.\n\n\u003e There is a standard script for building a plugin, which runs:\n\u003e - bazelisk build plugins/\u003cplugin_name\u003e\n\u003e - bazelisk test plugins/\u003cplugin_name\u003e:\u003cpugin_name\u003e_tests\n\u003e \n\u003e The second step is not executed if the plugin doesn\u0027t have tests (gosh, it happens some times).\n\nYep, and that\u0027s what the gerrit-build-plugin job does, and that seems appropriate for a non-core plugin.  But for a core plugin, is that still what we should be doing?  Basically I\u0027m trying to figure out if core plugins should be treated as part of Gerrit, or just like non-core plugins.\n\n\u003e Please note that all plugins are different and they may be built with:\n\u003e - sbt\n\u003e - bazel\n\u003e - maven\n\u003e - or a combination of the above\n\nSurely the core plugins all use bazel?\n\n\u003e \u003e No time is used running the api_install and eclipse project scripts.  I\u0027m curious what those are and what they do to set up for the unit tests?  Or are they here just to exercise them to make sure they don\u0027t have errors?\n\u003e \n\u003e You need to run api_install otherwise the sbt and maven builds won\u0027t work.\n\nWhat are the sbt and maven builds?  Is that something that happens inside bazelisk test?  Because I don\u0027t see anything after api_install about maven.\n \n\u003e \u003e 79 minutes running bazelisk test.  Is it expected that these should take so long?  We\u0027re running on an n1-standard-2 VM, that\u0027s 2vcpus with 8G of ram.  should we bump that up to a 2vcpu machine?\n\u003e \n\u003e Gerrit build shouldn\u0027t take over 8G of RAM, but we have some failures (flakey) where also with 16G of RAM the build is killed becuase of memory issues. I would suggest to bump that up to 32 GB.\n\u003e \n\u003e With regards to CPUs, Bazel eats *a lot* of them and 2 are definitely not enough. I would go with 8 or 16 CPUs.\n\nThanks, sounds like n1-standard-8 is the minumum, and we may want 16.  Added in Ied09366e4714b8824f2152d8d53342dd3129e3a6.\n\n\u003e A couple of things about PolyGerrit tests:\n\u003e \n\u003e 1. They require Chrome to be installed (not Chromium)\n\u003e 2. They require a display (we use Xvfb on the CI)\n\u003e \n\u003e We are trying to upgrade them to Chrome 80, but they fail at the moment. That\u0027s why we stick with an older version Chrome. The problem with that approach is that Google doesn\u0027t keep all the Chrome versions online: when a new version is out, the old version is removed.\n\u003e \n\u003e Unfortunately, PolyGerrit tests are sensitive to the version of Chrome and it takes a bit of time to get them working on newer versions. That\u0027s why again having Docker was helpful.\n\nOkay, that helps.  I\u0027d like to just set the polygerrit tests aside for the moment and focus on the java tests.",
+      "parentUuid": "d8d31bf8_09661509",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 89
+      },
+      "revId": "511f2237b348ec83b64ede7e81df0bed35f3dc0f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
