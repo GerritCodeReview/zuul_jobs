@@ -214,6 +214,30 @@
       "revId": "511f2237b348ec83b64ede7e81df0bed35f3dc0f",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "59284a7d_e917c622",
+        "filename": "playbooks/gerrit/build.yaml",
+        "patchSetId": 14
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-04-01T21:22:29Z",
+      "side": 1,
+      "message": "\u003e \u003e \u003e I\u0027d like to just set the polygerrit tests aside for the moment and focus on the java tests.\n\u003e \u003e \n\u003e \u003e That was exactly my suggestion. forget PolyGerrit tests for now. Make the rest work. \n\u003e \n\u003e Great.  I agree.  I originally wasn\u0027t even trying to make the polygerrit tests work.  But for some reason, the *javatests* need a bunch of node packages installed (like fried-twinkie) to work.  I still don\u0027t understand why.\n\n+1, let\u0027s make one step at a time :-) ... with baby steps we\u0027ll get there.\n\n\u003e I think Monty already discussed why it would be better to defer RBE until later.  It\u0027s too much for me right now.  Using RBE is going to require dealing with credentials, the service itself is in beta, and it\u0027s unproven (there are even unmerged changes) required to get it working.\n\n+1, also RBE should be an \"optimization\" and not a \"requirement\" for the build to work. Bear in mind that our build process is Open-Source because also companies can use it for *their* build of Gerrit.\n\nE.g. SAP I know uses the same scripts that we use for building Gerrit. Forcing people to buy a specific service (RBE) from a specific Cloud vendor (Google) is not the purpose of our exercise. The build should work also without RBE, even if slower.\n\n\u003e I will be happy to continue to work with you to get simple, straightforward jobs working that build and test on virtual machines.  After that, I will be happy to talk about using docker or RBE for those.  But I just can\u0027t add RBE into the mix now, it\u0027s too much at once.  The need is for validation of changes to these repos, and we\u0027re really close.\n\nAlso, for building just the backend, excluding Docker-based tests, the requirements are very minimal:\n\na) Java\nb) Bazel + Bazelisk\nc) A recent Git CLI\n\n\u003e  Let\u0027s just finish that.\n\u003e \n\u003e \u003e   $ bazelisk build --config\u003dremote :release :api plugins:core\n\u003e \u003e   $ bazelisk test --config\u003dremote javatests/...\n\nWith all the tons of BAZEL_OPTS :-)\n\n\u003e \u003e Correct, all core plugins use Bazel.\n\u003e \n\u003e Okay, that\u0027s helpful.  But I think I\u0027m still confused on one point, let me ask it very deliberately:\n\u003e \n\u003e I think there are three cases to handle:\n\u003e \n\u003e 1) A change to the \"gerrit\" repo.\n\nThis is your current use-case.\n\nThe build step is:\nhttps://gerrit.googlesource.com/gerrit-ci-scripts/+/refs/heads/master/jenkins/gerrit-bazel-build.sh\n\nThe test step is:\nhttps://gerrit.googlesource.com/gerrit-ci-scripts/+/refs/heads/master/jenkins/gerrit-bazel-test.sh\n(just ignore the PolyGerrit thing)\n\n\u003e 2) A change to a core plugin repo (eg, \"plugins/replication\")\n\u003e 3) A change to a non-core plugin repo (eg, \"plugins/checks\")\n\nThose two use-cases are a different build process.\n\nSee the scripts for building a bazel plugin at:\nhttps://gerrit.googlesource.com/gerrit-ci-scripts/+/refs/heads/master/jenkins/gerrit-bazel-build-plugin.sh\n\n\u003e (Let\u0027s ignore non-bazelisk plugins right now, though I know that\u0027s a possibility for #3.)\n\nSGTM.",
+      "parentUuid": "a1103efe_96e5259a",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 33,
+        "endChar": 89
+      },
+      "revId": "511f2237b348ec83b64ede7e81df0bed35f3dc0f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
