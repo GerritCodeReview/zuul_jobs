@@ -62,18 +62,23 @@
 - job:
     name: test-gerrit-build-master
     parent: gerrit-build
+    files:
+      - roles/ensure-bazelisk/.*
+      - roles/prepare-gerrit-repos/.*
+      - roles/copy-plugin-deps/.*
+      - playbooks/gerrit/.*
 
 - job:
     name: test-gerrit-build-stable-3.1
-    parent: gerrit-build
+    parent: test-gerrit-build-master
     override-checkout: stable-3.1
 
 - job:
     name: test-gerrit-build-stable-3.0
-    parent: gerrit-build
+    parent: test-gerrit-build-master
     override-checkout: stable-3.0
 
 - job:
     name: test-gerrit-build-stable-2.16
-    parent: gerrit-build
+    parent: test-gerrit-build-master
     override-checkout: stable-2.16
