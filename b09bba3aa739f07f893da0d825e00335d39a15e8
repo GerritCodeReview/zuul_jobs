@@ -39,6 +39,29 @@
       "revId": "b09bba3aa739f07f893da0d825e00335d39a15e8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "6dba58b9_15bcd006",
+        "filename": "zuul.d/test-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-04-03T15:37:36Z",
+      "side": 1,
+      "message": "Just to be sure I understand it correctly: this addition would have the effect, that this job will run, if some of these files are changed?",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 69,
+        "endChar": 27
+      },
+      "revId": "b09bba3aa739f07f893da0d825e00335d39a15e8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
