@@ -22,6 +22,23 @@
       "revId": "b09bba3aa739f07f893da0d825e00335d39a15e8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ace6342d_f6dd2181",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-04-03T14:13:05Z",
+      "side": 1,
+      "message": "This has nothing to do with RBE, or caching, or changes to gerrit.\n\nThere is a job called \"gerrit-build\".  Its purpose is to build and test changes to the gerrit repo.  Normally I would define that in the gerrit repo, and if we needed to make changes to the job, I would propose a patch to the gerrit repo and Zuul would run the job with the change.  However, since it has been requested that we include only the minimum amount of job configuration in-repo, most of that job is actually defined in *this* repo.\n\nSo when we make changes to the parts of that job that are in this repo, we still want to run the job in order to test that the changes work.  So there are four more jobs, each prefixed with \"test-\" and suffixed with branch names like \"-master\" or \"stable-3.1\".  They run the full gerrit build and test, simulating what would happen on each of the four branches of the gerrit repo.  That\u0027s how we verify that changes to the gerrit-build job work.\n\nCurrently, they run on every single change to this repo, however, there are other jobs in this repo, including the \"gerrit-build-plugin\" job.  It\u0027s different enough that it\u0027s possible to make a change to that job without changing anything that affects the \"gerrit-build\" job.  If we do that, we can save some time by not running four copies of the \"gerrit-build\" job along with the \"gerrit-plugin-build\" job (which we do want to run because that\u0027s what we\u0027re changing).\n\nThat\u0027s what this change does.  It says, \"if you\u0027re making a change to this repo, and you aren\u0027t touching any files that are used by the gerrit-build job, then don\u0027t run the test-gerrit-build-* jobs\".",
+      "revId": "b09bba3aa739f07f893da0d825e00335d39a15e8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
