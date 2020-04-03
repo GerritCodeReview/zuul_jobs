@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "08c6f9af_a2fbc443",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-04-03T07:15:19Z",
+      "side": 1,
+      "message": "I don\u0027t understand how this is achieved, can you elaborate? \n\nOn RBE based build, that is still our goal for Zuul CI toolchain, Bazel would do that for you, extensively using Bazel Remote cache behind the scenes. So that in case of some changes in contrib directory, that is not contributing in any way to the final artifacts or influence test outcome, the command:\n\n  $ bazel test //...\n\nwould be a no op.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 10,
+        "endChar": 61
+      },
+      "revId": "b09bba3aa739f07f893da0d825e00335d39a15e8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
