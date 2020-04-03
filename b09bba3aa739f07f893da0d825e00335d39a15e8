@@ -79,6 +79,48 @@
       "revId": "b09bba3aa739f07f893da0d825e00335d39a15e8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "915fdf9a_82c3ed92",
+        "filename": "zuul.d/test-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-04-03T15:46:26Z",
+      "side": 1,
+      "message": "Thanks for clarifying.",
+      "parentUuid": "dd05300b_12ca795b",
+      "revId": "b09bba3aa739f07f893da0d825e00335d39a15e8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ab342594_37cd9b64",
+        "filename": "zuul.d/test-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-04-03T15:46:26Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6dba58b9_15bcd006",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 69,
+        "endChar": 27
+      },
+      "revId": "b09bba3aa739f07f893da0d825e00335d39a15e8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
