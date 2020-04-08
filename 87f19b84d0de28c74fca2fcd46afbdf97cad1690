@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f9c6de5d_887a4cc9",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-04-08T18:57:56Z",
+      "side": 1,
+      "message": "What is the story behind hard coding here NOTEDB\u003dON? On stable-2.16 (that is going to be discontinued in near future) we have two different checkers: ReviewDb and NoteDb. What is the plan to pass --test_env\u003dGERRIT_NOTEDB\u003dON to NoteDb checker Job and ommit that option on ReviewDb checker job?",
+      "range": {
+        "startLine": 47,
+        "startChar": 9,
+        "endLine": 47,
+        "endChar": 35
+      },
+      "revId": "87f19b84d0de28c74fca2fcd46afbdf97cad1690",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
