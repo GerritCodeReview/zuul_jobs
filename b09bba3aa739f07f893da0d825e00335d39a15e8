@@ -144,6 +144,23 @@
       "revId": "b09bba3aa739f07f893da0d825e00335d39a15e8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52cdb931_b3d92b50",
+        "filename": "zuul.d/test-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-04-08T21:58:32Z",
+      "side": 1,
+      "message": "This is basically the Zuul analog of that.  There isn\u0027t a templating system for jobs, instead we define a new job for each thing we want to test, inherit from a common job, and then override just the things we want to change.  It\u0027s different, but after years of using both, I find this to be easier and clearer, especially once you get past the trivial case (and I\u0027m responsible for the JJB templating system :).",
+      "revId": "b09bba3aa739f07f893da0d825e00335d39a15e8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
