@@ -75,7 +75,8 @@
 
       .. zuul:jobvar:: baselisk_test_targets
 
-         The bazelisk targets to test.
+         The bazelisk targets to test.  Defaults to
+         "plugins/{{gerrit_plugin }}/..."
     run: playbooks/gerrit-plugin/build.yaml
     nodeset:
       nodes:
@@ -84,4 +85,5 @@
     vars:
       gerrit_plugin: "{{ zuul.project.short_name }}"
       bazelisk_targets: "plugins/{{ gerrit_plugin }}:{{ gerrit_plugin }}"
+      bazelisk_test_targets: "plugins/{{ gerrit_plugin }}/..."
       zuul_work_dir: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/gerrit"
