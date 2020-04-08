@@ -121,6 +121,29 @@
       "revId": "b09bba3aa739f07f893da0d825e00335d39a15e8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "19da537f_a068f841",
+        "filename": "zuul.d/test-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-04-08T20:42:47Z",
+      "side": 1,
+      "message": "Can we define a template like in JJB and reuse it with different variables?",
+      "range": {
+        "startLine": 71,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 34
+      },
+      "revId": "b09bba3aa739f07f893da0d825e00335d39a15e8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
