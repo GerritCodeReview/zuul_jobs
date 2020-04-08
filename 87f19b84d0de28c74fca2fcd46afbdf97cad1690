@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "f415dd05_a2e96aed",
+        "filename": "playbooks/gerrit/pre.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-04-08T21:51:57Z",
+      "side": 1,
+      "message": "Sure!  Here are a couple of different ways to find that, any one would work.\n\n1) Look at the output[1] from a build and expand the second \"pre playbook\" section.  You\u0027ll see bazelisk tasks there, and they come from a different playbook[2] which is shared by all of the gerrit-related jobs (plugins and core).\n\nYou\u0027ll see a list of roles there (this is analogous to a list of JJB builders).  One of them installs bazelisk, and you can find it[3] in the roles/ directory of the same repo.\n\n2) You could find a pointer to the same pre playbook in the text job output[4].  But I prefer the console tab since it lets you drill down easier.\n\n3) You can walk up the job inheritance hierarchy[5] (put \"gerrit-build\" in the search box) and look at the job definition of each parent job to find their pre-playbooks.\n\n[1] https://ci.gerritcodereview.com/t/gerrit/build/3f33aeb878374d2bb599362bdcf3c95f/console\n[2] https://gerrit.googlesource.com/zuul/jobs/+/refs/heads/master/playbooks/gerrit-setup/pre.yaml\n[3] https://gerrit.googlesource.com/zuul/jobs/+/refs/heads/master/roles/ensure-bazelisk/\n[4] https://ci.gerritcodereview.com/t/gerrit/build/3f33aeb878374d2bb599362bdcf3c95f/log/job-output.txt#3254\n[5] https://ci.gerritcodereview.com/t/gerrit/jobs",
+      "revId": "87f19b84d0de28c74fca2fcd46afbdf97cad1690",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c380b493_3a5405ab",
         "filename": "playbooks/gerrit/pre.yaml",
         "patchSetId": 15
@@ -39,6 +56,23 @@
       "revId": "87f19b84d0de28c74fca2fcd46afbdf97cad1690",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e1452d6_bf5e6e11",
+        "filename": "playbooks/gerrit/pre.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-04-08T21:51:57Z",
+      "side": 1,
+      "message": "Maybe we should try dopping this line and see what breaks.",
+      "revId": "87f19b84d0de28c74fca2fcd46afbdf97cad1690",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     },
     {
       "key": {
@@ -82,6 +116,23 @@
     },
     {
       "key": {
+        "uuid": "61cb15fa_b9a0a83a",
+        "filename": "playbooks/gerrit/pre.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-04-08T21:51:57Z",
+      "side": 1,
+      "message": "Similar to the reponse above, it\u0027s in the same gerrit-setup pre-playbook; here\u0027s the role[1]\nThe version defaults to 8[2].  I based that on this line from the Dockerfile[3].\n\n[1] https://gerrit.googlesource.com/zuul/jobs/+/refs/heads/master/roles/ensure-java/tasks/main.yaml\n[2] https://gerrit.googlesource.com/zuul/jobs/+/refs/heads/master/roles/ensure-java/defaults/main.yaml\n[3] https://gerrit.googlesource.com/gerrit-ci-scripts/+/refs/heads/master/jenkins-docker/master/Dockerfile#107\n\nRe git: we certainly could do that.  I checked the unit tests and confirmed that the version in stretch backports (and later buster) meet the minimum version requirements so I figured this would be easier and faster (and more likely to be compatible with local development).  But if we expect to need even newer source versions of git, we can do that pretty easily.",
+      "revId": "87f19b84d0de28c74fca2fcd46afbdf97cad1690",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fbc0a09f_182dc387",
         "filename": "zuul.d/jobs.yaml",
         "patchSetId": 15
@@ -102,6 +153,23 @@
       "revId": "87f19b84d0de28c74fca2fcd46afbdf97cad1690",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "783af35b_825f25bd",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-04-08T21:51:57Z",
+      "side": 1,
+      "message": "Will do.",
+      "revId": "87f19b84d0de28c74fca2fcd46afbdf97cad1690",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     },
     {
       "key": {
@@ -149,6 +217,23 @@
       "revId": "87f19b84d0de28c74fca2fcd46afbdf97cad1690",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "791967ab_c34d00d1",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-04-08T21:51:57Z",
+      "side": 1,
+      "message": "I\u0027ll work on a solution to run both on 2.16.",
+      "revId": "87f19b84d0de28c74fca2fcd46afbdf97cad1690",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
