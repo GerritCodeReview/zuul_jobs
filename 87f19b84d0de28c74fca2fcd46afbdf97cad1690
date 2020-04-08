@@ -2,6 +2,109 @@
   "comments": [
     {
       "key": {
+        "uuid": "1a6a272d_d82f8e4b",
+        "filename": "playbooks/gerrit/pre.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-04-08T20:38:51Z",
+      "side": 1,
+      "message": "I could not find where you install Bazel, buildifier and Bazelisk: can you point me to the right location?",
+      "revId": "87f19b84d0de28c74fca2fcd46afbdf97cad1690",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c380b493_3a5405ab",
+        "filename": "playbooks/gerrit/pre.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-04-08T20:38:51Z",
+      "side": 1,
+      "message": "Not sure about the version of Maven that is getting installed. However, we do require very little Maven support in Bazel.",
+      "range": {
+        "startLine": 11,
+        "startChar": 46,
+        "endLine": 11,
+        "endChar": 70
+      },
+      "revId": "87f19b84d0de28c74fca2fcd46afbdf97cad1690",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cad272c9_471b99ae",
+        "filename": "playbooks/gerrit/pre.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-04-08T20:38:51Z",
+      "side": 1,
+      "message": "I could not find where the JDK is getting installed.\nIn our debian Docker image we have:\n  apt-get update \u0026\u0026 apt-get install -y wget software-properties-common default-jdk",
+      "revId": "87f19b84d0de28c74fca2fcd46afbdf97cad1690",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f98c17f_a9cd2035",
+        "filename": "playbooks/gerrit/pre.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-04-08T20:38:51Z",
+      "side": 1,
+      "message": "Why not installing git from source? That is what we do today on our Docker image.\nIt will allow to switch and test with any arbitrary Git version more easily, without going fishing for a distro.",
+      "range": {
+        "startLine": 26,
+        "startChar": 10,
+        "endLine": 28,
+        "endChar": 89
+      },
+      "revId": "87f19b84d0de28c74fca2fcd46afbdf97cad1690",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fbc0a09f_182dc387",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-04-08T20:38:51Z",
+      "side": 1,
+      "message": "We also want to make sure that the API and the Eclipse generation is healthy and working.\nYou should then run:\n\n  tools/maven/api.sh install\n  tools/eclipse/project.py --bazel bazelisk",
+      "range": {
+        "startLine": 45,
+        "startChar": 25,
+        "endLine": 45,
+        "endChar": 49
+      },
+      "revId": "87f19b84d0de28c74fca2fcd46afbdf97cad1690",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f9c6de5d_887a4cc9",
         "filename": "zuul.d/jobs.yaml",
         "patchSetId": 15
@@ -13,6 +116,30 @@
       "writtenOn": "2020-04-08T18:57:56Z",
       "side": 1,
       "message": "What is the story behind hard coding here NOTEDB\u003dON? On stable-2.16 (that is going to be discontinued in near future) we have two different checkers: ReviewDb and NoteDb. What is the plan to pass --test_env\u003dGERRIT_NOTEDB\u003dON to NoteDb checker Job and ommit that option on ReviewDb checker job?",
+      "range": {
+        "startLine": 47,
+        "startChar": 9,
+        "endLine": 47,
+        "endChar": 35
+      },
+      "revId": "87f19b84d0de28c74fca2fcd46afbdf97cad1690",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c43c72d0_b7a86b1b",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-04-08T20:38:51Z",
+      "side": 1,
+      "message": "GERRIT_NOTEDB\u003d{ON,OFF} are two different builds on v2.16, with ReviewDb and with NoteDb.\nWe can\u0027t validate a change on stable-2.16 if any of the two is failing.\n\nYes, we are going to discontinue v2.16. But, until is officially EOL, we should keep it sane and working.",
+      "parentUuid": "f9c6de5d_887a4cc9",
       "range": {
         "startLine": 47,
         "startChar": 9,
