@@ -190,6 +190,24 @@
     },
     {
       "key": {
+        "uuid": "1ab4b58f_582bcbed",
+        "filename": "playbooks/gerrit/pre.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-04-09T08:53:59Z",
+      "side": 1,
+      "message": "I believe we want to make sure that our scripts and publishing still works, isn\u0027t it?\nAlso the Eclipse project generation should be checked that is still working, as it depends from Bazel anyway.\n\nZuul isn\u0027t only for running Bazel but rather for running our CI validation pipeline.",
+      "parentUuid": "ea14c846_1ed249b2",
+      "revId": "87f19b84d0de28c74fca2fcd46afbdf97cad1690",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cad272c9_471b99ae",
         "filename": "playbooks/gerrit/pre.yaml",
         "patchSetId": 15
