@@ -154,6 +154,24 @@
     },
     {
       "key": {
+        "uuid": "5dbe8556_bf76d162",
+        "filename": "playbooks/gerrit/pre.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-04-09T05:50:46Z",
+      "side": 1,
+      "message": "While it\u0027s true, that api.sh install and api.sh deploy are using Maven, we are not publishing Snapshots artifact on central. And we can ignore one single plugin (Github?) that is still using Maven. So that we don\u0027t need Maven tool chain at all. At least not in Zuul environment.",
+      "parentUuid": "e6c1cab1_29ed92a2",
+      "revId": "87f19b84d0de28c74fca2fcd46afbdf97cad1690",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cad272c9_471b99ae",
         "filename": "playbooks/gerrit/pre.yaml",
         "patchSetId": 15
