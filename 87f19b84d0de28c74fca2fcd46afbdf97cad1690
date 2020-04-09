@@ -172,6 +172,24 @@
     },
     {
       "key": {
+        "uuid": "ea14c846_1ed249b2",
+        "filename": "playbooks/gerrit/pre.yaml",
+        "patchSetId": 15
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2020-04-09T06:35:39Z",
+      "side": 1,
+      "message": "\u003e we are not publishing Snapshots artifact on central\n\nbut it would be good if we could do that",
+      "parentUuid": "5dbe8556_bf76d162",
+      "revId": "87f19b84d0de28c74fca2fcd46afbdf97cad1690",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cad272c9_471b99ae",
         "filename": "playbooks/gerrit/pre.yaml",
         "patchSetId": 15
