@@ -40,7 +40,7 @@
     nodeset:
       nodes:
         - name: testnode
-          label: debian-stretch-60G
+          label: debian-stretch-e2-standard-16
     vars:
       bazelisk_targets: "plugins:core release api"
       bazelisk_test_targets: >-
@@ -81,7 +81,7 @@
     nodeset:
       nodes:
         - name: testnode
-          label: debian-stretch-60G
+          label: debian-stretch-e2-standard-16
     vars:
       gerrit_plugin: "{{ zuul.project.short_name }}"
       bazelisk_targets: "plugins/{{ gerrit_plugin }}:{{ gerrit_plugin }}"
