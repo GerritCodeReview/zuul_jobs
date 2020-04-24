@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6940377f_deeaeb65",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1012732
+      },
+      "writtenOn": "2020-04-24T16:16:25Z",
+      "side": 1,
+      "message": "Nit: returns",
+      "range": {
+        "startLine": 13,
+        "startChar": 20,
+        "endLine": 13,
+        "endChar": 26
+      },
+      "revId": "9a0b3e48005733ea0f0ce99cdfca0d3fcafdb709",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c28730f0_82f0cf69",
+        "filename": "zuul.d/test-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1012732
+      },
+      "writtenOn": "2020-04-24T16:16:25Z",
+      "side": 1,
+      "message": "Mention (in the commit message) that this is now the reference plugin used for testing purposes? As gitiles is (now) known to return code 4, I mean.\n\nNote though, gitiles became core only from the stable-3.0 branch and up. But stable-2.16 will soon become EOL (next month). However automated CI will likely remain for it, for some time. There are other core plugins which started that earlier and have no tests.",
+      "range": {
+        "startLine": 53,
+        "startChar": 16,
+        "endLine": 55,
+        "endChar": 28
+      },
+      "revId": "9a0b3e48005733ea0f0ce99cdfca0d3fcafdb709",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
