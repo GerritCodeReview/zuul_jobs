@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "044fd422_763aee7a",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1011123
+      },
+      "writtenOn": "2020-04-25T06:12:12Z",
+      "side": 1,
+      "message": "\"something we should collect\" ?",
+      "range": {
+        "startLine": 9,
+        "startChar": 30,
+        "endLine": 9,
+        "endChar": 54
+      },
+      "revId": "6c99ad54726146e5509366985fc257d9bd334291",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7cd89be2_3014e775",
         "filename": "roles/bazelisk-build/tasks/main.yaml",
         "patchSetId": 3
