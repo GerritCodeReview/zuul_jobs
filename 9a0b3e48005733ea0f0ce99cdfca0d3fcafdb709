@@ -25,6 +25,23 @@
     },
     {
       "key": {
+        "uuid": "54c50899_d8c365a3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-04-27T22:48:56Z",
+      "side": 1,
+      "message": "Oops.",
+      "revId": "9a0b3e48005733ea0f0ce99cdfca0d3fcafdb709",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c28730f0_82f0cf69",
         "filename": "zuul.d/test-jobs.yaml",
         "patchSetId": 1
@@ -45,6 +62,23 @@
       "revId": "9a0b3e48005733ea0f0ce99cdfca0d3fcafdb709",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ffeb5b03_a9e9f0b3",
+        "filename": "zuul.d/test-jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-04-27T22:48:56Z",
+      "side": 1,
+      "message": "Yes, I should have done that sorry.  Also, long term, we should probably either add a second job, or some kind of synthetic testing to validate the behavior.",
+      "revId": "9a0b3e48005733ea0f0ce99cdfca0d3fcafdb709",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
