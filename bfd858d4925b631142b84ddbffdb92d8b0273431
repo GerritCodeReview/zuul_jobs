@@ -34,6 +34,24 @@
       "revId": "bfd858d4925b631142b84ddbffdb92d8b0273431",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ef2763a_be913469",
+        "filename": "roles/prepare-gerrit-repos/tasks/main.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-04-29T14:16:51Z",
+      "side": 1,
+      "message": "\u003e How can I say in Bazel that I need the release.war?\n\nLike I did in plugin-manager BUILD file:\n\n  data \u003d [\"//:release.war\"],\n\n\u003e If we have to make one ansible script per plugin, then we\u0027ll end up with a bit of a mess, with hundreds of them.\n\nNo. We will reuse one single ansible playbook for the most plugin, while having the option to override ansible playbook if needed. What we will not do is to always clone 1000 submodules for 1000 plugins, if only one single plugin need them.\n\nSay I have 1000 plugin. 999 don\u0027t need other plugins, and should not clone 999 plugin repositories. One single plugin foo needs all other 999 plugins to build and verify itself. Clearly, there is one single place in your build infrastructure, where you have to define this dependencies: plugin foo. This is not Bazel, but the build set-up for plugin foo.",
+      "parentUuid": "5824fc97_c1330d70",
+      "revId": "bfd858d4925b631142b84ddbffdb92d8b0273431",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
