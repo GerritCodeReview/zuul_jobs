@@ -16,6 +16,24 @@
       "revId": "bfd858d4925b631142b84ddbffdb92d8b0273431",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5824fc97_c1330d70",
+        "filename": "roles/prepare-gerrit-repos/tasks/main.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-04-29T14:04:28Z",
+      "side": 1,
+      "message": "\u003e So basically, what happens is that to run tests in this plugi we need to build release.war first.\n\nYep, we do need release.war for the plugin-manager.\n\n\u003e So thet problem here is, that plugin-manager has unspecified dependencies. \n\nHow can I say in Bazel that I need the release.war?\n\n\u003e Th correct fix would be to adjust Playbook ansible script for plugin-manager and add there all cross-plugins references.\n\nI thought that Bazel is in charge to build the correct dependencies. However, the submodules need to be inizialised as I don\u0027t believe Bazel would do the submodule update by himself.\n\nIf we have to make one ansible script per plugin, then we\u0027ll end up with a bit of a mess, with hundreds of them. Is there a way to put a \"common\" template rule as we do with JJB today?",
+      "parentUuid": "a7421c7b_2dd68572",
+      "revId": "bfd858d4925b631142b84ddbffdb92d8b0273431",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
