@@ -4,6 +4,11 @@
 # it to be file:///dev/plugins/download-commands, which isn't a
 # thing. Removing the origin causes git to use relative local
 # filesystem paths.
+- name: Init submodules
+  command: "git submodule update --init"
+  args:
+    chdir: "{{ gerrit_root }}"
+
 - name: Remove origin remote
   command: "git remote rm origin"
   args:
