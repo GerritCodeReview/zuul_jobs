@@ -22,6 +22,30 @@
       "revId": "6c5dbaa46757d1d33214b50232d4960cc080affb",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "727eeaeb_cd3427eb",
+        "filename": "roles/prepare-gerrit-repos/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-04-29T13:31:26Z",
+      "side": 1,
+      "message": "Done, but I\u0027m not sure this is the right place for running the init of the submodules.",
+      "parentUuid": "cd83dd88_fce8cb9f",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 19
+      },
+      "revId": "6c5dbaa46757d1d33214b50232d4960cc080affb",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
