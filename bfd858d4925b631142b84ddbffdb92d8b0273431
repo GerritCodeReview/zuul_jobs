@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a7421c7b_2dd68572",
+        "filename": "roles/prepare-gerrit-repos/tasks/main.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-04-29T13:57:58Z",
+      "side": 1,
+      "message": "The error message form build plugin-manager is:\n\n - /home/zuul/src/gerrit.googlesource.com/gerrit/plugins/codemirror-editor and referenced by \u0027//plugins:core\u0027\nERROR: Analysis of target \u0027//plugins/plugin-manager:plugin_manager_tests\u0027 failed; build aborted: no such package \u0027plugins/codemirror-editor\u0027: BUILD file not found in any of the following directories.\n\nWhy is codemirror-editor is needed to run plugin-manager tests? That\u0027s why:\n\njunit_tests(\n    name \u003d \"plugin_manager_tests\",\n    srcs \u003d glob([\"src/test/java/**/*.java\"]),\n    data \u003d [\"//:release.war\"],\n    visibility \u003d [\"//visibility:public\"],\n    deps \u003d PLUGIN_TEST_DEPS + [\n        \":plugin-manager__plugin\",\n    ],\n)\n\nThis line is relevant here:\n\n      data \u003d [\"//:release.war\"],\n\nSo basically, what happens is that to run tests in this plugi we need to build release.war first. Tio build release.war we need all plugins.\n\nSo thet problem here is, that plugin-manager has unspecified dependencies. Th correct fix would be to adjust Playbook ansible script for plugin-manager and add there all cross-plugins references.",
+      "revId": "bfd858d4925b631142b84ddbffdb92d8b0273431",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
