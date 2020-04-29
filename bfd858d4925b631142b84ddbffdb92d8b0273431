@@ -70,6 +70,23 @@
       "revId": "bfd858d4925b631142b84ddbffdb92d8b0273431",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5706836b_759af660",
+        "filename": "roles/prepare-gerrit-repos/tasks/main.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-04-29T16:50:27Z",
+      "side": 1,
+      "message": "I left a message on the issue with a bit more info -- but the short version is that the job should already set up the submodules, but we need to tell it which ones to use using the \u0027required-projects\u0027 setting in Zuul.  To correct this, we just need to add the necessary projects to that list, and we should decide whether that\u0027s something we want to do when we build all plugins, or if it\u0027s just something we do for the plugin-manager build.  Alternative changes:\nhttps://gerrit-review.googlesource.com/265212\nhttps://gerrit-review.googlesource.com/265213",
+      "revId": "bfd858d4925b631142b84ddbffdb92d8b0273431",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
