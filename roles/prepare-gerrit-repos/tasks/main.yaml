@@ -1,3 +1,8 @@
+- name: Init submodules
+  command: "git submodule update --init"
+  args:
+    chdir: "{{ gerrit_root }}"
+
 # In case there is no matching branch we may need to check out the
 # actual sha defined in the parent repo. The default zuul remote,
 # file:///dev/null, doesn't work here because relative paths cause
