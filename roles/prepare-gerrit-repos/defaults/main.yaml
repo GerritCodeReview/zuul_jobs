@@ -3,3 +3,4 @@ gerrit_project_mapping:
   gerrit: ''
   jgit: modules/jgit
   'zuul/jobs': ''
+gerrit_root: "{{ ansible_user_dir }}/{{ zuul.projects[gerrit_project_name].src_dir }}"
