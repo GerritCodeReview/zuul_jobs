@@ -16,6 +16,24 @@
       "revId": "e1f0e9044a538dd16fecec5042d6a62be32910b5",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97a25144_5b1691d1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2020-05-08T00:19:54Z",
+      "side": 1,
+      "message": "Nope, i reported to him on irc that one of the jobs were failing due to gerrit_root being undefined.",
+      "parentUuid": "c77b24f3_3391a2ea",
+      "revId": "e1f0e9044a538dd16fecec5042d6a62be32910b5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
