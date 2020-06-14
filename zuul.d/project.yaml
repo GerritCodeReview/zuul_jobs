@@ -5,7 +5,8 @@
         - test-ensure-java
         - test-gerrit-setup
         - test-install-build-essential
-        - test-gerrit-plugin-build
+        - test-gerrit-plugin-build-8
+        - test-gerrit-plugin-build-16
         - test-gerrit-build-master
         - test-gerrit-build-stable-3.1
         - test-gerrit-build-stable-3.0

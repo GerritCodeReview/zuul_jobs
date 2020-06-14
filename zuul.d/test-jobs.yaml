@@ -47,12 +47,33 @@
       - playbooks/test-gerrit-setup.yaml
 
 - job:
-    name: test-gerrit-plugin-build
+    name: test-gerrit-plugin-build-8
     parent: gerrit-plugin-build
     required-projects:
-      - plugins/gitiles
+      - plugins/code-owners
     vars:
-      gerrit_plugin: gitiles
+      gerrit_plugin: code-owners
+    nodeset:
+      nodes:
+        - name: testnode
+          label: debian-stretch-e2-standard-8
+    files:
+      - roles/ensure-bazelisk/.*
+      - roles/prepare-gerrit-repos/.*
+      - roles/copy-plugin-deps/.*
+      - playbooks/gerrit-plugin/build.yaml
+
+- job:
+    name: test-gerrit-plugin-build-16
+    parent: gerrit-plugin-build
+    required-projects:
+      - plugins/code-owners
+    vars:
+      gerrit_plugin: code-owners
+    nodeset:
+      nodes:
+        - name: testnode
+          label: debian-stretch-e2-standard-16
     files:
       - roles/ensure-bazelisk/.*
       - roles/prepare-gerrit-repos/.*
