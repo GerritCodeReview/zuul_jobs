@@ -63,10 +63,6 @@
          The bazelisk targets to test.  Defaults to
          "plugins/{{gerrit_plugin }}/..."
     run: playbooks/gerrit-plugin/build.yaml
-    nodeset:
-      nodes:
-        - name: testnode
-          label: debian-stretch-60G
     vars:
       gerrit_plugin: "{{ zuul.project.short_name }}"
       bazelisk_targets: "plugins/{{ gerrit_plugin }}:{{ gerrit_plugin }}"
