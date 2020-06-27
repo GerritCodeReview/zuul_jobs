@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "e8dab5c0_2609cc55",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-06-27T13:43:01Z",
+      "side": 1,
+      "message": "Great -- it looks like the content-type header isn\u0027t correct, but right-click/save works (I downloaded a file and verified it), so we can deal with that later.",
+      "parentUuid": "b03cffc7_58e66d3f",
+      "revId": "7753a9edc1c1ccf50e87f7260854436333cea070",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d09c31a5_538b836d",
         "filename": "roles/bazelisk-build/tasks/main.yaml",
         "patchSetId": 4
@@ -51,6 +69,24 @@
       "revId": "7753a9edc1c1ccf50e87f7260854436333cea070",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c8e0c38e_a22cef2a",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 4
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2020-06-27T13:43:01Z",
+      "side": 1,
+      "message": "Oops, copy paste error.  Fixed in next ps.",
+      "parentUuid": "d09c31a5_538b836d",
+      "revId": "7753a9edc1c1ccf50e87f7260854436333cea070",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
