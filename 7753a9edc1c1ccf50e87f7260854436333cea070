@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "b03cffc7_58e66d3f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-06-27T03:47:20Z",
+      "side": 1,
+      "message": "I see and can download release.war for test-gerrit-build-master from:\n\n  https://storage.googleapis.com/gerrit_zuul_logs2/52/257252/4/check/test-gerrit-build-master/ff40ba3/artifacts/release.war\n\nFor test-gerrit-plugin-build I can see and download gitiles.jar, from:\n\n  https://storage.googleapis.com/gerrit_zuul_logs2/52/257252/4/check/test-gerrit-plugin-build/131dbdc/artifacts/gitiles.jar",
+      "parentUuid": "ae839e22_d34f9be8",
+      "revId": "7753a9edc1c1ccf50e87f7260854436333cea070",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d09c31a5_538b836d",
         "filename": "roles/bazelisk-build/tasks/main.yaml",
         "patchSetId": 4
