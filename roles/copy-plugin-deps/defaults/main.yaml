@@ -1,1 +1,3 @@
+gerrit_project_name: gerrit.googlesource.com/gerrit
 gerrit_plugin: "{{ zuul.project.short_name }}"
+gerrit_root: "{{ ansible_user_dir }}/{{ zuul.projects[gerrit_project_name].src_dir }}"
