@@ -34,6 +34,23 @@
       "revId": "e1f0e9044a538dd16fecec5042d6a62be32910b5",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5bff2020_30ed1d9a",
+        "filename": "roles/prepare-gerrit-repos/defaults/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2020-06-28T19:37:47Z",
+      "side": 1,
+      "message": "Was it already deployed on GCE? oauth plugin is still failing with the same error message. I wrote issue 13037.",
+      "revId": "e1f0e9044a538dd16fecec5042d6a62be32910b5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
