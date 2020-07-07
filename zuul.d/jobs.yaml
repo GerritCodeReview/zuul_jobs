@@ -12,6 +12,7 @@
     pre-run: playbooks/gerrit-setup/pre.yaml
     required-projects:
       - gerrit
+    tags: test
 
 - job:
     name: gerrit-build-base
