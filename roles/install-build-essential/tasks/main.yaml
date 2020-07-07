@@ -4,4 +4,5 @@
     name:
       - build-essential
       - zip
+      - unzip
     state: present
