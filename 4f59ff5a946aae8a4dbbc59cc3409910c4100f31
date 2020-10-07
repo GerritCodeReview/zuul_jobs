@@ -33,6 +33,23 @@
       "message": "@James could you suggest a way to verify this change? (the Zuul CI verification says \"not relevant\")",
       "revId": "4f59ff5a946aae8a4dbbc59cc3409910c4100f31",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "318f1aa0_6bf69c8f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-10-07T09:06:01Z",
+      "side": 1,
+      "message": "We haven\u0027t verified this, however, it is urgent to set the Java 8 verification for plugins, so we\u0027ll merge it and, if that doesn\u0027t work, we\u0027ll revert it.",
+      "revId": "4f59ff5a946aae8a4dbbc59cc3409910c4100f31",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
