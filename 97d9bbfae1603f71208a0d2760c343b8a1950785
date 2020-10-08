@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "zuul-check:zuul_jobs": {
+      "state": "SCHEDULED",
+      "message": "Change has been enqueued in check",
+      "url": "https://ci.gerritcodereview.com/t/gerrit/status/change/284035,1",
+      "started": "2020-10-08T22:34:32Z",
+      "created": "2020-10-08T22:34:32Z",
+      "updated": "2020-10-08T22:34:32Z"
+    }
+  }
+}
