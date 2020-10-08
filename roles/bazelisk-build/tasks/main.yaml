@@ -9,7 +9,7 @@
 - name: Run bazelisk test
   when: "bazelisk_test_targets != ''"
   shell: |
-    {{ bazelisk_executable }} test --java_toolchain=//tools:error_prone_warnings_toolchain {{ bazelisk_test_targets }}
+    {{ bazelisk_executable }} test --java_toolchain=//tools:error_prone_warnings_toolchain --test_output=errors --test_summary=detailed --flaky_test_attempts=3 {{ bazelisk_test_targets }}
   args:
     executable: /bin/bash
     chdir: "{{ zuul_work_dir }}"
