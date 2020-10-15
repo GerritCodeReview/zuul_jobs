@@ -22,6 +22,30 @@
       },
       "revId": "97d9bbfae1603f71208a0d2760c343b8a1950785",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94a457e4_3b3e58d2",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-10-15T21:55:51Z",
+      "side": 1,
+      "message": "That isn\u0027t what the Bazel documentation says:\n\"Each test will be retried up to the specified number of times in case of any test failure. Tests that required more than one attempt to pass are marked as \u0027FLAKY\u0027 in the test summary.\"\n\nIf you set flaky_test_attempts, then Bazel will *retry* the failed tests up to 3 times. If one of them is successful, then the build is successful BUT the test will be reported as FLAKY.",
+      "parentUuid": "0cdc72de_a25fdd6a",
+      "range": {
+        "startLine": 12,
+        "startChar": 136,
+        "endLine": 12,
+        "endChar": 160
+      },
+      "revId": "97d9bbfae1603f71208a0d2760c343b8a1950785",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
