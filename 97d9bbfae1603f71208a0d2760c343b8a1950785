@@ -46,6 +46,30 @@
       },
       "revId": "97d9bbfae1603f71208a0d2760c343b8a1950785",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7a8666b5_75df4ca7",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2020-10-15T22:07:56Z",
+      "side": 1,
+      "message": "Ah yes, I misread it. Thanks!",
+      "parentUuid": "94a457e4_3b3e58d2",
+      "range": {
+        "startLine": 12,
+        "startChar": 136,
+        "endLine": 12,
+        "endChar": 160
+      },
+      "revId": "97d9bbfae1603f71208a0d2760c343b8a1950785",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
