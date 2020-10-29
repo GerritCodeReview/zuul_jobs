@@ -3,6 +3,23 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "07334bc9_9394c80b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2020-10-29T21:22:24Z",
+      "side": 1,
+      "message": "Can we enable this flakiness checks on the Zuul CI? Otherwise we would not realise that we are merging flaky tests.",
+      "revId": "97d9bbfae1603f71208a0d2760c343b8a1950785",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "0cdc72de_a25fdd6a",
         "filename": "roles/bazelisk-build/tasks/main.yaml",
         "patchSetId": 1
