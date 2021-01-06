@@ -2,7 +2,7 @@
   shell: |
     java -fullversion
     {{ bazelisk_executable }} version
-    {{ bazelisk_executable }} build --spawn_strategy=standalone --genrule_strategy=standalone --java_toolchain=//tools:error_prone_warnings_toolchain {{ bazelisk_targets }}
+    {{ bazelisk_executable }} build --java_toolchain=//tools:error_prone_warnings_toolchain {{ bazelisk_targets }}
   args:
     executable: /bin/bash
     chdir: "{{ zuul_work_dir }}"
