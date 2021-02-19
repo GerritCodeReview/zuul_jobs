@@ -1,0 +1,3 @@
+bazel_cache_server_root: /opt/bazel-cache
+bazel_cache_uri: /
+bazel_cache_remote_url: https://storage.googleapis.com

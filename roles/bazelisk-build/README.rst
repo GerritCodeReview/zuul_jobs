@@ -26,6 +26,12 @@ Runs bazelisk build with the specified targets.
 
    Paths (relative to zuul_work_dir) of artifacts to collect.
 
+.. zuul:rolevar:: bazelisk_cache
+   :default: ""
+
+   Bazelisk arguments relating to cache.  Use this to enable a remote
+   or local disk cache.
+
 .. zuul:rolevar:: zuul_output_dir
    :default: {{ ansible_user_dir }}/zuul-output
 

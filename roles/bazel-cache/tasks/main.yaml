@@ -1,0 +1,30 @@
+- name: Install nginx
+  package:
+    name: nginx
+    state: present
+  become: true
+
+- name: Remove default nginx config
+  file:
+    path: /etc/nginx/sites-enabled/default
+    state: absent
+  become: true
+
+- name: Install nginx config
+  template:
+    dest: /etc/nginx/sites-enabled/bazel-cache
+    src: nginx-bazel-cache.conf.j2
+  become: true
+
+- name: Prepare bazel cache directories
+  file:
+    path: "{{ bazel_cache_server_root }}/{{ bazel_cache_uri }}"
+    state: directory
+    owner: www-data
+  become: true
+
+- name: Start nginx
+  service:
+    name: nginx
+    state: started
+  become: true
