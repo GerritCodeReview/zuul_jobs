@@ -1,0 +1,22 @@
+server {
+	listen 127.0.0.1:80 default_server;
+	index index.html;
+
+	server_name _;
+
+	root {{ bazel_cache_server_root }};
+
+	location / {
+		if ($request_method != PUT) {
+		  proxy_pass {{ bazel_cache_remote_url }};
+		}
+
+		# Allow PUT
+		dav_methods PUT;
+		# Allow nginx to create the /ac and /cas subdirectories.
+		create_full_put_path on;
+		# The maximum size of a single file.
+		client_max_body_size 1G;
+		allow all;
+	}
+}
