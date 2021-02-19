@@ -6,3 +6,18 @@
       - zip
       - unzip
     state: present
+
+- name: Install stretch-backports
+  when: "ansible_distribution_release == 'stretch'"
+  become: true
+  lineinfile:
+    path: /etc/apt/sources.list
+    line: "deb https://deb.debian.org/debian stretch-backports main"
+
+- command: apt-get update
+  when: "ansible_distribution_release == 'stretch'"
+  become: true
+
+- command: apt-get -y -t stretch-backports install git
+  when: "ansible_distribution_release == 'stretch'"
+  become: true

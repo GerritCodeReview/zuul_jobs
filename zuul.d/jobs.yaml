@@ -1,3 +1,14 @@
+# Quick reference chart for job hierarchy:
+#                         gerrit-setup      (this repo)
+#                             |
+#                         gerrit-base       (gerrit repo)
+#                             |
+#         +-------------------+-----------------+
+#         |                                     |
+# gerrit-build-base (this repo)      gerrit-plugin-build (this repo)
+#         |
+# gerrit-build      (gerrit repo)
+
 - job:
     name: gerrit-setup
     description: |
@@ -10,8 +21,16 @@
       that, see :zuul:job:`gerrit-base` which inherits from this and
       adds branch-appropriate required-projects.
     pre-run: playbooks/gerrit-setup/pre.yaml
+    post-run: playbooks/gerrit-setup/post.yaml
     required-projects:
       - gerrit
+    vars:
+      bazel_cache_container: bazel-cache-67e7ca4394f4
+      bazelisk_cache: "--remote_cache=https://gerrit-ci.gerritforge.com/cache"
+      zuul_copy_output:
+        /var/log/nginx/access.log: logs
+        /var/log/nginx/error.log: logs
+        /etc/nginx/sites-enabled/bazel-cache: logs
 
 - job:
     name: gerrit-build-base
@@ -34,12 +53,18 @@
 
          The bazelisk targets to test.
     run: playbooks/gerrit/build.yaml
-    timeout: 3600
+    timeout: 7200
+    nodeset:
+      nodes:
+        - name: testnode
+          label: debian-stretch-e2-standard-16
     vars:
       bazelisk_targets: ":release"
       bazelisk_artifacts:
         - bazel-bin/release.war
       zuul_work_dir: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/gerrit"
+      test_tag_filters: "--test_tag_filters=-flaky,-elastic,-git-protocol-v2"
+      bazelisk_test_targets: "--test_env=GERRIT_NOTEDB=ON {{test_tag_filters}} //..."
 
 - job:
     name: gerrit-plugin-build
