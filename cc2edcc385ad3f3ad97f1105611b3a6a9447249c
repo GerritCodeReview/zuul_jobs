@@ -1,12 +1,13 @@
 {
   "checks": {
     "zuul-check:zuul_jobs": {
-      "state": "SCHEDULED",
-      "message": "Change has been enqueued in check",
-      "url": "https://ci.gerritcodereview.com/t/gerrit/status/change/297362,1",
+      "state": "NOT_RELEVANT",
+      "message": "Project has no jobs configured",
+      "url": "https://ci.gerritcodereview.com/t/gerrit/buildset/8780844db46844539d3a3322967d3ccd",
       "started": "2021-02-19T15:28:16Z",
+      "finished": "2021-02-19T15:28:19Z",
       "created": "2021-02-19T15:28:17Z",
-      "updated": "2021-02-19T15:28:17Z"
+      "updated": "2021-02-19T15:28:19Z"
     }
   }
 }
