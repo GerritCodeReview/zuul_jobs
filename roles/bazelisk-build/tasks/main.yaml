@@ -2,7 +2,7 @@
   shell: |
     java -fullversion
     {{ bazelisk_executable }} version
-    {{ bazelisk_executable }} build --java_toolchain=//tools:error_prone_warnings_toolchain {{ bazelisk_targets }}
+    {{ bazelisk_executable }} build --java_toolchain=//tools:error_prone_warnings_toolchain {{ bazelisk_targets }} {{ bazelisk_cache }}
   args:
     executable: /bin/bash
     chdir: "{{ zuul_work_dir }}"
@@ -30,3 +30,13 @@
             url: "artifacts/{{ item | basename }}"
             metadata:
               type: java_jar
+- name: Return cache to Zuul
+  #when: false
+  zuul_return:
+    data:
+      zuul:
+        artifacts:
+          - name: "Cache"
+            url: "artifacts/cache.tgz"
+            metadata:
+              type: tar
