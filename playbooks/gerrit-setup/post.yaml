@@ -1,0 +1,4 @@
+- hosts: all
+  roles:
+    - role: stage-output
+      stage_dir: "{{ ansible_user_dir }}/zuul-output"
