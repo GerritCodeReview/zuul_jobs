@@ -1,0 +1,17 @@
+- name: Synchronize cache contents to executor
+  synchronize:
+    dest: "{{ zuul.executor.work_root }}/bazel-cache"
+    mode: pull
+    src: "{{ bazel_cache_server_root }}/{{ bazel_cache_container }}"
+    verify_host: true
+    owner: false
+    group: false
+
+- name: Upload to GCS
+  delegate_to: localhost
+  zuul_google_storage_upload:
+    container: "{{ bazel_cache_container }}"
+    credentials_file: "{{ bazel_cache_credentials_file }}"
+    project: "{{ bazel_cache_project }}"
+    root: "{{ zuul.executor.work_root }}/bazel-cache"
+  register: upload_results
