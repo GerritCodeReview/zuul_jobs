@@ -62,6 +62,7 @@
 - job:
     name: test-gerrit-build-master
     parent: gerrit-build
+    tag: relevant
     files:
       - roles/ensure-bazelisk/.*
       - roles/prepare-gerrit-repos/.*
