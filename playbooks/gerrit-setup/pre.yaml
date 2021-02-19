@@ -7,3 +7,4 @@
       node_version: 10
     - install-build-essential
     - prepare-gerrit-repos
+    - bazel-cache
