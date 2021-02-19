@@ -1,0 +1,9 @@
+- hosts: all
+  roles:
+    - role: stage-output
+      stage_dir: "{{ ansible_user_dir }}/zuul-output"
+  tasks:
+    - name: Conditionally update Bazel cache
+      when: zuul.post_review
+      include_role:
+        name: update-bazel-cache
