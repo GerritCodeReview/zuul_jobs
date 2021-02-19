@@ -1,3 +1,15 @@
+- name: Install stretch-backports
+  when: "ansible_distribution_release == 'stretch'"
+  become: true
+  lineinfile:
+    path: /etc/apt/sources.list
+    line: "deb https://deb.debian.org/debian {{ ansible_distribution_release }}-backports main"
+
+- command: apt-get update
+  become: true
+
+- command: cat /etc/apt/sources.list
+
 - name: Install essential build packages
   become: true
   package:
@@ -5,4 +17,8 @@
       - build-essential
       - zip
       - unzip
+      - git
     state: present
+
+- command: apt-get -y install git
+  become: true
