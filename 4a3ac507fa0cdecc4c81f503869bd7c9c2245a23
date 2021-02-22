@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1836da2_af1fa410",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 30
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010246
+      },
+      "writtenOn": "2021-02-22T14:22:34Z",
+      "side": 1,
+      "message": "This looks great!",
+      "revId": "4a3ac507fa0cdecc4c81f503869bd7c9c2245a23",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "11a1743b_fc95332a",
+        "filename": "roles/install-build-essential/tasks/main.yaml",
+        "patchSetId": 30
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1010246
+      },
+      "writtenOn": "2021-02-22T14:22:34Z",
+      "side": 1,
+      "message": "Maybe combine this with the next command to avoid ansible fork cost.",
+      "revId": "4a3ac507fa0cdecc4c81f503869bd7c9c2245a23",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
