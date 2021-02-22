@@ -20,6 +20,23 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "a08e36a7_f8b15012",
+        "filename": "roles/install-build-essential/tasks/main.yaml",
+        "patchSetId": 30
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1010246
+      },
+      "writtenOn": "2021-02-22T14:58:48Z",
+      "side": 1,
+      "message": "This whole section may not be needed if we skip git protocol v2 tests like luca suggested? Or - maybe since we have the ability to do this we just remove the -git-protocol-v2 from our tests?",
+      "revId": "4a3ac507fa0cdecc4c81f503869bd7c9c2245a23",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "11a1743b_fc95332a",
         "filename": "roles/install-build-essential/tasks/main.yaml",
         "patchSetId": 30
@@ -31,6 +48,29 @@
       "writtenOn": "2021-02-22T14:22:34Z",
       "side": 1,
       "message": "Maybe combine this with the next command to avoid ansible fork cost.",
+      "revId": "4a3ac507fa0cdecc4c81f503869bd7c9c2245a23",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b89ed449_596b06fd",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 30
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1010246
+      },
+      "writtenOn": "2021-02-22T14:58:48Z",
+      "side": 1,
+      "message": "Per luca, this should be:\n\n -flaky,-elastic,-git-protocol-v2",
+      "range": {
+        "startLine": 62,
+        "startChar": 44,
+        "endLine": 62,
+        "endChar": 74
+      },
       "revId": "4a3ac507fa0cdecc4c81f503869bd7c9c2245a23",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
