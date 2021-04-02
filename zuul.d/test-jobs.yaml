@@ -69,6 +69,16 @@
       - playbooks/gerrit/.*
 
 - job:
+    name: test-gerrit-build-stable-3.3
+    parent: test-gerrit-build-master
+    override-checkout: stable-3.3
+
+- job:
+    name: test-gerrit-build-stable-3.2
+    parent: test-gerrit-build-master
+    override-checkout: stable-3.2
+
+- job:
     name: test-gerrit-build-stable-3.1
     parent: test-gerrit-build-master
     override-checkout: stable-3.1
