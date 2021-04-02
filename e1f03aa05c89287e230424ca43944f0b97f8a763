@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b0410f01_85e79313",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2021-04-02T20:10:45Z",
+      "side": 1,
+      "message": "I had that change pending my working copy for a quite a while. The idea is a  plugin might have solely a master branch and would want to check whether it is compatible with a select set of stable branches.  The stable-3.2 and stable-3.3 did not get added when the branches got cut.",
+      "revId": "e1f03aa05c89287e230424ca43944f0b97f8a763",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
