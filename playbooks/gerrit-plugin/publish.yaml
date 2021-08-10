@@ -1,0 +1,105 @@
+- name: Update plugins.json
+  hosts: localhost
+  vars:
+    # This is a JMESpath query we use later, defined here to avoid
+    # quoting issues.
+    artifact_query: "artifacts[?metadata.type=='java_jar']"
+    # The path relative to the container root where the archive will
+    # be published.  We include the current build UUID so that we
+    # always get a unique path (so that the JSON file which contains
+    # the sha1sum is never out of sync with the archive).
+    relative_path: "{{ gerrit_plugin }}/{{ zuul.branch }}/{{ zuul.uuid }}/{{ gerrit_plugin }}.jar"
+  tasks:
+    # Zuul passes artifact data as zuul.artifacts; query that to find
+    # the one we're interested in.
+    - name: Find artifact metadata
+      set_fact:
+        this_artifact: "{{ (zuul | json_query(artifact_query))[0] }}"
+
+    # Make two empty directories for uploading later.
+    - name: Prepare JSON output directory
+      file:
+        state: directory
+        path: "{{ zuul.executor.work_root }}/plugins_json_upload"
+    - name: Prepare archive output directory
+      file:
+        state: directory
+        path: "{{ (zuul.executor.work_root+'/plugins_archive_upload/'+relative_path) | dirname }}"
+
+    # Download the plugin jar file from the log storage system and
+    # place it in our upload directory.  We will upload it from here
+    # shortly.
+    - name: Fetch plugin jar
+      get_url:
+        url: "{{ this_artifact.url }}"
+        dest: "{{ zuul.executor.work_root }}/plugins_archive_upload/{{ relative_path }}"
+        checksum: "sha1:{{ this_artifact.metadata.sha1 }}"
+
+    # Download the existing plugins.json file and store it in memory.
+    - name: Fetch plugins.json
+      uri:
+        url: https://storage.googleapis.com/gerrit_zuul_artifacts/plugins.json
+        return_content: true
+      register: plugin_info      
+
+    # We have a local copy of the plugin repo checked out, check to
+    # see if there is a package.json from which we can read the plugin
+    # description.
+    - name: Check for package.json
+      stat:
+        path: "{{ zuul.executor.work_root+'/'+zuul.project.src_dir+'/package.json' }}"
+      register: package_json_stat
+    - name: Load package.json
+      when: package_json_stat.stat.exists
+      set_fact:
+        package_json: "{{ lookup('file', zuul.executor.work_root+'/'+zuul.project.src_dir+'/package.json') | from_json }}"
+    - name: Set default package.json data
+      when: not package_json_stat.stat.exists
+      set_fact:
+        package_json: {}
+    - name: Set plugin description
+      set_fact:
+        plugin_description: "{{ package_json.description | default('') }}"
+
+    # We're going to update the section of plugins.json with our
+    # metadata; prepare that section here.
+    - name: Generate plugin version info
+      set_fact:
+        this_plugin_version_info:
+          sha1: '{{ this_artifact.metadata.sha1 }}'
+          url: 'https://storage.googleapis.com/gerrit_zuul_artifacts/{{ relative_path }}'
+          build_url: 'https://ci.gerritcodereview.com/t/gerrit/build/{{ zuul.uuid }}'
+    - name: Generate plugin info
+      set_fact:
+        my_plugin_info: "{{ {gerrit_plugin: {'description': plugin_description, 'branches': {zuul.branch: this_plugin_version_info}}} }}"
+
+    # Splice that section into the existing data (overwriting as
+    # necessary).
+    - name: Update plugin info
+      set_fact:
+        plugin_info: '{{ {} | combine(my_plugin_info) }}'
+
+    # Write the final plugins.json to our upload directory.
+    - name: Write updated plugin info
+      copy:
+        content: '{{ plugin_info | to_json }}'
+        dest: '{{ zuul.executor.work_root }}/plugins_json_upload/plugins.json'
+
+    # Upload the archive itself first.
+    - name: Upload plugin archive
+      include_role:
+        name: gcs-upload
+      vars:
+        gcs_upload_container: gerrit_zuul_artifacts
+        gcs_upload_project: gerritcodereview-ci
+        gcs_upload_root: '{{ zuul.executor.work_root }}/plugins_archive_upload'
+
+    # Finally upload the plugins.json file.
+    - name: Upload plugins.json
+      include_role:
+        name: gcs-upload
+      vars:
+        gcs_upload_container: gerrit_zuul_artifacts
+        gcs_upload_project: gerritcodereview-ci
+        gcs_upload_root: '{{ zuul.executor.work_root }}/plugins_json_upload'
+        gcs_upload_cache_control: 'public, max-age: 300'
