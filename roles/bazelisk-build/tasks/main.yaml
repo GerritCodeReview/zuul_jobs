@@ -20,13 +20,23 @@
   command: "cp {{ item }} {{ zuul_output_dir }}/artifacts"
   args:
     chdir: "{{ zuul_work_dir }}"
-- name: Return built artifacts to Zuul
+- name: Get sha1 of artifact
   loop: "{{ bazelisk_artifacts }}"
+  stat:
+    path: "{{ zuul_work_dir }}/{{ item }}"
+    checksum_algorithm: sha1
+    get_checksum: yes
+  register: stat
+- name: Return built artifacts to Zuul
+  with_together:
+    - "{{ bazelisk_artifacts }}"
+    - "{{ stat.results }}"
   zuul_return:
     data:
       zuul:
         artifacts:
           - name: "Build"
-            url: "artifacts/{{ item | basename }}"
+            url: "artifacts/{{ item.0 | basename }}"
             metadata:
               type: java_jar
+              sha1: "{{ item.1.stat.checksum }}"
