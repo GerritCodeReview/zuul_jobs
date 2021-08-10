@@ -65,10 +65,31 @@
          The bazelisk targets to test.  Defaults to
          "plugins/{{gerrit_plugin }}/..."
     run: playbooks/gerrit-plugin/build.yaml
-    vars:
+    vars: &plugin_build_vars
       gerrit_plugin: "{{ zuul.project.short_name }}"
       bazelisk_targets: "plugins/{{ gerrit_plugin }}:{{ gerrit_plugin }}"
       bazelisk_test_targets: "plugins/{{ gerrit_plugin }}/..."
       bazelisk_artifacts:
         - "bazel-bin/plugins/{{ gerrit_plugin }}/{{ gerrit_plugin }}.jar"
       zuul_work_dir: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/gerrit"
+
+# A mutex (default semaphore max is 1) so that only one job at a time
+# is updating the plugins.json file.
+- semaphore:
+    name: gerrit-plugins-json
+
+- job:
+    name: gerrit-plugin-publish
+    description: |
+      Publish a previously built Gerrit plugin
+
+      This downloads a previously built gerrit plugin archive from the
+      log storage system and uploads it to an artifact publishing site.
+
+      It is meant to run immediately after gerrit-plugin-build.  It is
+      a separate job so that it can use a mutex to obtain exclusive
+      write access to the plugins.json file.
+    run: playbooks/gerrit-plugin/publish.yaml
+    vars: *plugin_build_vars
+    post-review: true
+    semaphores: gerrit-plugins-json
