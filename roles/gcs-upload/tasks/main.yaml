@@ -1,0 +1,10 @@
+- name: Upload to GCS
+  delegate_to: localhost
+  gcs_upload:
+    container: "{{ gcs_upload_container }}"
+    credentials_file: "{{ gcs_upload_credentials_file }}"
+    project: "{{ gcs_upload_project }}"
+    root: "{{ gcs_upload_root }}"
+    prefix: "{{ gcs_upload_prefix }}"
+    cache_control: "{{ gcs_upload_cache_control }}"
+  register: gcs_upload_results

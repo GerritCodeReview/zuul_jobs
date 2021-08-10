@@ -1,0 +1,3 @@
+gcs_upload_credentials_file: /authdaemon/token
+gcs_upload_prefix: ''
+gcs_upload_cache_control: null
