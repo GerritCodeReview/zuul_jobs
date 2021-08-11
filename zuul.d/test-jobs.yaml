@@ -55,6 +55,7 @@
       gerrit_plugin: gitiles
     files:
       - roles/ensure-bazelisk/.*
+      - roles/bazelisk-build/.*
       - roles/prepare-gerrit-repos/.*
       - roles/copy-plugin-deps/.*
       - playbooks/gerrit-plugin/build.yaml
@@ -64,6 +65,7 @@
     parent: gerrit-build
     files:
       - roles/ensure-bazelisk/.*
+      - roles/bazelisk-build/.*
       - roles/prepare-gerrit-repos/.*
       - roles/copy-plugin-deps/.*
       - playbooks/gerrit/.*
