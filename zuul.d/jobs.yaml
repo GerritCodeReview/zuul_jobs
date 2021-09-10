@@ -72,3 +72,217 @@
       bazelisk_artifacts:
         - "bazel-bin/plugins/{{ gerrit_plugin }}/{{ gerrit_plugin }}.jar"
       zuul_work_dir: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/gerrit"
+
+# Add per-branch versions of plugin build/publish jobs in order to
+# support plugins which build against multiple versions of gerrit from
+# single branches.
+
+# master
+- job:
+    name: gerrit-plugin-build-master
+    parent: gerrit-plugin-build
+    description: |
+      Builds a plugin against the master branch of Gerrit regardless
+      of this change's target branch.
+    required-projects:
+      - name: gerrit
+        override-checkout: master
+
+- job:
+    name: gerrit-plugin-publish-master
+    parent: gerrit-plugin-publish
+
+- project-template:
+    name: non-core-plugin-master
+    description: |
+      Build the plugin in check, and also build and publish it after
+      every merged commit.
+    check:
+      jobs:
+        - gerrit-plugin-build-master
+    post:
+      jobs:
+        - gerrit-plugin-build-master
+        - gerrit-plugin-publish-master:
+            dependencies:
+              - gerrit-plugin-build-master
+
+# stable-3.4
+- job:
+    name: gerrit-plugin-build-stable-3.4
+    parent: gerrit-plugin-build
+    description: |
+      Builds a plugin against the stable-3.4 branch of Gerrit regardless
+      of this change's target branch.
+    required-projects:
+      - name: gerrit
+        override-checkout: stable-3.4
+
+- job:
+    name: gerrit-plugin-publish-stable-3.4
+    parent: gerrit-plugin-publish
+
+- project-template:
+    name: non-core-plugin-stable-3.4
+    description: |
+      Build the plugin in check, and also build and publish it after
+      every merged commit.
+    check:
+      jobs:
+        - gerrit-plugin-build-stable-3.4
+    post:
+      jobs:
+        - gerrit-plugin-build-stable-3.4
+        - gerrit-plugin-publish-stable-3.4:
+            dependencies:
+              - gerrit-plugin-build-stable-3.4
+
+# stable-3.3
+- job:
+    name: gerrit-plugin-build-stable-3.3
+    parent: gerrit-plugin-build
+    description: |
+      Builds a plugin against the stable-3.3 branch of Gerrit regardless
+      of this change's target branch.
+    required-projects:
+      - name: gerrit
+        override-checkout: stable-3.3
+
+- job:
+    name: gerrit-plugin-publish-stable-3.3
+    parent: gerrit-plugin-publish
+
+- project-template:
+    name: non-core-plugin-stable-3.3
+    description: |
+      Build the plugin in check, and also build and publish it after
+      every merged commit.
+    check:
+      jobs:
+        - gerrit-plugin-build-stable-3.3
+    post:
+      jobs:
+        - gerrit-plugin-build-stable-3.3
+        - gerrit-plugin-publish-stable-3.3:
+            dependencies:
+              - gerrit-plugin-build-stable-3.3
+
+# stable-3.2
+- job:
+    name: gerrit-plugin-build-stable-3.2
+    parent: gerrit-plugin-build
+    description: |
+      Builds a plugin against the stable-3.2 branch of Gerrit regardless
+      of this change's target branch.
+    required-projects:
+      - name: gerrit
+        override-checkout: stable-3.2
+
+- job:
+    name: gerrit-plugin-publish-stable-3.2
+    parent: gerrit-plugin-publish
+
+- project-template:
+    name: non-core-plugin-stable-3.2
+    description: |
+      Build the plugin in check, and also build and publish it after
+      every merged commit.
+    check:
+      jobs:
+        - gerrit-plugin-build-stable-3.2
+    post:
+      jobs:
+        - gerrit-plugin-build-stable-3.2
+        - gerrit-plugin-publish-stable-3.2:
+            dependencies:
+              - gerrit-plugin-build-stable-3.2
+
+# stable-2.16
+- job:
+    name: gerrit-plugin-build-stable-2.16
+    parent: gerrit-plugin-build
+    description: |
+      Builds a plugin against the stable-2.16 branch of Gerrit regardless
+      of this change's target branch.
+    required-projects:
+      - name: gerrit
+        override-checkout: stable-2.16
+
+- job:
+    name: gerrit-plugin-publish-stable-2.16
+    parent: gerrit-plugin-publish
+
+- project-template:
+    name: non-core-plugin-stable-2.16
+    description: |
+      Build the plugin in check, and also build and publish it after
+      every merged commit.
+    check:
+      jobs:
+        - gerrit-plugin-build-stable-2.16
+    post:
+      jobs:
+        - gerrit-plugin-build-stable-2.16
+        - gerrit-plugin-publish-stable-2.16:
+            dependencies:
+              - gerrit-plugin-build-stable-2.16
+
+# stable-2.15
+- job:
+    name: gerrit-plugin-build-stable-2.15
+    parent: gerrit-plugin-build
+    description: |
+      Builds a plugin against the stable-2.15 branch of Gerrit regardless
+      of this change's target branch.
+    required-projects:
+      - name: gerrit
+        override-checkout: stable-2.15
+
+- job:
+    name: gerrit-plugin-publish-stable-2.15
+    parent: gerrit-plugin-publish
+
+- project-template:
+    name: non-core-plugin-stable-2.15
+    description: |
+      Build the plugin in check, and also build and publish it after
+      every merged commit.
+    check:
+      jobs:
+        - gerrit-plugin-build-stable-2.15
+    post:
+      jobs:
+        - gerrit-plugin-build-stable-2.15
+        - gerrit-plugin-publish-stable-2.15:
+            dependencies:
+              - gerrit-plugin-build-stable-2.15
+
+# stable-2.14
+- job:
+    name: gerrit-plugin-build-stable-2.14
+    parent: gerrit-plugin-build
+    description: |
+      Builds a plugin against the stable-2.14 branch of Gerrit regardless
+      of this change's target branch.
+    required-projects:
+      - name: gerrit
+        override-checkout: stable-2.14
+
+- job:
+    name: gerrit-plugin-publish-stable-2.14
+    parent: gerrit-plugin-publish
+
+- project-template:
+    name: non-core-plugin-stable-2.14
+    description: |
+      Build the plugin in check, and also build and publish it after
+      every merged commit.
+    check:
+      jobs:
+        - gerrit-plugin-build-stable-2.14
+    post:
+      jobs:
+        - gerrit-plugin-build-stable-2.14
+        - gerrit-plugin-publish-stable-2.14:
+            dependencies:
+              - gerrit-plugin-build-stable-2.14
