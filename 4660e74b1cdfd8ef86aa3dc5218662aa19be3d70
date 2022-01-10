@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0534db96_1a1c332e",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2022-01-10T09:42:21Z",
+      "side": 0,
+      "message": "I believe this was introduced (@James correct me if I am wrong) it was for validating incoming changes against Java 8 as well, even if the default toolchain was on Java 11 (e.g. stable-3.2, stable-3.3 and stable-3.4).\n\nShould we have instead two validation jobs and two different checks?\n- Java 8 checker\n- Java 11 checker\n\nThen, the Java 8 checker will only be configured for stable-3.2, stable-3.3 and stable-3.4.\n\nWDYT?",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 91
+      },
+      "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
