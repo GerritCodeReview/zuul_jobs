@@ -46,6 +46,30 @@
       },
       "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5bfdfef_f4041740",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2022-01-10T10:38:26Z",
+      "side": 0,
+      "message": "\u003e \u003e even if the default toolchain was on Java 11 [...]\n\u003e \n\u003e The default java_toolchain already provide you exactly what you want. See the commit message:\n\u003e \n\u003e   Java toolchain is specified in .bazelrc file in gerrit workspace and\n\u003e   thus shouldn\u0027t be specified explicitly.\n\nI know, let me re-express myself more clearly: the extra option was done *explicitly* for overriding the default Java toolchain defined in .bazelrc: we wanted to make sure that changes are *still* validated against Java 8 even though the default toolchain was on Java 11.\n\nThat is the reason why I believe the best strategy would be to have two separate checkers:\n\n- Java 11 (the default java tool chain)\n- Java 8 (the overridden tool chain)\n\nThe job associated with the Java 8 checker should then keep the overridden java toolchain.\n\nHope that explains what I meant.",
+      "parentUuid": "c7cc643c_cc25ac44",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 91
+      },
+      "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
