@@ -70,6 +70,30 @@
       },
       "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8d68849a_d54be0ba",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2022-01-10T11:13:40Z",
+      "side": 0,
+      "message": "\u003e I know, let me re-express myself more clearly: the extra option was done *explicitly* for overriding the default Java toolchain defined in .bazelrc: we wanted to make sure that changes are *still* validated against Java 8 even though the default toolchain was on Java 11.\n\nIt was the case *before* we announced the switch to Java 11.\n\nToday, what regression would you like to catch and on what branch? This is the current situation what happens, when you invoke bazel (without any option):\n\n  $ bazel build release\n\n* stable-3.0: default java toolchain: Java 8\n* stable-3.1: default java toolchain: Java 8\n* stable-3.2: default java toolchain: Java 8\n* stable-3.3: default java toolchain: Java 8\n* stable-3.4: default java toolchain: Java 8\n* stable-3.5: default java toolchain: Java 11, the code can still be built with Java 8\n* master: default java toolchain: Java 11, the code cannot be built with Java 8 anymore\n\nSo your above comment would be only applicable for stable-3.5 only.\n\nHowever, you have suggested: [1] to move change 327478, that clarified Java 8 compatibility is completely removed from master to stable-3.5.\n\nAlso see this announcement: [2] with title:\n\n  [ANNOUNCE] Gerrit to drop support for Java 8 on master\n\nfrom 09.09.2021, 02:14:29, quoting:\n\n  [...]\n  The direct consequence is that Java 8 source-code compatibility cannot be \n  guaranteed anymore on master.\n  Gerrit v3.5.0 will be effectively compatible with Java 11 only.\n  We are also preparing the Gerrit v3.5.0 release notes at [3],\n  where the compatibility with Java 8 is effectively removed,\n  both at the source and binary level.\n  \nShould we revoke the above announcement and re-claim the compatibility of stable-3.5 with Java 8? Also this change is only about Zuul-CI and plugin builds. Where is the Gerrit core CI job that verifies stable-3.5 branch is still compatible with Java 8? If we don\u0027t have/need such a job for gerrit core, why would we need this check on Zuul-CI for gerrit plugins?\n\n[1] https://gerrit-review.googlesource.com/c/gerrit/+/327478/2#message-92a39d9dd86aa5983a30ea91b37cc17c59f694f7\n[2] https://groups.google.com/g/repo-discuss/c/eFL2sDy45Gc/m/a9yY_OAcBgAJ",
+      "parentUuid": "c5bfdfef_f4041740",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 91
+      },
+      "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
