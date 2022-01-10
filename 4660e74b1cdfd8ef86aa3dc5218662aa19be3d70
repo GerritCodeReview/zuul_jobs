@@ -94,6 +94,30 @@
       },
       "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53ca789a_f7ce8910",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2022-01-10T11:23:33Z",
+      "side": 0,
+      "message": "To add to my above comment: you said, in your comment on change 327478, quoting:\n\n  MAY means that it *can* be compatible but you should not rely on it because \n  things are likely to change. I could just push a change now on stable-3.5, which \n  is validated and built against Java 11, and once is merged, I can change the MAY \n  to IS.\n\nI just cherry-picked change 327777 that is Java 8 incompatible change to stable-3.5 branch. Once it is merged, the situation would be:\n\n* stable-3.5: default java toolchain: Java 11, the code cannot be built with Java 8 anymore\n* master: default java toolchain: Java 11, the code cannot be built with Java 8 anymore",
+      "parentUuid": "8d68849a_d54be0ba",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 91
+      },
+      "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
