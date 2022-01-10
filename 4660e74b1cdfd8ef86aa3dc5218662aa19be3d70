@@ -118,6 +118,30 @@
       },
       "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66ec067d_a2b73df2",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2022-01-10T23:21:41Z",
+      "side": 0,
+      "message": "I am fine with stable-3.5 and master, no issues with that.\n\nMy concern is stable-3.3 and stable-3.4: how do we validate that they\u0027ll be able to validated against Java 8 and Java 11 with Zuul? (we release Gerrit v3.3.* and v3.4.* on Java 11 but the code needs to be compatible with both Java 8 and Java 11)",
+      "parentUuid": "53ca789a_f7ce8910",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 91
+      },
+      "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
