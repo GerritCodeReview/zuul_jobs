@@ -238,6 +238,30 @@
       },
       "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0de36ac_872ba6c7",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2022-01-11T22:40:32Z",
+      "side": 0,
+      "message": "BTW, I just realized, it\u0027s not enough to choose the right java toolchain. The JAVA_HOME should also point to the right java version.\n\nIf you have have a mismatch:\n\n  $ echo $JAVA_HOME\n  /usr/lib64/jvm/java-11-openjdk\n\nAnd with this Java 8 incompatible change:\n\n  diff --git a/java/Main.java b/java/Main.java\nindex 11d8234c60..0e75b7c687 100644\n--- a/java/Main.java\n+++ b/java/Main.java\n@@ -12,6 +12,8 @@\n // See the License for the specific language governing permissions and\n // limitations under the License.\n \n+import java.util.List;\n+\n public final class Main {\n   private static final String FLOGGER_BACKEND_PROPERTY \u003d \"flogger.backend_factory\";\n   private static final String FLOGGER_LOGGING_CONTEXT \u003d \"flogger.logging_context\";\n@@ -23,6 +25,7 @@ public final class Main {\n   //\n \n   public static void main(String[] argv) throws Exception {\n+    List\u003cString\u003e notUsed \u003d List.of();\n\n\nyou would still produce broken release.war final artifact:\n\n  $ JAVA_HOME\u003d/usr/lib64/jvm/java-11-openjdk \\\n    bazelisk build --java_toolchain\u003d//tools:error_prone_warnings_toolchain headless\n  INFO: Invocation ID: 0d9cdadb-882d-4229-b660-db38a1eb47da\n  INFO: Analyzed target //:headless (177 packages loaded, 2752 targets configured).\n  INFO: Found 1 target...\n  Target //:headless up-to-date:\n    bazel-bin/headless.war\n  INFO: Elapsed time: 34.302s, Critical Path: 15.83s\n  INFO: 19 processes: 13 remote cache hit, 5 internal, 1 linux-sandbox.\n  INFO: Build completed successfully, 19 total actions\n\nNow, try to run it on Java 8:\n\n  $ java -fullverssion\n  openjdk full version \"1.8.0_312-b07\"\n\nbroken:\n\n  $ java -jar bazel-bin/headless.war\n  Exception in thread \"main\" java.lang.NoSuchMethodError: \n  java.util.List.of()Ljava/util/List;\n  at Main.main(Main.java:28)",
+      "parentUuid": "a04217f9_67da98a2",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 91
+      },
+      "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
