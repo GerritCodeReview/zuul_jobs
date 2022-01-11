@@ -214,6 +214,30 @@
       },
       "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a04217f9_67da98a2",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2022-01-11T21:58:16Z",
+      "side": 0,
+      "message": "\u003e Rather a theoretical case, that we don\u0027t need to care about? Especially not on very stable branches stable-3.3 and stable-3.4 where we do not accept big changes, but only severe security vulnerabilities and critical regressions. \n\nOn stable branches we are generally available to fix any bug, not just security and critical fixes (see [3]). However, I do agree that *IF* we do not need to keep that complexity anymore, I\u0027d just drop Java 8 altogether on stable-3.3/3.4 as we officially release only on Java 11.\n\nI\u0027ve added a discussion point to the next ESC (which is tomorrow) on this.\n\n[3] https://www.gerritcodereview.com/support.html",
+      "parentUuid": "b5b610b8_47339513",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 91
+      },
+      "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
