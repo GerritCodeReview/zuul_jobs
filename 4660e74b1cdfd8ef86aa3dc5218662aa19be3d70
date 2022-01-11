@@ -190,6 +190,30 @@
       },
       "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b5b610b8_47339513",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2022-01-11T21:24:13Z",
+      "side": 0,
+      "message": "\u003e Things are a bit more complicated though, because you could have a change that is compatible with Java 8 but NOT with Java 11, causing the merging of changes that would break the main build.\n\nRather a theoretical case, that we don\u0027t need to care about? Especially not on very stable branches stable-3.3 and stable-3.4 where we do not accept big changes, but only severe security vulnerabilities and critical regressions. And even if you would manage to conduct Java 8 compatible but NOT Java 11 compatible change (show me how?!) we would catch that immediately, as you would merge that change up to master, that is built with Java 11 anyway (or during release build from stable-3.3 branch with Java 11).\n\nI uploaded change 327911 to guarantee Java 8 compatibility on stable-3.3 and stable-3.4 branches (and this change should be reverted starting from stable-3.5 branch).\n\nThat way, we can simplify the Zuul and GerritForge CI. To continue to publish official Gerrit images built with Java 11 byte code we would have to pass java 11 toolchain during release build (we would update the documentation for release manager).",
+      "parentUuid": "640b301a_06c33219",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 91
+      },
+      "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
