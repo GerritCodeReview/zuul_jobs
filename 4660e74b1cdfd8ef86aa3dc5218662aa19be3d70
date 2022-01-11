@@ -166,6 +166,30 @@
       },
       "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "640b301a_06c33219",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2022-01-11T13:31:40Z",
+      "side": 0,
+      "message": "\u003e Alternatively, we could revert overriding toolchain to java11 on stable-3.3 and\n\u003e stable-3.4 branches in .bazelrc and build with Java 8 per default there.\n\u003e That way we should be save. \n\nThings are a bit more complicated though, because you could have a change that is compatible with Java 8 but NOT with Java 11, causing the merging of changes that would break the main build.\n\nI don\u0027t believe it is just a problem of stable-3.3 and stable-3.4, we\u0027ll have the same problem with master as we are getting ready to support also Java 17 on master.\n\nGoogle is on Java 11 anyway on master, the only one I recall needed to have the source code buildable with Java 8 on stable-3.3/3.4 was SAP. Possibly they\u0027ve upgraded now to Java 11?\n\n@Matthias would you be OK in switching off compatibility with Java 8 on stable-3.3/3.4?",
+      "parentUuid": "ddb21acc_44bf06f2",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 91
+      },
+      "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
