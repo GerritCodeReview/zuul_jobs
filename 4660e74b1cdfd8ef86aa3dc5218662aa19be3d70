@@ -142,6 +142,30 @@
       },
       "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ddb21acc_44bf06f2",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2022-01-11T11:10:42Z",
+      "side": 0,
+      "message": "I missed that default java toolchain is java 11 on stable-3.3 and stable-3.4 branches.\n\nBut what\u0027s the point to complicate the CI, if officially released images for 3.3 and 3.4 release lines can only be run with Java 11 anyway?\n\n  $ java -fullversion\n  openjdk full version \"1.8.0_312-b07\"\n  \n  $ wget https://repo1.maven.org/maven2/com/google/gerrit/gerrit-war/3.3.9/gerrit-war-3.3.9.war\n\n  $ java -jar gerrit-war-3.3.9.war version\n  Error: A JNI error has occurred, please check your installation and try again\n  Exception in thread \"main\" java.lang.UnsupportedClassVersionError:\n  Main has been compiled by a more recent version of the Java Runtime (class file \n  version 55.0), \n  this version of the Java Runtime only recognizes class file versions up to 52.0\n\nAlternatively, we could revert overriding toolchain to java11 on stable-3.3 and stable-3.4 branches in .bazelrc and build with Java 8 per default there. That way we should be save. \n\nMy change 264535 wasn\u0027t intended to be active on branches, where Java 8 compatibility has to be provided. Best way to provide Java 8 compatibility is to build with Java 8 per default.",
+      "parentUuid": "66ec067d_a2b73df2",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 91
+      },
+      "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
