@@ -1,0 +1,6 @@
+- name: Preparatory steps for gitiles build job
+  hosts: all
+  roles:
+    - ensure-bazelisk
+    - ensure-java
+    - install-build-essential
