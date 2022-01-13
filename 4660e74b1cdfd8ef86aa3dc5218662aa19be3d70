@@ -310,6 +310,30 @@
       },
       "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a88bfdc_8bb657f6",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2022-01-13T07:54:10Z",
+      "side": 0,
+      "message": "\u003e Do you mean Java 11 compatibility?\n\nMatthias just answered Luca\u0027s question:\n\n\u003e \u003e @Matthias would you be OK in switching off compatibility with Java 8 on stable-3.3/3.4?\n\nRegarding your statement:\n\n\u003e Java 8 is officially supported on 3.3/3.4 still.\n\nCorrect. However, per default, official images published on Maven Central and Cocker images are built with Java 11. Moreover. if you run these commands on stable-3.3 and stable-3.4:\n\n  $ bazel build :release\n\nand\n\n  $ bazel test //...\n\nThis produces Java major byte code version 55 (Java 11) and the tests are running against Java 11.\n\nSee change 327911 where I changed the default in .bazelrc to Java 8 toolchain on stable-3.3 and stable-3.4 branches, quoting from the commit message:\n\n  before change 327911 is submitted, the situation is:\n\n  stable-3.3: default toolchain: Java 11, guaranteed compatibility: Java 8\n  stable-3.4: default toolchain: Java 11, guaranteed compatibility: Java 8\n  from stable-3.5: default toolchain/guaranteed compatibility: Java 11\n\n  after change 327911 is submitted, merged to stable-3.4 branch and reverted\n  started from stable-3.5 branch, the situation is:\n\n  stable-3.3: default toolchain/guaranteed compatibility: Java 8\n  stable-3.4: default toolchain/guaranteed compatibility: Java 8\n  from stable-3.5: default toolchain/guaranteed compatibility: Java 11",
+      "parentUuid": "2157327d_4fc8db31",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 91
+      },
+      "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
