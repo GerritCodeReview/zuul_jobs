@@ -1,0 +1,11 @@
+- name: Preparatory steps for gitiles build job
+  hosts: all
+  roles:
+    - ensure-bazelisk
+    - ensure-java
+    - install-build-essential
+  tasks:
+    - name: Update submodules
+      command: "git submodule update --init"
+      args:
+        chdir: "{{ zuul_work_dir }}"
