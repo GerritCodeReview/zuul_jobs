@@ -94,3 +94,9 @@
     name: test-gerrit-build-stable-2.16
     parent: test-gerrit-build-master
     override-checkout: stable-2.16
+
+- job:
+    name: test-gitiles-build-master
+    parent: gitiles-build
+    files:
+      - playbooks/gitiles/.*
