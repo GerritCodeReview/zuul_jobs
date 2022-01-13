@@ -77,3 +77,9 @@
     name: test-gerrit-build-stable-3.3
     parent: test-gerrit-build-master
     override-checkout: stable-3.3
+
+- job:
+    name: test-gitiles-build-master
+    parent: gitiles-build
+    files:
+      - playbooks/gitiles/.*
