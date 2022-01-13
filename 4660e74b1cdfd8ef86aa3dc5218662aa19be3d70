@@ -286,6 +286,30 @@
       },
       "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2157327d_4fc8db31",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2022-01-13T04:28:31Z",
+      "side": 0,
+      "message": "\u003e we are OK to switch off compatibility with Java 8 on stable-3.3/3.4\n\nDo you mean Java 11 compatibility? Java 8 is officially supported on 3.3/3.4 still.",
+      "parentUuid": "dd932fd1_158d2209",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 91
+      },
+      "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
