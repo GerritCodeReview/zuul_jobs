@@ -9,3 +9,4 @@
         - test-gerrit-build-stable-3.5
         - test-gerrit-build-stable-3.4
         - test-gerrit-build-stable-3.3
+        - test-gitiles-build-master

@@ -72,3 +72,31 @@
       bazelisk_artifacts:
         - "bazel-bin/plugins/{{ gerrit_plugin }}/{{ gerrit_plugin }}.jar"
       zuul_work_dir: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/gerrit"
+
+- job:
+    name: gitiles-build
+    description: |
+      Builds gitiles
+
+      This job builds gitiles server.
+
+      Responds to these variables:
+
+      .. zuul:jobvar:: baselisk_targets
+
+         The bazelisk targets to build.  Defaults to ":all".
+
+      .. zuul:jobvar:: baselisk_test_targets
+
+         The bazelisk targets to test.
+    required-projects:
+      - gitiles
+      - jgit
+    pre-run: playbooks/gitiles/pre-build.yaml
+    run: playbooks/gitiles/gitiles-build.yaml
+    vars:
+      bazelisk_targets: ":all"
+      bazelisk_test_targets: "//..."
+      bazelisk_artifacts:
+        - "bazel-bin/gitiles.war"
+      zuul_work_dir: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/gitiles"
