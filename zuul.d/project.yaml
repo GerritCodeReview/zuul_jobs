@@ -1,11 +1,4 @@
 - project:
     check:
       jobs:
-        - test-ensure-bazelisk
-        - test-gerrit-setup
-        - test-install-build-essential
-        - test-gerrit-plugin-build
-        - test-gerrit-build-master
-        - test-gerrit-build-stable-3.5
-        - test-gerrit-build-stable-3.4
-        - test-gerrit-build-stable-3.3
+        - test-gitiles-build-master
