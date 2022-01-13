@@ -1,0 +1,5 @@
+- name: Build gitiles
+  hosts: all
+  roles:
+    - role: bazelisk-build
+      bazelisk_targets: ":all"
