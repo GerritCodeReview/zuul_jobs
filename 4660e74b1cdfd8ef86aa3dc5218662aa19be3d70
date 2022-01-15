@@ -334,6 +334,30 @@
       },
       "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65288b09_7a183649",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2022-01-15T11:25:26Z",
+      "side": 0,
+      "message": "I\u0027ll publish a Survey for the community on Monday, so that we\u0027ll get feedback if anyone really know the Java 8 source-code compatibility anymore. That was done for SAP and Google at that time, but I don\u0027t believe that anyone else used it.",
+      "parentUuid": "7a88bfdc_8bb657f6",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 91
+      },
+      "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
