@@ -358,6 +358,30 @@
       },
       "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19f394db_921b4ae0",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2022-01-27T15:37:47Z",
+      "side": 0,
+      "message": "@Luca, sounds like you\u0027re looking for this change and Change Iea5283af to support building/testing twice on 3.3/3.4 (once for java8 and again for java11)?\n\nThat seems like the appropriate thing to do since we know not everything that works on 8 would always work on 11. @davido, do you have concerns with that?\n\nSince this won\u0027t be the last java update we do, it would be good to outline the process in a doc for future reference. We don\u0027t have to do that now, but if the commit messages can include sufficient reasoning for the changes, it will make it easier to do later.",
+      "parentUuid": "65288b09_7a183649",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 91
+      },
+      "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
