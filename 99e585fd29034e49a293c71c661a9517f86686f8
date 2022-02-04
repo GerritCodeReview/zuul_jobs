@@ -16,6 +16,23 @@
       "message": "Update: Bazel version was bumped yesterday to 5.0 in change 291864. Bazel 5.0 deprecates and ignores --toolchain_* option and hence the plugin build is green again on master, even without that change, see for example change 329839.\n\nI updated the commit message to reflect that.",
       "revId": "99e585fd29034e49a293c71c661a9517f86686f8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "77404b78_68a1ed48",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2022-02-04T07:22:31Z",
+      "side": 1,
+      "message": "Why the verification of this change is failing?\n\nI see these logs:\n\n* test-gerrit-build-master 14 mins 23 secs SUCCESS\n* test-gerrit-build-stable-2.16 13 mins 42 secs SUCCESS\n* test-gerrit-build-stable-3.0 11 mins 41 secs SUCCESS\n* test-gerrit-build-stable-3.1 7 mins 2 secs FAILURE\n* test-gerrit-build-stable-3.2 8 mins 32 secs FAILURE\n* test-gerrit-build-stable-3.3 7 mins 38 secs FAILURE\n\nWe should remove stale branches and add the recent ones: stable-3.4 and stable-3.5.",
+      "revId": "99e585fd29034e49a293c71c661a9517f86686f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
