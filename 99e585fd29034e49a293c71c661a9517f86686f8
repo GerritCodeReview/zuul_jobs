@@ -33,6 +33,24 @@
       "message": "Why the verification of this change is failing?\n\nI see these logs:\n\n* test-gerrit-build-master 14 mins 23 secs SUCCESS\n* test-gerrit-build-stable-2.16 13 mins 42 secs SUCCESS\n* test-gerrit-build-stable-3.0 11 mins 41 secs SUCCESS\n* test-gerrit-build-stable-3.1 7 mins 2 secs FAILURE\n* test-gerrit-build-stable-3.2 8 mins 32 secs FAILURE\n* test-gerrit-build-stable-3.3 7 mins 38 secs FAILURE\n\nWe should remove stale branches and add the recent ones: stable-3.4 and stable-3.5.",
       "revId": "99e585fd29034e49a293c71c661a9517f86686f8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cf5ad63d_f82ab254",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2022-02-04T10:19:28Z",
+      "side": 1,
+      "message": "Why do we need to remove the stable branches? We just need to avoid building with Zuul on them, by just filtering them out in the checkers definition, isn\u0027t it?",
+      "parentUuid": "77404b78_68a1ed48",
+      "revId": "99e585fd29034e49a293c71c661a9517f86686f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
