@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "567399b1_3eb0f69d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2022-02-04T07:13:49Z",
+      "side": 1,
+      "message": "Update: Bazel version was bumped yesterday to 5.0 in change 291864. Bazel 5.0 deprecates and ignores --toolchain_* option and hence the plugin build is green again on master, even without that change, see for example change 329839.\n\nI updated the commit message to reflect that.",
+      "revId": "99e585fd29034e49a293c71c661a9517f86686f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
