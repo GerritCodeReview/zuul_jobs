@@ -51,6 +51,24 @@
       "parentUuid": "77404b78_68a1ed48",
       "revId": "99e585fd29034e49a293c71c661a9517f86686f8",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d3b96b3_ecf44b9a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2022-02-04T11:20:32Z",
+      "side": 1,
+      "message": "This has nothing to do with checker definition. It\u0027s building everything: [1], but this project has only master branch: [2].\n\n[1] https://imgur.com/a/VfM4Nbp\n[2] https://imgur.com/a/zWWLKSi",
+      "parentUuid": "cf5ad63d_f82ab254",
+      "revId": "99e585fd29034e49a293c71c661a9517f86686f8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
