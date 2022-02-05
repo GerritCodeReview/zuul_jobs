@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bb30e828_398e4a13",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2022-02-05T13:55:13Z",
+      "side": 1,
+      "message": "The reason why the verification tests on stable-3.3 and stable-3.4 are failing:\n\nZuul pipeline is using discontinued Python 3.5 release. I filed issue 15667 and uploaded change 329899 to stable-3.3 branch as workaround, that appears to work on both Python 3.5 and Python 3.10 releases.\n\nNevertheless, we should update the build pipeline used by Zuul ASAP.",
+      "revId": "35615825e711231c48537f846a07697cf24ec19f",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
