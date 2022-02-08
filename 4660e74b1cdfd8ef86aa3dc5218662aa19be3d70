@@ -382,6 +382,30 @@
       },
       "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9d843558_abad0866",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2022-02-08T06:01:24Z",
+      "side": 0,
+      "message": "Conclusion from this discussion:\n\nWe stop passing --java_toolchain option in Zuul pipeline (that doesn\u0027t work starting from master anyway, where Bazel was bumped to 5.0.0).\n\nMarking this as resolved.",
+      "parentUuid": "19f394db_921b4ae0",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 91
+      },
+      "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
