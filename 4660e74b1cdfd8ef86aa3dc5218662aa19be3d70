@@ -406,6 +406,30 @@
       },
       "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a2561b66_9aae4550",
+        "filename": "roles/bazelisk-build/tasks/main.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2022-02-09T05:10:20Z",
+      "side": 0,
+      "message": "@davido I thought Luca was expecting validation for both java 8 and 11? Just removing --java_toolchain won\u0027t do that, will it?\n\nThat said, I think we can do that in a follow-up change and this one can just \"fix\" the current state. Based on that, I\u0027ll +2.",
+      "parentUuid": "9d843558_abad0866",
+      "range": {
+        "startLine": 5,
+        "startChar": 36,
+        "endLine": 5,
+        "endChar": 91
+      },
+      "revId": "4660e74b1cdfd8ef86aa3dc5218662aa19be3d70",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
