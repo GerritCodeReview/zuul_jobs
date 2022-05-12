@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f603dc36_0e0f3cad",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 8
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2022-05-12T16:40:13Z",
+      "side": 1,
+      "message": "Add this to vars:\n```\n  gerrit_project_name: gerrit.googlesource.com/gitiles\n  gerrit_project_mapping:\n    gitiles: \u0027\u0027\n    jgit: modules/jgit\n    \u0027zuul/jobs\u0027: \u0027\u0027\n```",
+      "range": {
+        "startLine": 102,
+        "startChar": 6,
+        "endLine": 102,
+        "endChar": 19
+      },
+      "revId": "aa248e31bca4dc0c8da49ef1ba8ca4c3d3b6c777",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
