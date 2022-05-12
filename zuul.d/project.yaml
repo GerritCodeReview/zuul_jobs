@@ -2,7 +2,6 @@
     check:
       jobs:
         - test-ensure-bazelisk
-        - test-ensure-java
         - test-gerrit-setup
         - test-install-build-essential
         - test-gerrit-plugin-build

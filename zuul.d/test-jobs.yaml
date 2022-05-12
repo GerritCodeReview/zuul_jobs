@@ -8,13 +8,6 @@
       - playbooks/test-ensure-bazelisk.yaml
 
 - job:
-    name: test-ensure-java
-    run: playbooks/test-ensure-java.yaml
-    files:
-      - roles/ensure-java/.*
-      - playbooks/test-ensure-java.yaml
-
-- job:
     name: test-install-build-essential
     run: playbooks/test-install-build-essential.yaml
     files:
