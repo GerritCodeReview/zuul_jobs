@@ -1,5 +1,0 @@
-- name: Install JDK
-  become: true
-  package:
-    name: openjdk-{{ java_version }}-jdk
-    state: present
