@@ -16,6 +16,24 @@
       "message": "Add this to check out the gitiles repo:\n```\n    required-projects:\n      - gitiles\n```",
       "revId": "2aa72fc0ec3b484b7170ac6e4ca9eb1a8771fa95",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d2c98f87_db4d2b9a",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 6
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2022-05-12T16:26:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d7601a9c_154c02e5",
+      "revId": "2aa72fc0ec3b484b7170ac6e4ca9eb1a8771fa95",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
