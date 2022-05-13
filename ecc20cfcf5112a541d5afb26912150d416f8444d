@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5927255b_de089e74",
+        "filename": "roles/prepare-gerrit-repos/vars/main.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2022-05-13T04:40:05Z",
+      "side": 0,
+      "message": "This fix should be done in its own change.",
+      "revId": "ecc20cfcf5112a541d5afb26912150d416f8444d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb633252_b6a4a43b",
+        "filename": "zuul.d/project.yaml",
+        "patchSetId": 17
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2022-05-13T04:40:05Z",
+      "side": 0,
+      "message": "This should be reverted.",
+      "range": {
+        "startLine": 4,
+        "startChar": 8,
+        "endLine": 11,
+        "endChar": 38
+      },
+      "revId": "ecc20cfcf5112a541d5afb26912150d416f8444d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
