@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a5583ab_2b16bc8c",
+        "filename": "playbooks/gitiles/pre-build.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2022-05-13T10:52:40Z",
+      "side": 1,
+      "message": "Did you remove the newline at end on purpose?",
+      "range": {
+        "startLine": 7,
+        "startChar": 2,
+        "endLine": 7,
+        "endChar": 26
+      },
+      "revId": "2342914a91d9221766fd6c5ae77b8b79a3e57c87",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
