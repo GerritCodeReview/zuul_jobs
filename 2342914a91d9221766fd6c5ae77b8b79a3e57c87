@@ -22,6 +22,30 @@
       },
       "revId": "2342914a91d9221766fd6c5ae77b8b79a3e57c87",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8574534e_5023b471",
+        "filename": "playbooks/gitiles/pre-build.yaml",
+        "patchSetId": 20
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1014252
+      },
+      "writtenOn": "2022-05-13T12:05:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9a5583ab_2b16bc8c",
+      "range": {
+        "startLine": 7,
+        "startChar": 2,
+        "endLine": 7,
+        "endChar": 26
+      },
+      "revId": "2342914a91d9221766fd6c5ae77b8b79a3e57c87",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
