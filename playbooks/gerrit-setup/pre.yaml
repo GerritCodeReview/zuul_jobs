@@ -2,7 +2,8 @@
   hosts: all
   roles:
     - ensure-bazelisk
-    - ensure-java
+    - role: ensure-java
+      java_version: 11
     - role: ensure-nodejs
       node_version: 10
     - install-build-essential
