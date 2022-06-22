@@ -50,6 +50,24 @@
       "message": "@James, @Clark, once upstream change is merged, we would still want to pass java_version: 8 for plugin build on stable-3.4 branch.\n\nThis project doesn\u0027t have any branches yet. Am I understanding correctly, that we would create stable-3.4 branch for this project and override java_version: 8 in ensure-java role and then Zuul would do the right thing, and will fetch the right branch for plugin build on stable-34 branch?\n\nOr would we need to do something special for that in Zuul toolchain on gerrit-review, or even change every plugin repository on stable-3.4 branch to achieve that?\n\nNeedless to say, when we do that, we would revert this commit when merging up to master.",
       "revId": "92b8a1bb7aaa9b86e86975cda842d7568b934475",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ccae3d1c_8bb9ed1f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2022-06-22T21:29:29Z",
+      "side": 1,
+      "message": "For Gerrit, our tool for solving branch-specific job customization is to modify the base jobs defined in the gerrit repo.  Basically, it has branches, unlike this repo, so we use that to contain our branch information.  We only use that for \"required-projects\" now, but we can include variables like java_version too.  TLDR: add \"vars: {java_version: 11}\" to gerrit-base on the stable-3.4 branch here: https://gerrit.googlesource.com/gerrit/+/refs/heads/stable-3.4/.zuul.yaml\n\nI think that\u0027s a better approach than branching this repo (which would solve this problem, but probably create others (such as not being able to run jobs on new branches because this repo doesn\u0027t have the new branch)).  In other words: generic jobs repos like this usually work best with only one branch.",
+      "parentUuid": "097878b0_9862fa71",
+      "revId": "92b8a1bb7aaa9b86e86975cda842d7568b934475",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
