@@ -33,6 +33,23 @@
       "message": "This is superseded by changing the default upstream: [1].\n\n[1] https://review.opendev.org/846909",
       "revId": "92b8a1bb7aaa9b86e86975cda842d7568b934475",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "097878b0_9862fa71",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2022-06-22T09:48:54Z",
+      "side": 1,
+      "message": "@James, @Clark, once upstream change is merged, we would still want to pass java_version: 8 for plugin build on stable-3.4 branch.\n\nThis project doesn\u0027t have any branches yet. Am I understanding correctly, that we would create stable-3.4 branch for this project and override java_version: 8 in ensure-java role and then Zuul would do the right thing, and will fetch the right branch for plugin build on stable-34 branch?\n\nOr would we need to do something special for that in Zuul toolchain on gerrit-review, or even change every plugin repository on stable-3.4 branch to achieve that?\n\nNeedless to say, when we do that, we would revert this commit when merging up to master.",
+      "revId": "92b8a1bb7aaa9b86e86975cda842d7568b934475",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
