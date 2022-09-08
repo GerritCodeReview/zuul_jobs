@@ -5,4 +5,7 @@
       - build-essential
       - zip
       - unzip
+      # Bazlets rules look up python with ctx.which('python'), it is no more
+      # available by default since Debian 11 / Ubuntu 20.04 LTS
+      - python-is-python3
     state: present
