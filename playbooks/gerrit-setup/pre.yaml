@@ -3,6 +3,8 @@
   roles:
     - ensure-bazelisk
     - ensure-java
+    - role: ensure-python
+      python_version: 3
     - role: ensure-nodejs
       node_version: 10
     - install-build-essential
