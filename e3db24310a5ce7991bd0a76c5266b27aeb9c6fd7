@@ -1,12 +1,13 @@
 {
   "checks": {
     "zuul-check:zuul_jobs": {
-      "state": "SCHEDULED",
-      "message": "Change has been enqueued in check",
-      "url": "https://ci.gerritcodereview.com/t/gerrit/status/change/346594,1",
+      "state": "FAILED",
+      "message": "Change failed",
+      "url": "https://ci.gerritcodereview.com/t/gerrit/buildset/8b42107af8754fb59725dcc4a899b4e1",
       "started": "2022-09-23T00:50:02Z",
+      "finished": "2022-09-23T00:50:03Z",
       "created": "2022-09-23T00:50:02Z",
-      "updated": "2022-09-23T00:50:02Z"
+      "updated": "2022-09-23T00:50:03Z"
     }
   }
 }
