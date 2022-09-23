@@ -91,6 +91,7 @@
          The bazelisk targets to test.
     required-projects:
       - gitiles
+      - java-prettify
       - jgit
     pre-run: playbooks/gitiles/pre-build.yaml
     run: playbooks/gitiles/gitiles-build.yaml
@@ -102,6 +103,7 @@
       gerrit_project_name: gerrit.googlesource.com/gitiles
       gerrit_project_mapping:
         gitiles: ''
+        java-prettify: modules/java-prettify
         jgit: modules/jgit
         'zuul/jobs': ''
       zuul_work_dir: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/gitiles"
