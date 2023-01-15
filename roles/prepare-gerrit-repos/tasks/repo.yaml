@@ -54,7 +54,11 @@
 # defined in the parent repo.
 - name: Update submodule
   when: "project_in_gitmodules and (not project_branch_exists or not tracking_branch)"
-  command: "git submodule update --init {{ project_dest }}"
+  # Set protocol.file.allow=always while submodule init, which lets
+  # the submodule command to clone from a local directory. It's
+  # necessary as of Git 2.38.1, where the default was changed to
+  # "user" in response to CVE-2022-39253.
+  command: "git -c protocol.file.allow=always submodule update --init {{ project_dest }}"
   args:
     chdir: "{{ gerrit_root }}"
 
