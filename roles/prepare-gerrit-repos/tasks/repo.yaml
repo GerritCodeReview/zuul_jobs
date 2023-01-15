@@ -54,7 +54,7 @@
 # defined in the parent repo.
 - name: Update submodule
   when: "project_in_gitmodules and (not project_branch_exists or not tracking_branch)"
-  command: "git submodule update --init {{ project_dest }}"
+  command: "git -c protocol.file.allow=always submodule update --init {{ project_dest }}"
   args:
     chdir: "{{ gerrit_root }}"
 
