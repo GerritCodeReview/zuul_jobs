@@ -24,6 +24,30 @@
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "960690b7_c3b5cc96",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1096442
+      },
+      "writtenOn": "2023-01-16T14:52:14Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f446709a_7afcac5e",
+      "range": {
+        "startLine": 9,
+        "startChar": 55,
+        "endLine": 10,
+        "endChar": 7
+      },
+      "revId": "b15f143f8461f7c63604ba8e538b41e5d6245e4d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "749bbeb9_c7384664",
@@ -37,6 +61,30 @@
       "writtenOn": "2023-01-16T14:42:41Z",
       "side": 1,
       "message": "This was accidental, isn\u0027t it?\nI would say that this fix is important; however, we should also follow-up by pinning the desired Git version to avoid unintentional breakages.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 31
+      },
+      "revId": "b15f143f8461f7c63604ba8e538b41e5d6245e4d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48a00db6_a9591b26",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1096442
+      },
+      "writtenOn": "2023-01-16T14:52:14Z",
+      "side": 1,
+      "message": "Yes I think this change I54bd13f77ea4 accidentally updated git version. I agree we would want to pin the git version. Ack.",
+      "parentUuid": "749bbeb9_c7384664",
       "range": {
         "startLine": 12,
         "startChar": 0,
@@ -94,6 +142,24 @@
       "writtenOn": "2023-01-16T14:42:41Z",
       "side": 1,
       "message": "Can you add a comment before L57 to explain why are we doing this?",
+      "revId": "b15f143f8461f7c63604ba8e538b41e5d6245e4d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f10b7a58_6e57db20",
+        "filename": "roles/prepare-gerrit-repos/tasks/repo.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1096442
+      },
+      "writtenOn": "2023-01-16T14:52:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d120bb0a_8a8c1c0f",
       "revId": "b15f143f8461f7c63604ba8e538b41e5d6245e4d",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
