@@ -1,6 +1,52 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "f446709a_7afcac5e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-01-16T14:42:41Z",
+      "side": 1,
+      "message": "I believe that was also happening before, but just the local cache of packages wasn\u0027t updated.\n\nAs a follow-up change, I\u0027d suggest to pin the Git version we are willing to install.",
+      "range": {
+        "startLine": 9,
+        "startChar": 55,
+        "endLine": 10,
+        "endChar": 7
+      },
+      "revId": "b15f143f8461f7c63604ba8e538b41e5d6245e4d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "749bbeb9_c7384664",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-01-16T14:42:41Z",
+      "side": 1,
+      "message": "This was accidental, isn\u0027t it?\nI would say that this fix is important; however, we should also follow-up by pinning the desired Git version to avoid unintentional breakages.",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 31
+      },
+      "revId": "b15f143f8461f7c63604ba8e538b41e5d6245e4d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "bac2019c_ba4c474a",
@@ -14,6 +60,40 @@
       "writtenOn": "2023-01-16T04:36:02Z",
       "side": 1,
       "message": "Not sure why 3.3, 3.4 CI failed. Seems unrelated? and by the way 3.3 \u0026 3.4 are now not supported?",
+      "revId": "b15f143f8461f7c63604ba8e538b41e5d6245e4d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f1d18449_615d8033",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-01-16T14:42:41Z",
+      "side": 1,
+      "message": "Thanks @prudhvi.alahari@linaro.org for the fix !",
+      "revId": "b15f143f8461f7c63604ba8e538b41e5d6245e4d",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d120bb0a_8a8c1c0f",
+        "filename": "roles/prepare-gerrit-repos/tasks/repo.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1006192
+      },
+      "writtenOn": "2023-01-16T14:42:41Z",
+      "side": 1,
+      "message": "Can you add a comment before L57 to explain why are we doing this?",
       "revId": "b15f143f8461f7c63604ba8e538b41e5d6245e4d",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
