@@ -15,6 +15,13 @@ Runs bazelisk build with the specified targets.
    The bazelisk targets to test.  ``bazelisk test`` will only be run
    if this value is not the empty string.
 
+.. zuul:rolevar:: bazelisk_test_output
+   :default: errors
+
+   The bazelisk test output level.  Used as the argument to `--test_output=`.
+   See https://bazel.build/reference/command-line-reference#flag--test_output
+   for accepted values.
+
 .. zuul:rolevar:: bazelisk_executable
    :default: bazelisk
 
