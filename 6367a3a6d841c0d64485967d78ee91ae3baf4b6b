@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "515b56fa_01c9c665",
+        "filename": "roles/bazelisk-build/README.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1003883
+      },
+      "writtenOn": "2023-04-07T19:48:19Z",
+      "side": 1,
+      "message": "Nit use single space.",
+      "range": {
+        "startLine": 21,
+        "startChar": 33,
+        "endLine": 21,
+        "endChar": 36
+      },
+      "revId": "6367a3a6d841c0d64485967d78ee91ae3baf4b6b",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
