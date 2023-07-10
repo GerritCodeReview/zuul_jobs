@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "43b944fc_e2ccfae5",
+        "filename": "zuul.d/project.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2023-07-10T20:59:08Z",
+      "side": 1,
+      "message": "3.3 and 3.4 can be removed i think? (seperate change ofc).",
+      "revId": "4ddc1c634785da6a267e47f456d6f5f239d471d8",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
