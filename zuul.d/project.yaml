@@ -6,7 +6,8 @@
         - test-gerrit-plugin-build
         - test-gerrit-build-master
         - test-gerrit-build-stable-3.5
-        - test-gerrit-build-stable-3.4
-        - test-gerrit-build-stable-3.3
+        - test-gerrit-build-stable-3.6
+        - test-gerrit-build-stable-3.7
+        - test-gerrit-build-stable-3.8
         - test-gitiles-build-master
         - test-install-build-essential
