@@ -30,6 +30,7 @@
 
 - name: Check for unsatisfiable source repo condition
   when:
+    - "project_in_gitmodules"
     - "project.canonical_name != zuul.project.canonical_name"
     - "not project_branch_exists or not tracking_branch"
     - "repo_has_dependent_change"
