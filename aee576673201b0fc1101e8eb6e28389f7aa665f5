@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f48e3d38_c5d475a5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2023-09-29T07:21:59Z",
+      "side": 1,
+      "message": "It looks like this change is in service of having this role support setting up submodules for more than just the gerrit repo.  It was named \"prepare-gerrit-repos\" to indicate its purpose was specifically to set up gerrit-related repos.  And note that gitiles *is* a submodule of gerrit.\n\nSo here are my concerns:\n\n1) Since gitiles *is* a submodule of gerrit, should it not be the case that we should run this role in its original intended configuration, to set up the gerrit repo with gitiles as a submodule and perform the build of gitiles in the context of gerrit?\n\n2) Since gitiles *also* has submodules of its own, perhaps we need a new role that performs similar submodule setup steps for the gitiles repo itself?\n\n3) If (and only if) we feel it is reasonable to expand the scope of the prepare-gerrit-repos role to support other repos, should we update the name and/or documentation to reflect that?  Note that the role does have extensive documentation explaining exactly what it does and the reasons why.  I worry that if we continue to change the scope without updating docs, they will be misleading.  Here is the docs link: https://gerrit.googlesource.com/zuul/jobs/+/refs/heads/master/roles/prepare-gerrit-repos/README.rst\n\nI\u0027m not sure I have delved into this in quite as much detail as Clark (and what I have done is with quite a bit more jetlag), but my initial thoughts are that because we have two sets of submodules to set up, we probably need two roles (or at least to run one role twice?).  Once for gerrit -\u003e gitiles, and again for gitiles -\u003e whatever.\n\nTo accomplish that, I could see us either expanding the scope of this role and invoking it twice, or making a new role.",
+      "revId": "aee576673201b0fc1101e8eb6e28389f7aa665f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
