@@ -34,6 +34,24 @@
       "parentUuid": "f48e3d38_c5d475a5",
       "revId": "aee576673201b0fc1101e8eb6e28389f7aa665f5",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8b0c25cb_4673f326",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1087826
+      },
+      "writtenOn": "2023-09-29T07:58:57Z",
+      "side": 1,
+      "message": "Ah, I was definitely confused by that, sorry, and thanks for the correction.  I agree that we can ignore that bit about having to run the role twice, and the only remaining concerns are just around whether we rename this and/or update the docs.",
+      "parentUuid": "67df6e83_ece79636",
+      "revId": "aee576673201b0fc1101e8eb6e28389f7aa665f5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
