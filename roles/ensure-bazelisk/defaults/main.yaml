@@ -1,6 +1,0 @@
-bazelisk_version: v1.3.0
-bazelisk_arch: linux-amd64
-bazelisk_url: "https://github.com/bazelbuild/bazelisk/releases/download/{{ bazelisk_version }}/bazelisk-{{ bazelisk_arch }}"
-bazelisk_executable: bazelisk
-# If we have to download it, store it here:
-bazelisk_target: "{{ ansible_user_dir }}/.local/bin/bazelisk"
