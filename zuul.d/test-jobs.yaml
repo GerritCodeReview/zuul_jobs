@@ -1,13 +1,6 @@
 # Jobs used for testing roles in this repository
 
 - job:
-    name: test-ensure-bazelisk
-    run: playbooks/test-ensure-bazelisk.yaml
-    files:
-      - roles/ensure-bazelisk/.*
-      - playbooks/test-ensure-bazelisk.yaml
-
-- job:
     name: test-install-build-essential
     run: playbooks/test-install-build-essential.yaml
     files:
@@ -33,7 +26,6 @@
       - plugins/webhooks
       - polymer-bridges
     files:
-      - roles/ensure-bazelisk/.*
       - roles/ensure-java/.*
       - roles/prepare-gerrit-repos/.*
       - roles/install-build-essential/.*
@@ -47,7 +39,6 @@
     vars:
       gerrit_plugin: gitiles
     files:
-      - roles/ensure-bazelisk/.*
       - roles/bazelisk-build/.*
       - roles/prepare-gerrit-repos/.*
       - roles/copy-plugin-deps/.*
@@ -57,7 +48,6 @@
     name: test-gerrit-build-master
     parent: gerrit-build
     files:
-      - roles/ensure-bazelisk/.*
       - roles/bazelisk-build/.*
       - roles/prepare-gerrit-repos/.*
       - roles/copy-plugin-deps/.*
