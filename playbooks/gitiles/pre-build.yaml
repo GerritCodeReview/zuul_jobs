@@ -2,6 +2,7 @@
   hosts: all
   roles:
     - ensure-bazelisk
+      bazelisk_version: v1.28.1
     - role: ensure-java
       java_version: 17
     - install-build-essential
