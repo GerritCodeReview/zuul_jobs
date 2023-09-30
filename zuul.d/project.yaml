@@ -1,7 +1,6 @@
 - project:
     check:
       jobs:
-        - test-ensure-bazelisk
         - test-gerrit-setup
         - test-gerrit-plugin-build
         - test-gerrit-build-master
