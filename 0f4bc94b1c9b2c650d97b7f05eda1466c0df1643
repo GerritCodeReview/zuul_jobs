@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7047bbdf_883afaac",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2024-03-13T22:05:57Z",
+      "side": 1,
+      "message": "Validated by child change. Probably failing until [1] is submitted:\n\n[1] 413345: Merge branch \u0027stable-3.9\u0027 | https://gerrit-review.googlesource.com/c/gerrit/+/413345",
+      "revId": "0f4bc94b1c9b2c650d97b7f05eda1466c0df1643",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
