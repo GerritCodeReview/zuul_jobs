@@ -1,6 +1,8 @@
 gerrit_project_name: gerrit.googlesource.com/gerrit
 gerrit_project_mapping:
   gerrit: ''
+  java-prettify: modules/java-prettify
   jgit: modules/jgit
+  polymer-bridges: polymer-bridges
   'zuul/jobs': ''
 gerrit_root: "{{ ansible_user_dir }}/{{ zuul.projects[gerrit_project_name].src_dir }}"
