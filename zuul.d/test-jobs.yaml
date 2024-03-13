@@ -66,16 +66,6 @@
 
 # TODO remove unsupported stable gerrit builds.
 - job:
-    name: test-gerrit-build-stable-3.3
-    parent: test-gerrit-build-master
-    override-checkout: stable-3.3
-
-- job:
-    name: test-gerrit-build-stable-3.4
-    parent: test-gerrit-build-master
-    override-checkout: stable-3.4
-
-- job:
     name: test-gerrit-build-stable-3.5
     parent: test-gerrit-build-master
     override-checkout: stable-3.5
@@ -94,6 +84,11 @@
     name: test-gerrit-build-stable-3.8
     parent: test-gerrit-build-master
     override-checkout: stable-3.8
+
+- job:
+    name: test-gerrit-build-stable-3.9
+    parent: test-gerrit-build-master
+    override-checkout: stable-3.9
 
 - job:
     name: test-gitiles-build-master
