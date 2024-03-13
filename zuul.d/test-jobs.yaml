@@ -19,6 +19,7 @@
     parent: gerrit-setup
     run: playbooks/test-gerrit-setup.yaml
     required-projects:
+      - java-prettify
       - jgit
       - plugins/codemirror-editor
       - plugins/commit-message-length-validator
