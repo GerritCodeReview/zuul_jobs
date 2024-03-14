@@ -16,6 +16,23 @@
       "message": "There are flaky node failures, but all the jobs have passed on PS3 at some point: https://ci.gerritcodereview.com/t/gerrit/builds?change\u003d413342\u0026skip\u003d0",
       "revId": "2551b9d5b2b5490ebfeacfce5ab2655d763547a3",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c55ea925_ae6d5044",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2024-03-14T15:32:15Z",
+      "side": 1,
+      "message": "Node failure seems to happen to stable-3.5. Not sure why though but this change lgtm.",
+      "revId": "2551b9d5b2b5490ebfeacfce5ab2655d763547a3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
