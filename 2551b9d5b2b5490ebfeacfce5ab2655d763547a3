@@ -33,6 +33,24 @@
       "message": "Node failure seems to happen to stable-3.5. Not sure why though but this change lgtm.",
       "revId": "2551b9d5b2b5490ebfeacfce5ab2655d763547a3",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b713c65c_a2493b52",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002666
+      },
+      "writtenOn": "2024-03-14T15:34:27Z",
+      "side": 1,
+      "message": "Yeah, it seems random. The first time the tests ran they failed for 3.8 and plugin-build [1], then I re-ran the job and only 3.5 failed.\n\n[1] https://ci.gerritcodereview.com/t/gerrit/buildset/f04bf542c3704cc9976141318f731b4d",
+      "parentUuid": "c55ea925_ae6d5044",
+      "revId": "2551b9d5b2b5490ebfeacfce5ab2655d763547a3",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
