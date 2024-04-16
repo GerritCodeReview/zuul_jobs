@@ -4,6 +4,6 @@
     - ensure-bazelisk
     - ensure-java
     - role: ensure-nodejs
-      node_version: 10
+      node_version: 12
     - install-build-essential
     - prepare-gerrit-repos
