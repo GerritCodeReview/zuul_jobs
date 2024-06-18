@@ -1,0 +1,4 @@
+# Bazel automatically detects whether colors should be output, most probably
+# based on whether stdin is /dev/null or is a tty. Zuul supports ANSI coloring
+# output so we can turn it on.
+common --color=yes

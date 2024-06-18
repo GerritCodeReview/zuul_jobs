@@ -23,3 +23,8 @@
     bazelisk_executable: "{{ bazelisk_target }}"
     cacheable: true
   when: bazelisk_downloaded is changed
+
+- name: Add Bazel configuration
+  copy:
+    src: bazelrc
+    dest: {{ ansible_user_dir }}/.bazelrc
