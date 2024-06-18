@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc3de3ef_ec6a7565",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2024-06-18T13:55:38Z",
+      "side": 1,
+      "message": "That is working as I expected it, the streamed logs do get highlighted as well as the snippets in the console log of each step.  The only thing missing is the display of logs in output-logs.txt which do not support Ansi coloring, but that does not seem to be a concern to me. The Zuul log viewer should be taught to convert Ansi to HTML, but that might slow down the display of logs.",
+      "revId": "804be1b7543d1fc03e424a635d07bf6a737d280c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
