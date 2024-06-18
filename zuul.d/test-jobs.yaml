@@ -64,22 +64,6 @@
       - roles/copy-plugin-deps/.*
       - playbooks/gerrit/.*
 
-# TODO remove unsupported stable gerrit builds.
-- job:
-    name: test-gerrit-build-stable-3.5
-    parent: test-gerrit-build-master
-    override-checkout: stable-3.5
-
-- job:
-    name: test-gerrit-build-stable-3.6
-    parent: test-gerrit-build-master
-    override-checkout: stable-3.6
-
-- job:
-    name: test-gerrit-build-stable-3.7
-    parent: test-gerrit-build-master
-    override-checkout: stable-3.7
-
 - job:
     name: test-gerrit-build-stable-3.8
     parent: test-gerrit-build-master
