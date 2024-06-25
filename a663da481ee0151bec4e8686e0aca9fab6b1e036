@@ -1,12 +1,9 @@
 {
   "checks": {
     "zuul-check:zuul_jobs": {
-      "state": "RUNNING",
-      "message": "Jobs have started running",
-      "url": "https://ci.gerritcodereview.com/t/gerrit/status/change/431477,1",
-      "started": "2024-06-25T20:36:34Z",
+      "state": "NOT_STARTED",
       "created": "2024-06-25T20:36:34Z",
-      "updated": "2024-06-25T20:36:44Z"
+      "updated": "2024-06-25T21:35:28Z"
     }
   }
 }
