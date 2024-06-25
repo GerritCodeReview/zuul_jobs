@@ -5,4 +5,5 @@ gerrit_project_mapping:
   jgit: modules/jgit
   polymer-bridges: polymer-bridges
   'zuul/jobs': ''
+  'zuul/config': ''
 gerrit_root: "{{ ansible_user_dir }}/{{ zuul.projects[gerrit_project_name].src_dir }}"
