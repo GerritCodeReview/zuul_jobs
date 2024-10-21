@@ -8,5 +8,6 @@
         - test-gerrit-build-stable-3.8
         - test-gerrit-build-stable-3.9
         - test-gerrit-build-stable-3.10
+        - test-gerrit-build-stable-3.11
         - test-gitiles-build-master
         - test-install-build-essential
