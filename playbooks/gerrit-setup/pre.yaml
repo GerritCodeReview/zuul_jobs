@@ -5,6 +5,6 @@
     - role: ensure-java
       java_version: 17
     - role: ensure-nodejs
-      node_version: 12
+      node_version: 18
     - install-build-essential
     - prepare-gerrit-repos
