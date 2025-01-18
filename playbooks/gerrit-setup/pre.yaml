@@ -3,6 +3,8 @@
   roles:
     - ensure-bazelisk
     - ensure-java
+    - role: ensure-java
+      java_version: 17
     - role: ensure-nodejs
       node_version: 12
     - install-build-essential
