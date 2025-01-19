@@ -2,6 +2,7 @@
   hosts: all
   roles:
     - ensure-bazelisk
-    - ensure-java
+    - role: ensure-java
+      java_version: 17
     - install-build-essential
     - prepare-gerrit-repos
