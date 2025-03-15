@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6e17c575_07ad0dd7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3947411
+      },
+      "writtenOn": "2025-03-15T17:13:17Z",
+      "side": 1,
+      "message": "388154: Consume ensure-bazelisk role from upstream zuul | https://gerrit-review.googlesource.com/c/zuul/jobs/+/388154",
+      "revId": "72daf2047fac8d335e35f8dd5446a3ec69daff80",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
