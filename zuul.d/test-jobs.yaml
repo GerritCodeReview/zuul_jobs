@@ -80,6 +80,11 @@
     override-checkout: stable-3.12
 
 - job:
+    name: test-gerrit-build-stable-3.13
+    parent: test-gerrit-build-master
+    override-checkout: stable-3.13
+
+- job:
     name: test-gitiles-build-master
     parent: gitiles-build
     files:
