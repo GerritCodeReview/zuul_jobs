@@ -1,7 +1,16 @@
-Copy plugin bazel deps
+Copy plugin Bazel dependency files
+==================================
 
-If the plugin being built has an ``external_plugin_deps.bzl`` file,
-copy it into the Gerrit plugins directory.
+This role copies Bazel dependency files from a plugin source tree
+into the Gerrit ``plugins`` directory when they are present.
+
+If the plugin being built contains an ``external_plugin_deps.bzl`` file,
+it is copied into the Gerrit plugins directory.
+
+If the plugin being built contains an ``external_plugin_deps.MODULE.bazel``
+file, it is also copied into the Gerrit plugins directory.
+
+Both files are optional and are copied only if they exist.
 
 **Role Variables**
 
