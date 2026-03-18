@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb0a6736_16bdcf82",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-03-18T09:35:19Z",
+      "side": 1,
+      "message": "I was able to verify with change 552581 that it works as expected.",
+      "revId": "5b9610f802e625bf2d601b1f1fdf80b95b4dce06",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
