@@ -7,7 +7,7 @@ home directory by default.
 **Role Variables**
 
 .. zuul:rolevar:: bazelisk_version
-   :default: v1.3.0
+   :default: v1.28.1
 
    Version of Bazelisk to install
 
