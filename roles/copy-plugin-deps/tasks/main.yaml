@@ -5,4 +5,13 @@
 
 - name: Copy external plugin deps
   command: "cp -f {{ ansible_user_dir }}/src/gerrit.googlesource.com/gerrit/plugins/{{ gerrit_plugin }}/external_plugin_deps.bzl {{ gerrit_root }}/plugins"
-  when: "deps_stat.stat.exists is true"
+  when: deps_stat.stat.exists
+
+- name: Check if external plugin deps MODULE file exists
+  stat:
+    path: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/gerrit/plugins/{{ gerrit_plugin }}/external_plugin_deps.MODULE.bazel"
+  register: module_deps_stat
+
+- name: Copy external plugin deps MODULE file
+  command: "cp -f {{ ansible_user_dir }}/src/gerrit.googlesource.com/gerrit/plugins/{{ gerrit_plugin }}/external_plugin_deps.MODULE.bazel {{ gerrit_root }}/plugins"
+  when: module_deps_stat.stat.exists
