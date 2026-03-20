@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f90d20e_876e2fa2",
+        "filename": "zuul.d/test-jobs.yaml",
+        "patchSetId": 7
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-03-20T07:20:24Z",
+      "side": 0,
+      "message": "This file wasn\u0027t removed yet.",
+      "revId": "5b9610f802e625bf2d601b1f1fdf80b95b4dce06",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce16043e_1a827b4b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-03-20T07:20:24Z",
+      "side": 1,
+      "message": "Ustream `ensure-bazelisk` uses default bazelisk version v1.11.0.\n\nWe need at least v1.27.0, that supports `MODULE.bazel` for `.bazelversion` detection.",
+      "revId": "7f1547c836dbd503d25b1ee4849f454d0af7b966",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
