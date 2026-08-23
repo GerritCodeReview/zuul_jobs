@@ -1,0 +1,7 @@
+- name: Preparatory steps for java-prettify build job
+  hosts: all
+  roles:
+    - role: ensure-bazelisk
+      bazelisk_version: v1.28.1
+    - role: ensure-java
+      java_version: 17

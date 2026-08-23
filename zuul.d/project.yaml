@@ -8,4 +8,5 @@
         - test-gerrit-build-stable-3.12
         - test-gerrit-build-stable-3.13
         - test-gitiles-build-master
+        - test-java-prettify-build
         - test-install-build-essential

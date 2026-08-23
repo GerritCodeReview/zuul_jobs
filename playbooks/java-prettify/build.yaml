@@ -1,0 +1,4 @@
+- name: Build java-prettify
+  hosts: all
+  roles:
+    - bazelisk-build

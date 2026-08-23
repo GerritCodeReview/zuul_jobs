@@ -107,3 +107,31 @@
         jgit: modules/jgit
         'zuul/jobs': ''
       zuul_work_dir: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/gitiles"
+
+- job:
+    name: java-prettify-build
+    description: |
+      Builds java-prettify
+
+      This job builds the standalone java-prettify library, which has no
+      dependencies on other Gerrit projects.
+
+      Responds to these variables:
+
+      .. zuul:jobvar:: baselisk_targets
+
+         The bazelisk targets to build.  Defaults to "//...".
+
+      .. zuul:jobvar:: baselisk_test_targets
+
+         The bazelisk targets to test.  Defaults to "//...".
+    required-projects:
+      - java-prettify
+    pre-run: playbooks/java-prettify/pre-build.yaml
+    run: playbooks/java-prettify/build.yaml
+    vars:
+      bazelisk_targets: "//..."
+      bazelisk_test_targets: "//..."
+      bazelisk_artifacts:
+        - "bazel-bin/libjava-prettify.jar"
+      zuul_work_dir: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/java-prettify"
