@@ -3,6 +3,6 @@
   roles:
     - ensure-bazelisk
     - role: ensure-java
-      java_version: 17
+      java_version: 21
     - install-build-essential
     - prepare-gerrit-repos
