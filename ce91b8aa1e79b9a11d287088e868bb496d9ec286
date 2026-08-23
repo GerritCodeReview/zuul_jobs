@@ -1,13 +1,9 @@
 {
   "checks": {
     "zuul-check:zuul_jobs": {
-      "state": "NOT_RELEVANT",
-      "message": "Project has no jobs configured",
-      "url": "https://ci.gerritcodereview.com/t/gerrit/buildset/2e1710bfd6294a02aa8cc0afb5dd7899",
-      "started": "2026-08-23T19:10:32Z",
-      "finished": "2026-08-23T19:10:36Z",
+      "state": "NOT_STARTED",
       "created": "2026-08-23T18:32:03Z",
-      "updated": "2026-08-23T19:10:36Z"
+      "updated": "2026-08-23T21:14:46Z"
     }
   }
 }
