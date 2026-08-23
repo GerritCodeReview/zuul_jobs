@@ -89,3 +89,9 @@
     parent: gitiles-build
     files:
       - playbooks/gitiles/.*
+
+- job:
+    name: test-java-prettify-build
+    parent: java-prettify-build
+    files:
+      - playbooks/java-prettify/.*

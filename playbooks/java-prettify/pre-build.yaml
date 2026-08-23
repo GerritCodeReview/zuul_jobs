@@ -1,0 +1,8 @@
+- name: Preparatory steps for java-prettify build job
+  hosts: all
+  roles:
+    - ensure-bazelisk
+    - role: ensure-java
+      java_version: 17
+    - install-build-essential
+    - prepare-gerrit-repos
