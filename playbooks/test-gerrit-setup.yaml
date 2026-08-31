@@ -5,6 +5,7 @@
       args:
         chdir: "{{ ansible_user_dir }}"
       loop:
+        - modules/gitiles
         - modules/java-prettify
         - modules/jgit
         - plugins/codemirror-editor

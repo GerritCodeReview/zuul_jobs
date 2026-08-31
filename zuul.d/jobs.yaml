@@ -102,9 +102,11 @@
         - "bazel-bin/gitiles.war"
       gerrit_project_name: gerrit.googlesource.com/gitiles
       gerrit_project_mapping:
+        gerrit: ''
         gitiles: ''
         java-prettify: modules/java-prettify
         jgit: modules/jgit
+        'plugins/gitiles': ''
         'zuul/jobs': ''
       zuul_work_dir: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/gitiles"
 
