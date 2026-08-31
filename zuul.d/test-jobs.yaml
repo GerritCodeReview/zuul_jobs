@@ -19,6 +19,7 @@
     parent: gerrit-setup
     run: playbooks/test-gerrit-setup.yaml
     required-projects:
+      - gitiles
       - java-prettify
       - jgit
       - plugins/codemirror-editor
@@ -44,6 +45,7 @@
     name: test-gerrit-plugin-build
     parent: gerrit-plugin-build
     required-projects:
+      - gitiles
       - plugins/gitiles
     vars:
       gerrit_plugin: gitiles

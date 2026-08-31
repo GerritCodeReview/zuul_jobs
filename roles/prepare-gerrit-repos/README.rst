@@ -57,14 +57,17 @@ dependent projects have the same branches as Gerrit itself.
    repo, supply the empty string.
 
    The following is the default value; it instructs the role not to
-   copy the gerrit project into itself, and to copy the jgit project
-   into ``modules/jgit``:
+   copy the gerrit project into itself, and to copy non-plugin
+   submodule projects into their Gerrit tree locations:
 
    .. code-block:: yaml
 
       gerrit_project_mapping:
         gerrit: ''
+        gitiles: modules/gitiles
+        java-prettify: modules/java-prettify
         jgit: modules/jgit
+        polymer-bridges: polymer-bridges
 
 .. zuul:rolevar:: gerrit_project_name
    :default: gerrit.googlesource.com/gerrit
