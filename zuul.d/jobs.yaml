@@ -108,6 +108,7 @@
         jgit: modules/jgit
         'plugins/gitiles': ''
         'zuul/jobs': ''
+      skip_unmapped_projects: true
       zuul_work_dir: "{{ ansible_user_dir }}/src/gerrit.googlesource.com/gitiles"
 
 - job:

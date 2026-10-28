@@ -7,4 +7,8 @@ gerrit_project_mapping:
   polymer-bridges: polymer-bridges
   'zuul/jobs': ''
   'zuul/config': ''
+# Ignore projects pulled into the buildset (e.g. via a shared Gerrit topic)
+# that are not listed in gerrit_project_mapping, instead of moving them into
+# the tree. Builds that only care about a fixed set of repos set this to true.
+skip_unmapped_projects: false
 gerrit_root: "{{ ansible_user_dir }}/{{ zuul.projects[gerrit_project_name].src_dir }}"
