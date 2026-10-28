@@ -13,7 +13,7 @@
   include_tasks:
     file: repo.yaml
   vars:
-    project_dest: "{{ gerrit_project_mapping.get(project.name, project.name) }}"
+    project_dest: "{{ gerrit_project_mapping.get(project.name, '' if skip_unmapped_projects else project.name) }}"
   when: "project_dest != ''"
   loop: "{{ zuul.projects.values() | list }}"
   loop_control:
