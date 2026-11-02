@@ -16,6 +16,24 @@
       "message": "Set `skip_unmapped_projects: true` here too?",
       "revId": "53a88b633bbe64e8f44e607822842054789b848a",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8e771af_91074a1e",
+        "filename": "zuul.d/jobs.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 144,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "2026-11-02T07:11:26Z",
+      "side": 1,
+      "message": "Good catch, added it to java-prettify-build too. Thanks!",
+      "parentUuid": "1b504878_db91fea4",
+      "revId": "53a88b633bbe64e8f44e607822842054789b848a",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
